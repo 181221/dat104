@@ -20,9 +20,9 @@ public class ValutaServlet extends HttpServlet {
         String fraCur = request.getParameter("currency-fra");
         String tilCur = request.getParameter("currency-til");
 
-        if(beregner.isValidBelop(fraBelop)){
+        if(beregner.isValidBelop(fraBelop)){ //sjekker om belop er riktig verdi
             double omgjorfraBelop = Double.parseDouble(fraBelop);
-            resultat = ValutaBeregner.BeregnValuta(fraCur, tilCur, omgjorfraBelop);
+            resultat = ValutaBeregner.BeregnValuta(fraCur, tilCur, omgjorfraBelop); //bergnValute sjekker om Cur er riktig
             gyldig = true;
         }else {
             gyldig = false;

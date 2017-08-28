@@ -4,6 +4,8 @@ import no.hvl.lph.ExchangeRate;
 import no.hvl.lph.ExchangeRateService;
 
 import java.io.IOException;
+import java.util.Currency;
+import java.util.Set;
 
 public class ValutaBeregner {
 
@@ -17,8 +19,21 @@ public class ValutaBeregner {
     //"heihwe\"\+\"hwie"
 
     public static double BeregnValuta(String fra, String til, double belop) throws IOException {
-        ExchangeRate rate = ExchangeRateService.getRate(fra, til);
+        ExchangeRate rate;
+        if(sjekkOmValutaStemmer(fra, til)){
+             rate = ExchangeRateService.getRate(fra, til);
+        }else {
+            return 0;
+        }
         return rate.getRate() * belop;
+    }
+    public static boolean sjekkOmValutaStemmer(String fra, String til) {
+        Set<Currency> currencies = Currency.getAvailableCurrencies();
+        if(currencies.contains(fra) && currencies.contains(til)){
+            return true;
+        }else {
+            return false;
+        }
     }
 
 }
