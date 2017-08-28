@@ -8,11 +8,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Valuta</title>
   </head>
   <body>
-  <div class="nav navbar">
-    <li><a href=""></a></li>
-  </div>
+    <form action="resultat">
+      <div>
+        beløp<input type="text" name="fra-belop">
+        <select name="currency-fra">
+          <option value="NOK">NOK</option>
+          <option value="USD">USD</option>
+          <option value="SEK">SEK</option>
+          <option value="EURO">EURO</option>
+        </select>
+      </div>
+      <div>
+        Skal veksles til
+        <select name="currency-til">
+          <option value="NOK">NOK</option>
+          <option value="USD">USD</option>
+          <option value="SEK">SEK</option>
+          <option value="EURO">EURO</option>
+        </select>
+      </div>
+      <input type="Submit" value="Submit">
+    </form>
   </body>
 </html>
