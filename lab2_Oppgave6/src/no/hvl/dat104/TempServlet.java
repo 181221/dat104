@@ -16,7 +16,6 @@ public class TempServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         double omregning;
         boolean gyldig = true; // skal implementere test klasser senere

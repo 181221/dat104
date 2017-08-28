@@ -9,8 +9,14 @@
 <html>
 <head>
     <title>vis resultat</title>
+    <style>
+        * {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
+<h4>Temperaturomregning resultat</h4>
     <%
         if((boolean)request.getAttribute("gyldig") && request.getAttribute("tempVal").equals("celsius")) {
     %>      <p>${tempen} &#8451; = ${omregning} &#8457; </p><%
@@ -20,6 +26,5 @@
             %> <p>du har søkt feil</p><%
         }
     %>
-
 </body>
 </html>
