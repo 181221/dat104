@@ -13,24 +13,21 @@ public class ValutaServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String message = "Hello World";
-
+        ValutaBeregner beregner = new ValutaBeregner();
+        double resultat = 0;
         String fraBelop = request.getParameter("fra-belop");
-        String tilCur = request.getParameter("til-currenzy");
+        String fraCur = request.getParameter("currency-fra");
+        String tilCur = request.getParameter("currency-til");
 
-        String fraCur = request.getParameter("fra-currenzy");
+        if(beregner.isValid(fraCur) && beregner.isValid(tilCur) && beregner.isValid(fraBelop)){
+            double omgjorfraBelop = Double.parseDouble(fraBelop);
+            resultat = ValutaBeregner.BeregnValuta(fraCur, tilCur, omgjorfraBelop);
+        }
 
-
-        double resultat = ValutaBeregner.BeregnValuta(fraBelop, tilCur);
-
-        double finalResult = resultat * Double.parseDouble(fraBelop);
-
-        //request.setAttribute("message", message); // This will be available as ${message}
         request.setAttribute("fra", fraBelop);
         request.setAttribute("til", tilCur);
         request.setAttribute("fraCur", fraCur);
-
-        request.setAttribute("resultat", finalResult);
+        request.setAttribute("resultat", String.format("%.2f", resultat));
         request.getRequestDispatcher("resultat.jsp").forward(request, response);
     }
 }

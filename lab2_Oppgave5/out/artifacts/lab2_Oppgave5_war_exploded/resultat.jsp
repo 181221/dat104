@@ -11,6 +11,8 @@
     <title>resultat</title>
 </head>
 <body>
+
+
     <p>${fra} ${fraCur} blir: ${resultat} ${til}  </p>
 </body>
 </html>
