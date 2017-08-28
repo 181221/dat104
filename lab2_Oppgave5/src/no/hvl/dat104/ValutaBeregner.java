@@ -7,7 +7,11 @@ import java.io.IOException;
 
 public class ValutaBeregner {
 
-    public boolean isValid(String s) {
+    /**
+     * @param s
+     * @return
+     */
+    public boolean isValidBelop(String s) {
         return s != null && s.matches("^\\d{1,12}(|[.]\\\\d+)$");
     }
     //"heihwe\"\+\"hwie"

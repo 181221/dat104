@@ -15,15 +15,19 @@ public class ValutaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ValutaBeregner beregner = new ValutaBeregner();
         double resultat = 0;
+        boolean gyldig;
         String fraBelop = request.getParameter("fra-belop");
         String fraCur = request.getParameter("currency-fra");
         String tilCur = request.getParameter("currency-til");
 
-        if(beregner.isValid(fraCur) && beregner.isValid(tilCur) && beregner.isValid(fraBelop)){
+        if(beregner.isValidBelop(fraBelop)){
             double omgjorfraBelop = Double.parseDouble(fraBelop);
             resultat = ValutaBeregner.BeregnValuta(fraCur, tilCur, omgjorfraBelop);
+            gyldig = true;
+        }else {
+            gyldig = false;
         }
-
+        request.setAttribute("gyldig", gyldig);
         request.setAttribute("fra", fraBelop);
         request.setAttribute("til", tilCur);
         request.setAttribute("fraCur", fraCur);
