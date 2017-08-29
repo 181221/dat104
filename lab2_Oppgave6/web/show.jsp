@@ -23,7 +23,8 @@
         }else if((boolean)request.getAttribute("gyldig") && request.getAttribute("tempVal").equals("fahrenheit")){
     %>      <<p>${tempen} &#8457; = ${omregning} &#8451; </p> <%
         }else {
-            %> <p>du har søkt feil</p><%
+            %> <p style="color: red;">Ugyldig brukerinput. Temperaturen må være lik et tall(lik eller over det absolutte
+                  nullpunk)</p><%
         }
     %>
 </body>

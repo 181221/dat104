@@ -39,6 +39,10 @@ public class Beregn {
         return temp;
     }
 
+    public void setTemp(Double s){
+        temp = s;
+    }
+
 
 
 
