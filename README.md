@@ -1,2 +1,2 @@
-# dat104
-test på merge
+﻿# dat104
+test på merg[insert] nå har eg merget
