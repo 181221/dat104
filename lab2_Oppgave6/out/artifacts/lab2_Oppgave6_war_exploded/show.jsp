@@ -26,6 +26,5 @@
             %> <p>du har søkt feil</p><%
         }
     %>
-
 </body>
 </html>

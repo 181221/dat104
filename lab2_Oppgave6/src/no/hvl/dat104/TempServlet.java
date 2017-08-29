@@ -13,15 +13,22 @@ import java.io.IOException;
 @WebServlet("/beregn")
 public class TempServlet extends HttpServlet {
     Beregn b;
+    double omregning;
+    boolean gyldig;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double omregning;
-        boolean gyldig = true; // skal implementere test klasser senere
         String tempVal = request.getParameter("radio1"); // celsius eller fahr
         String tempen = request.getParameter("temperatur"); // gradene
-        b = new Beregn(Double.parseDouble(tempen));
+
+        if(Beregn.isValidTemp(tempen)){
+            b = new Beregn(Double.parseDouble(tempen));
+            gyldig = true;
+        }else {
+            b = new Beregn();
+            gyldig = false;
+        }
 
         if(tempVal.equals("celsius")){
             omregning = b.omregnFraCtilF();
@@ -30,6 +37,7 @@ public class TempServlet extends HttpServlet {
         } else {
             omregning = 0.0;
         }
+
         request.setAttribute("gyldig",gyldig);
         request.setAttribute("tempVal", tempVal);
         request.setAttribute("tempen", tempen);
