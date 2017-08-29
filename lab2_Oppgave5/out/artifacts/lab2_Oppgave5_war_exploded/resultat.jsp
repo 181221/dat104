@@ -11,8 +11,13 @@
     <title>resultat</title>
 </head>
 <body>
+    <%
+        if((boolean)request.getAttribute("gyldig")) {
+    %>      <p>${fra} ${fraCur} blir: ${resultat} ${til}  </p><%
+        }else {
+    %> <p>du skrev inn feil </p> <%
+        }
+    %>
 
-
-    <p>${fra} ${fraCur} blir: ${resultat} ${til}  </p>
 </body>
 </html>
