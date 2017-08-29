@@ -16,7 +16,7 @@ public class Beregn {
         this.temp = temp;
     }
     public static boolean isValidTemp(String s) {
-        return s != null && s.matches("[0-9]{0,3}.[0-9]{0,3}");
+        return s != null && s.matches("\\d{0,3}.\\d{0,3}");
     }
 
     public double omregnFraCtilF() {
