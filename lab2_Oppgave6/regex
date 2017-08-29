@@ -1,0 +1,31 @@
+Ord som er 2 til 20 char i lengde
+[A-Za-z]{2,20}    samme   \\w{2,20}
+
+\\d     digit
+\\      not digit
+
+{5}
+
+ 2 charactrs that start with a C or A
+
+A[KlRZ]|C[AOT]      starter med A followed by K|L|R|Z
+
+. ^ * + ? {} [] \ | ()     protected signs trenger \\ foran
+"(\\{{1,})"  finner alle treff på {{ {{{ {   eller (\\{+)
+
++ whatever proceeds must occour one or more times
+
+//peder.wiig@gmail.com
+"[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z]{2,4}"
+
+//1-(410)555-3131
+"([0-9]( |-)?)?(\\(?[0-9]{3}\\)?|[0-9]{3})( |-)?([0-9{3}( |-)?[0-9]{4}|[a-zA->0-9]{7}"
+
+//123.123
+[0-9]{0,3}.[0-9]{0,3}
+
+
+
+
+
+

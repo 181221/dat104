@@ -1,10 +1,13 @@
 package no.hvl.dat104;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by Peder on 28.08.2017.
  */
 public class Beregn {
-    double temp;
+    private double temp;
 
     public Beregn() {
         temp = 0.0;
@@ -13,7 +16,7 @@ public class Beregn {
         this.temp = temp;
     }
     public static boolean isValidTemp(String s) {
-        return s != null && s.matches("^\\d{1,12}(|[.]\\\\d+)$");
+        return s != null && s.matches("[0-9]{0,3}.[0-9]{0,3}");
     }
 
     public double omregnFraCtilF() {
@@ -25,6 +28,12 @@ public class Beregn {
         /* fra F til C  | (T(°F) - 32) / 1.8 */
         double omregning = ((temp-32) / 1.8);
         return omregning;
+    }
+
+
+
+    public double getTemp() {
+        return temp;
     }
 
 

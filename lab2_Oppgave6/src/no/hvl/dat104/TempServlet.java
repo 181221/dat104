@@ -24,18 +24,21 @@ public class TempServlet extends HttpServlet {
 
         if(Beregn.isValidTemp(tempen)){
             b = new Beregn(Double.parseDouble(tempen));
-            gyldig = true;
+            System.out.println(b.getTemp());
+            System.out.print(b.getTemp() >= -273.15);
         }else {
             b = new Beregn();
-            gyldig = false;
         }
-
-        if(tempVal.equals("celsius")){
+        if(tempVal.equals("celsius") && b.getTemp() >= -273.15){
+            System.out.println("tempen er " + b.getTemp());
             omregning = b.omregnFraCtilF();
-        } else if (tempVal.equals("fahrenheit")){
+            gyldig = true;
+        } else if (tempVal.equals("fahrenheit") && b.getTemp() >= -459.67){
             omregning = b.omregnFraFtilC();
+            gyldig = true;
         } else {
             omregning = 0.0;
+            gyldig = false;
         }
 
         request.setAttribute("gyldig",gyldig);
