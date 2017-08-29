@@ -35,8 +35,8 @@
       <file leaf-file-name="Beregn.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="1581">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#259#260#0" expanded="true" />
@@ -793,12 +793,12 @@
       <workItem from="1503952027728" duration="6800000" />
       <workItem from="1503994960609" duration="77000" />
       <workItem from="1503995140784" duration="4552000" />
-      <workItem from="1504006667185" duration="134000" />
+      <workItem from="1504006667185" duration="646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11563000" />
+    <option name="totallyTimeSpent" value="12075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
@@ -1034,8 +1034,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="1581">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#259#260#0" expanded="true" />
