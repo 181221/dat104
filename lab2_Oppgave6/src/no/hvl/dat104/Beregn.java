@@ -13,9 +13,12 @@ public class Beregn {
         temp = 0.0;
     }
     public Beregn( double temp){
+
         this.temp = temp;
     }
+
     public static boolean isValidTemp(String s) {
+
         return s != null && s.matches("\\d{0,3}.\\d{0,3}");
     }
 
