@@ -13,10 +13,13 @@ public class Beregn {
         temp = 0.0;
     }
     public Beregn( double temp){
+
         this.temp = temp;
     }
+
     public static boolean isValidTemp(String s) {
-        return s != null && s.matches("[0-9]{0,3}.[0-9]{0,3}");
+
+        return s != null && s.matches("\\d{0,3}.\\d{0,3}");
     }
 
     public double omregnFraCtilF() {
@@ -34,6 +37,10 @@ public class Beregn {
 
     public double getTemp() {
         return temp;
+    }
+
+    public void setTemp(Double s){
+        temp = s;
     }
 
 

@@ -24,26 +24,24 @@ public class TempServlet extends HttpServlet {
 
         if(Beregn.isValidTemp(tempen)){
             b = new Beregn(Double.parseDouble(tempen));
-            System.out.println(b.getTemp());
-            System.out.print(b.getTemp() >= -273.15);
+            if(tempVal.equals("celsius") && b.getTemp() >= -273.15){
+                omregning = b.omregnFraCtilF();
+                gyldig = true;
+            }else if (tempVal.equals("fahrenheit") && b.getTemp() >= -459.67){
+                omregning = b.omregnFraFtilC();
+                gyldig = true;
+            } else {
+                gyldig = false;
+            }
         }else {
+            gyldig = false;
             b = new Beregn();
         }
-        if(tempVal.equals("celsius") && b.getTemp() >= -273.15){
-            System.out.println("tempen er " + b.getTemp());
-            omregning = b.omregnFraCtilF();
-            gyldig = true;
-        } else if (tempVal.equals("fahrenheit") && b.getTemp() >= -459.67){
-            omregning = b.omregnFraFtilC();
-            gyldig = true;
-        } else {
-            omregning = 0.0;
-            gyldig = false;
-        }
 
+        System.out.println(gyldig);
         request.setAttribute("gyldig",gyldig);
         request.setAttribute("tempVal", tempVal);
-        request.setAttribute("tempen", tempen);
+        request.setAttribute("tempen", b.getTemp());
         request.setAttribute("omregning", String.format("%.1f", omregning));
         request.getRequestDispatcher("show.jsp").forward(request, response);
     }
