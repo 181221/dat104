@@ -16,7 +16,88 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TempServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/TempServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/show.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Beregn.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#226#227#0" expanded="true" />
+                <element signature="e#259#260#0" expanded="true" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#753#754#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Regex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Regex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/regex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeregnTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/no/hvl/dat104/BeregnTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,7 +189,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="AndroidView" />
+=======
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,9 +230,21 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+<<<<<<< HEAD
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -835,11 +935,20 @@
       <updated>1503952023946</updated>
       <workItem from="1503952027728" duration="6800000" />
       <workItem from="1503994960609" duration="77000" />
+<<<<<<< HEAD
+      <workItem from="1503995140784" duration="4788000" />
+      <workItem from="1504283737928" duration="129000" />
+=======
       <workItem from="1503995140784" duration="4552000" />
       <workItem from="1504006667185" duration="1797000" />
+<<<<<<< HEAD
       <workItem from="1504013100177" duration="5065000" />
       <workItem from="1504174384313" duration="1999000" />
       <workItem from="1504514678685" duration="54000" />
+=======
+      <workItem from="1504013100177" duration="4994000" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
     </task>
     <servers />
   </component>
@@ -876,10 +985,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="20344000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="11794000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="18220000" />
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -895,16 +1015,39 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30714792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.48308668" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5169133" order="2" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30714792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15530546" sideWeight="0.78697807" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15530546" sideWeight="0.21302193" order="2" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15144694" sideWeight="0.20429009" order="2" side_tool="true" content_ui="tabs" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -913,7 +1056,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -935,6 +1082,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/TempServlet.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
         <state relative-caret-position="1020">
           <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding />
@@ -991,6 +1140,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/TempServlet.java">
       <provider selected="true" editor-type-id="text-editor">
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -999,28 +1149,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/show.jsp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="580">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+=======
         <state relative-caret-position="1020">
           <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="n#style#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="348">
+=======
         <state relative-caret-position="612">
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#200#201#0" expanded="true" />
             <element signature="e#226#227#0" expanded="true" />
+<<<<<<< HEAD
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+=======
             <element signature="e#788#789#0" expanded="true" />
             <element signature="e#812#813#0" expanded="true" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Regex.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="319">
+=======
         <state relative-caret-position="561">
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1030,18 +1209,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/regex">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="696">
+=======
         <state relative-caret-position="1224">
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/no/hvl/dat104/BeregnTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="377">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+=======
         <state relative-caret-position="663">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
         </state>
       </provider>
     </entry>
@@ -1147,25 +1336,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/regex">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="696">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="21" />
+=======
         <state relative-caret-position="51">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
+          <folding />
+>>>>>>> 7b8355182f4e83c0fa95e89b54736b7d80eb5f93
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Regex.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="319">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="43" />
+=======
         <state relative-caret-position="90">
           <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="37" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/web/show.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+=======
     <entry file="file://$PROJECT_DIR$/src/no/hvl/dat104/Beregn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="628">
           <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#200#201#0" expanded="true" />
@@ -1178,11 +1396,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/no/hvl/dat104/BeregnTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="29">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
+=======
         <state relative-caret-position="628">
           <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> e3cc360c0485a72aae45ef649d172966484eb34f
         </state>
       </provider>
     </entry>
