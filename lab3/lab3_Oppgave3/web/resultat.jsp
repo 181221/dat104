@@ -11,9 +11,6 @@
     <title>Resultat</title>
 </head>
 <body>
-
-        ${navn}
-
-
+        <h3 style="margin-top:5%;text-align: center">Hei: ${navn.toUpperCase()}</h3>
 </body>
 </html>

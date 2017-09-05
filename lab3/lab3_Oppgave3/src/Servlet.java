@@ -16,10 +16,10 @@ public class Servlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String navn = request.getParameter("navn");
-            System.out.print(navn);
+            String localen = request.getParameter("radio1");
+            request.setAttribute("localen", localen);
             navn = StringEscapeUtils.escapeHtml4(navn);
-            System.out.println(navn);
             request.setAttribute("navn", navn);
-            request.getRequestDispatcher("resultat.jsp").forward(request, response);
+            request.getRequestDispatcher("lang.jsp").forward(request, response);
     }
 }

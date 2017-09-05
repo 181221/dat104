@@ -17,6 +17,9 @@
   <h1>hei</h1>
     <form action="servlet" method="get">
       Ditt navn: <input type="text" placeholder="navn" name="navn">
+      <input type="radio" name="radio1" value="es_ES"> Spansk
+      <input type="radio" name="radio1" value="no_NO" checked> Norsk
+      <input type="radio" name="radio1" value="de_DE"> Tysk
       <input type="submit" value="Hallo">
     </form>
 
