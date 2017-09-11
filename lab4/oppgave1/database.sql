@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS "Vare";
+
+
+CREATE TABLE IF NOT EXISTS Vare
+(
+  item		CHARACTER VARYING (40),
+  PRIMARY KEY (item)
+);
+
+INSERT INTO Vare (item) VALUES ('Melk');
+
+
+
+
+
+
+
+

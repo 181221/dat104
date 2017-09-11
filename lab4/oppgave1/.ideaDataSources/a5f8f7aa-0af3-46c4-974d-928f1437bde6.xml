@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - h181221@data1.hib.no">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="h181221">
+      <ObjectId>44470</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12373</ObjectId>
+    </database>
+    <database id="4" parent="1" name="atle">
+      <ObjectId>16394</ObjectId>
+    </database>
+    <database id="5" parent="1" name="h16_dat104_g01">
+      <ObjectId>16466</ObjectId>
+    </database>
+    <database id="6" parent="1" name="h16_dat104_g02">
+      <ObjectId>16468</ObjectId>
+    </database>
+    <database id="7" parent="1" name="h16_dat104_g03">
+      <ObjectId>16470</ObjectId>
+    </database>
+    <database id="8" parent="1" name="h16_dat104_g04">
+      <ObjectId>16472</ObjectId>
+    </database>
+    <database id="9" parent="1" name="h16_dat104_g05">
+      <ObjectId>16474</ObjectId>
+    </database>
+    <database id="10" parent="1" name="h16_dat104_g06">
+      <ObjectId>16476</ObjectId>
+    </database>
+    <database id="11" parent="1" name="h16_dat104_g07">
+      <ObjectId>16478</ObjectId>
+    </database>
+    <database id="12" parent="1" name="h16_dat104_g08">
+      <ObjectId>16480</ObjectId>
+    </database>
+    <database id="13" parent="1" name="h16_dat104_g09">
+      <ObjectId>16482</ObjectId>
+    </database>
+    <database id="14" parent="1" name="h16_dat104_g10">
+      <ObjectId>16484</ObjectId>
+    </database>
+    <database id="15" parent="1" name="h16_dat104_g11">
+      <ObjectId>16486</ObjectId>
+    </database>
+    <database id="16" parent="1" name="h16_dat104_g12">
+      <ObjectId>16488</ObjectId>
+    </database>
+    <database id="17" parent="1" name="h16_dat104_g13">
+      <ObjectId>16490</ObjectId>
+    </database>
+    <database id="18" parent="1" name="h16_dat104_g14">
+      <ObjectId>16492</ObjectId>
+    </database>
+    <database id="19" parent="1" name="h16_dat104_g15">
+      <ObjectId>16494</ObjectId>
+    </database>
+    <database id="20" parent="1" name="h16_dat104_g16">
+      <ObjectId>16496</ObjectId>
+    </database>
+    <database id="21" parent="1" name="h16_dat104_g17">
+      <ObjectId>16498</ObjectId>
+    </database>
+    <database id="22" parent="1" name="h16_dat104_g18">
+      <ObjectId>16500</ObjectId>
+    </database>
+    <database id="23" parent="1" name="h16_dat104_g19">
+      <ObjectId>16502</ObjectId>
+    </database>
+    <database id="24" parent="1" name="h16_dat104_g20">
+      <ObjectId>16504</ObjectId>
+    </database>
+    <database id="25" parent="1" name="h16_dat104_g21">
+      <ObjectId>16506</ObjectId>
+    </database>
+    <database id="26" parent="1" name="h16_dat104_g22">
+      <ObjectId>16508</ObjectId>
+    </database>
+    <database id="27" parent="1" name="h16_dat104_g23">
+      <ObjectId>16510</ObjectId>
+    </database>
+    <database id="28" parent="1" name="h16_dat104_g24">
+      <ObjectId>16512</ObjectId>
+    </database>
+    <database id="29" parent="1" name="h16_dat104_g25">
+      <ObjectId>16514</ObjectId>
+    </database>
+    <database id="30" parent="1" name="h16_dat104_g26">
+      <ObjectId>16516</ObjectId>
+    </database>
+    <database id="31" parent="1" name="h16_dat104_g27">
+      <ObjectId>16518</ObjectId>
+    </database>
+    <database id="32" parent="1" name="h16_dat104_g28">
+      <ObjectId>16520</ObjectId>
+    </database>
+    <database id="33" parent="1" name="h16_dat104_g29">
+      <ObjectId>16522</ObjectId>
+    </database>
+    <database id="34" parent="1" name="h16_dat104_g30">
+      <ObjectId>16524</ObjectId>
+    </database>
+    <database id="35" parent="1" name="h16_dat104_p01">
+      <ObjectId>17367</ObjectId>
+    </database>
+    <database id="36" parent="1" name="h16_dat104_p02">
+      <ObjectId>17369</ObjectId>
+    </database>
+    <database id="37" parent="1" name="h16_dat104_p03">
+      <ObjectId>17371</ObjectId>
+    </database>
+    <database id="38" parent="1" name="h16_dat104_p04">
+      <ObjectId>17373</ObjectId>
+    </database>
+    <database id="39" parent="1" name="h16_dat104_p05">
+      <ObjectId>17375</ObjectId>
+    </database>
+    <database id="40" parent="1" name="h16_dat104_p06">
+      <ObjectId>17377</ObjectId>
+    </database>
+    <database id="41" parent="1" name="h16_dat104_p07">
+      <ObjectId>17379</ObjectId>
+    </database>
+    <database id="42" parent="1" name="h16_dat104_p08">
+      <ObjectId>17381</ObjectId>
+    </database>
+    <database id="43" parent="1" name="h16_dat104_p09">
+      <ObjectId>17383</ObjectId>
+    </database>
+    <database id="44" parent="1" name="h16_dat104_p10">
+      <ObjectId>17385</ObjectId>
+    </database>
+    <database id="45" parent="1" name="h994758">
+      <ObjectId>44404</ObjectId>
+    </database>
+    <database id="46" parent="1" name="h966415">
+      <ObjectId>44406</ObjectId>
+    </database>
+    <database id="47" parent="1" name="h182953">
+      <ObjectId>44408</ObjectId>
+    </database>
+    <database id="48" parent="1" name="h182852">
+      <ObjectId>44410</ObjectId>
+    </database>
+    <database id="49" parent="1" name="h182851">
+      <ObjectId>44412</ObjectId>
+    </database>
+    <database id="50" parent="1" name="h182675">
+      <ObjectId>44414</ObjectId>
+    </database>
+    <database id="51" parent="1" name="h182674">
+      <ObjectId>44416</ObjectId>
+    </database>
+    <database id="52" parent="1" name="h182044">
+      <ObjectId>44418</ObjectId>
+    </database>
+    <database id="53" parent="1" name="h182043">
+      <ObjectId>44420</ObjectId>
+    </database>
+    <database id="54" parent="1" name="h182042">
+      <ObjectId>44422</ObjectId>
+    </database>
+    <database id="55" parent="1" name="h182040">
+      <ObjectId>44424</ObjectId>
+    </database>
+    <database id="56" parent="1" name="h182039">
+      <ObjectId>44426</ObjectId>
+    </database>
+    <database id="57" parent="1" name="h182037">
+      <ObjectId>44428</ObjectId>
+    </database>
+    <database id="58" parent="1" name="h182036">
+      <ObjectId>44430</ObjectId>
+    </database>
+    <database id="59" parent="1" name="h182033">
+      <ObjectId>44432</ObjectId>
+    </database>
+    <database id="60" parent="1" name="h182032">
+      <ObjectId>44434</ObjectId>
+    </database>
+    <database id="61" parent="1" name="h182031">
+      <ObjectId>44436</ObjectId>
+    </database>
+    <database id="62" parent="1" name="h182027">
+      <ObjectId>44438</ObjectId>
+    </database>
+    <database id="63" parent="1" name="h182026">
+      <ObjectId>44440</ObjectId>
+    </database>
+    <database id="64" parent="1" name="h182025">
+      <ObjectId>44442</ObjectId>
+    </database>
+    <database id="65" parent="1" name="h182024">
+      <ObjectId>44444</ObjectId>
+    </database>
+    <database id="66" parent="1" name="h182023">
+      <ObjectId>44446</ObjectId>
+    </database>
+    <database id="67" parent="1" name="h182022">
+      <ObjectId>44448</ObjectId>
+    </database>
+    <database id="68" parent="1" name="h182021">
+      <ObjectId>44450</ObjectId>
+    </database>
+    <database id="69" parent="1" name="h182020">
+      <ObjectId>44452</ObjectId>
+    </database>
+    <database id="70" parent="1" name="h182019">
+      <ObjectId>44454</ObjectId>
+    </database>
+    <database id="71" parent="1" name="h181394">
+      <ObjectId>44456</ObjectId>
+    </database>
+    <database id="72" parent="1" name="h181391">
+      <ObjectId>44458</ObjectId>
+    </database>
+    <database id="73" parent="1" name="h181228">
+      <ObjectId>44460</ObjectId>
+    </database>
+    <database id="74" parent="1" name="h181227">
+      <ObjectId>44462</ObjectId>
+    </database>
+    <database id="75" parent="1" name="h181224">
+      <ObjectId>44464</ObjectId>
+    </database>
+    <database id="76" parent="1" name="h181223">
+      <ObjectId>44466</ObjectId>
+    </database>
+    <database id="77" parent="1" name="h181222">
+      <ObjectId>44468</ObjectId>
+    </database>
+    <database id="78" parent="1" name="h181220">
+      <ObjectId>44472</ObjectId>
+    </database>
+    <database id="79" parent="1" name="h181219">
+      <ObjectId>44474</ObjectId>
+    </database>
+    <database id="80" parent="1" name="h181218">
+      <ObjectId>44476</ObjectId>
+    </database>
+    <database id="81" parent="1" name="h181214">
+      <ObjectId>44478</ObjectId>
+    </database>
+    <database id="82" parent="1" name="h181212">
+      <ObjectId>44480</ObjectId>
+    </database>
+    <database id="83" parent="1" name="h181211">
+      <ObjectId>44482</ObjectId>
+    </database>
+    <database id="84" parent="1" name="h181210">
+      <ObjectId>44484</ObjectId>
+    </database>
+    <database id="85" parent="1" name="h181208">
+      <ObjectId>44486</ObjectId>
+    </database>
+    <database id="86" parent="1" name="h181207">
+      <ObjectId>44488</ObjectId>
+    </database>
+    <database id="87" parent="1" name="h181206">
+      <ObjectId>44490</ObjectId>
+    </database>
+    <database id="88" parent="1" name="h181204">
+      <ObjectId>44492</ObjectId>
+    </database>
+    <database id="89" parent="1" name="h181203">
+      <ObjectId>44494</ObjectId>
+    </database>
+    <database id="90" parent="1" name="h181202">
+      <ObjectId>44496</ObjectId>
+    </database>
+    <database id="91" parent="1" name="h181201">
+      <ObjectId>44498</ObjectId>
+    </database>
+    <database id="92" parent="1" name="h181200">
+      <ObjectId>44500</ObjectId>
+    </database>
+    <database id="93" parent="1" name="h181199">
+      <ObjectId>44502</ObjectId>
+    </database>
+    <database id="94" parent="1" name="h181198">
+      <ObjectId>44504</ObjectId>
+    </database>
+    <database id="95" parent="1" name="h181197">
+      <ObjectId>44506</ObjectId>
+    </database>
+    <database id="96" parent="1" name="h181196">
+      <ObjectId>44509</ObjectId>
+    </database>
+    <database id="97" parent="1" name="h181195">
+      <ObjectId>44511</ObjectId>
+    </database>
+    <database id="98" parent="1" name="h181194">
+      <ObjectId>44513</ObjectId>
+    </database>
+    <database id="99" parent="1" name="h181193">
+      <ObjectId>44515</ObjectId>
+    </database>
+    <database id="100" parent="1" name="h181192">
+      <ObjectId>44517</ObjectId>
+    </database>
+    <database id="101" parent="1" name="h181191">
+      <ObjectId>44519</ObjectId>
+    </database>
+    <database id="102" parent="1" name="h181190">
+      <ObjectId>44521</ObjectId>
+    </database>
+    <database id="103" parent="1" name="h181189">
+      <ObjectId>44523</ObjectId>
+    </database>
+    <database id="104" parent="1" name="h181188">
+      <ObjectId>44525</ObjectId>
+    </database>
+    <database id="105" parent="1" name="h181187">
+      <ObjectId>44527</ObjectId>
+    </database>
+    <database id="106" parent="1" name="h181186">
+      <ObjectId>44529</ObjectId>
+    </database>
+    <database id="107" parent="1" name="h181185">
+      <ObjectId>44531</ObjectId>
+    </database>
+    <database id="108" parent="1" name="h181183">
+      <ObjectId>44533</ObjectId>
+    </database>
+    <database id="109" parent="1" name="h181182">
+      <ObjectId>44535</ObjectId>
+    </database>
+    <database id="110" parent="1" name="h181181">
+      <ObjectId>44537</ObjectId>
+    </database>
+    <database id="111" parent="1" name="h181180">
+      <ObjectId>44539</ObjectId>
+    </database>
+    <database id="112" parent="1" name="h180236">
+      <ObjectId>44541</ObjectId>
+    </database>
+    <database id="113" parent="1" name="h152078">
+      <ObjectId>44543</ObjectId>
+    </database>
+    <database id="114" parent="1" name="h152056">
+      <ObjectId>44545</ObjectId>
+    </database>
+    <database id="115" parent="1" name="h151703">
+      <ObjectId>44547</ObjectId>
+    </database>
+    <database id="116" parent="1" name="h151699">
+      <ObjectId>44549</ObjectId>
+    </database>
+    <database id="117" parent="1" name="h151188">
+      <ObjectId>44551</ObjectId>
+    </database>
+    <database id="118" parent="1" name="h151182">
+      <ObjectId>44553</ObjectId>
+    </database>
+    <database id="119" parent="1" name="h150494">
+      <ObjectId>44555</ObjectId>
+    </database>
+    <database id="120" parent="1" name="h150362">
+      <ObjectId>44557</ObjectId>
+    </database>
+    <database id="121" parent="1" name="h149900">
+      <ObjectId>44559</ObjectId>
+    </database>
+    <database id="122" parent="1" name="h149852">
+      <ObjectId>44561</ObjectId>
+    </database>
+    <database id="123" parent="1" name="h148921">
+      <ObjectId>44563</ObjectId>
+    </database>
+    <database id="124" parent="1" name="h148149">
+      <ObjectId>44565</ObjectId>
+    </database>
+    <database id="125" parent="1" name="h147818">
+      <ObjectId>44567</ObjectId>
+    </database>
+    <database id="126" parent="1" name="h145168">
+      <ObjectId>44569</ObjectId>
+    </database>
+    <database id="127" parent="1" name="h140031">
+      <ObjectId>44571</ObjectId>
+    </database>
+    <database id="128" parent="1" name="h134233">
+      <ObjectId>44573</ObjectId>
+    </database>
+    <database id="129" parent="1" name="h133846">
+      <ObjectId>44575</ObjectId>
+    </database>
+    <database id="130" parent="1" name="h132868">
+      <ObjectId>44577</ObjectId>
+    </database>
+    <database id="131" parent="1" name="h131239">
+      <ObjectId>44579</ObjectId>
+    </database>
+    <database id="132" parent="1" name="h123515">
+      <ObjectId>44581</ObjectId>
+    </database>
+    <database id="133" parent="1" name="carsten">
+      <ObjectId>44643</ObjectId>
+    </database>
+    <database id="134" parent="1" name="h148916">
+      <ObjectId>44783</ObjectId>
+    </database>
+    <database id="135" parent="1" name="h148923">
+      <ObjectId>44795</ObjectId>
+    </database>
+    <database id="136" parent="1" name="h129411">
+      <ObjectId>51096</ObjectId>
+    </database>
+    <database id="137" parent="1" name="bil">
+      <ObjectId>54968</ObjectId>
+    </database>
+    <database id="138" parent="1" name="h141466">
+      <ObjectId>72719</ObjectId>
+    </database>
+    <database id="139" parent="1" name="h146193">
+      <ObjectId>72721</ObjectId>
+    </database>
+    <database id="140" parent="1" name="h146195">
+      <ObjectId>72723</ObjectId>
+    </database>
+    <database id="141" parent="1" name="h142576">
+      <ObjectId>72725</ObjectId>
+    </database>
+    <database id="142" parent="1" name="h141438">
+      <ObjectId>72727</ObjectId>
+    </database>
+    <database id="143" parent="1" name="h149903">
+      <ObjectId>72729</ObjectId>
+    </database>
+    <database id="144" parent="1" name="h140403">
+      <ObjectId>72731</ObjectId>
+    </database>
+    <database id="145" parent="1" name="h146164">
+      <ObjectId>72733</ObjectId>
+    </database>
+    <database id="146" parent="1" name="h141448">
+      <ObjectId>72735</ObjectId>
+    </database>
+    <database id="147" parent="1" name="h149887">
+      <ObjectId>72737</ObjectId>
+    </database>
+    <database id="148" parent="1" name="v17_dat101_g01">
+      <ObjectId>77429</ObjectId>
+    </database>
+    <database id="149" parent="1" name="v17_dat101_g02">
+      <ObjectId>77431</ObjectId>
+    </database>
+    <database id="150" parent="1" name="v17_dat101_g03">
+      <ObjectId>77433</ObjectId>
+    </database>
+    <database id="151" parent="1" name="v17_dat101_g04">
+      <ObjectId>77435</ObjectId>
+    </database>
+    <database id="152" parent="1" name="v17_dat101_g05">
+      <ObjectId>77437</ObjectId>
+    </database>
+    <database id="153" parent="1" name="v17_dat101_g06">
+      <ObjectId>77439</ObjectId>
+    </database>
+    <database id="154" parent="1" name="v17_dat101_g07">
+      <ObjectId>77441</ObjectId>
+    </database>
+    <database id="155" parent="1" name="v17_dat101_g08">
+      <ObjectId>77443</ObjectId>
+    </database>
+    <database id="156" parent="1" name="v17_dat101_g09">
+      <ObjectId>77445</ObjectId>
+    </database>
+    <database id="157" parent="1" name="v17_dat101_g10">
+      <ObjectId>77447</ObjectId>
+    </database>
+    <database id="158" parent="1" name="v17_dat101_g11">
+      <ObjectId>77449</ObjectId>
+    </database>
+    <database id="159" parent="1" name="v17_dat101_g12">
+      <ObjectId>77451</ObjectId>
+    </database>
+    <database id="160" parent="1" name="v17_dat101_g13">
+      <ObjectId>77453</ObjectId>
+    </database>
+    <database id="161" parent="1" name="v17_dat101_g14">
+      <ObjectId>77455</ObjectId>
+    </database>
+    <database id="162" parent="1" name="v17_dat101_g15">
+      <ObjectId>77457</ObjectId>
+    </database>
+    <database id="163" parent="1" name="v17_dat101_g16">
+      <ObjectId>77459</ObjectId>
+    </database>
+    <database id="164" parent="1" name="v17_dat101_g17">
+      <ObjectId>77461</ObjectId>
+    </database>
+    <database id="165" parent="1" name="v17_dat101_g18">
+      <ObjectId>77463</ObjectId>
+    </database>
+    <database id="166" parent="1" name="v17_dat101_g19">
+      <ObjectId>77465</ObjectId>
+    </database>
+    <database id="167" parent="1" name="v17_dat101_g20">
+      <ObjectId>77467</ObjectId>
+    </database>
+    <database id="168" parent="1" name="v17_dat101_g21">
+      <ObjectId>77469</ObjectId>
+    </database>
+    <database id="169" parent="1" name="v17_dat101_g22">
+      <ObjectId>77471</ObjectId>
+    </database>
+    <database id="170" parent="1" name="v17_dat101_g23">
+      <ObjectId>77473</ObjectId>
+    </database>
+    <database id="171" parent="1" name="v17_dat101_g24">
+      <ObjectId>77475</ObjectId>
+    </database>
+    <database id="172" parent="1" name="v17_dat101_g25">
+      <ObjectId>77477</ObjectId>
+    </database>
+    <database id="173" parent="1" name="v17_dat101_g26">
+      <ObjectId>77479</ObjectId>
+    </database>
+    <database id="174" parent="1" name="v17_dat101_g27">
+      <ObjectId>77481</ObjectId>
+    </database>
+    <database id="175" parent="1" name="v17_dat101_g28">
+      <ObjectId>77483</ObjectId>
+    </database>
+    <database id="176" parent="1" name="v17_dat101_g29">
+      <ObjectId>77485</ObjectId>
+    </database>
+    <database id="177" parent="1" name="v17_dat101_g30">
+      <ObjectId>77487</ObjectId>
+    </database>
+    <database id="178" parent="1" name="v17_dat101_g31">
+      <ObjectId>77489</ObjectId>
+    </database>
+    <database id="179" parent="1" name="v17_dat101_g32">
+      <ObjectId>77491</ObjectId>
+    </database>
+    <database id="180" parent="1" name="v17_dat101_g33">
+      <ObjectId>77493</ObjectId>
+    </database>
+    <database id="181" parent="1" name="v17_dat101_g34">
+      <ObjectId>77495</ObjectId>
+    </database>
+    <database id="182" parent="1" name="v17_dat101_ass">
+      <ObjectId>77497</ObjectId>
+    </database>
+    <database id="183" parent="1" name="stigespill">
+      <ObjectId>105708</ObjectId>
+    </database>
+    <schema id="184" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-09-11.13:38:41.407</IntrospectionTimestamp>
+      <IntrospectionStateNumber>81566</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="185" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="186" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="187" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="188" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="189" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <schema id="190" parent="2" name="demo">
+      <ObjectId>45123</ObjectId>
+    </schema>
+    <schema id="191" parent="2" name="ex03_company">
+      <ObjectId>46920</ObjectId>
+    </schema>
+    <schema id="192" parent="2" name="rederi">
+      <ObjectId>57531</ObjectId>
+    </schema>
+    <table id="193" parent="184" name="bruker">
+      <ObjectId>149605</ObjectId>
+      <StateNumber>81514</StateNumber>
+    </table>
+    <table id="194" parent="184" name="vare">
+      <ObjectId>174203</ObjectId>
+      <StateNumber>81566</StateNumber>
+    </table>
+    <column id="195" parent="193" name="navn">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>81514</StateNumber>
+    </column>
+    <column id="196" parent="193" name="etternavn">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>81514</StateNumber>
+    </column>
+    <column id="197" parent="194" name="item">
+      <Position>1</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>81566</StateNumber>
+    </column>
+    <index id="198" parent="194" name="vare_pkey">
+      <ObjectId>174206</ObjectId>
+      <ColNames>item</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="199" parent="194" name="vare_pkey">
+      <ObjectId>174207</ObjectId>
+      <ColNames>item</ColNames>
+      <UnderlyingIndexName>vare_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
