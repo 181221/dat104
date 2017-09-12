@@ -15,9 +15,8 @@ public class HandlelisteEAO {
     @PersistenceContext(name = "studentPersistenceUnit")
     private EntityManager em;
 
-    public Bruker finnBruker(Integer brukernavn) {
-        Bruker b = em.find(Bruker.class,brukernavn);
-        return b;
+    public void leggTilBruker(Bruker b) {
+        em.persist(b);
     }
     public Bruker finnBrukerPaaNavn(String navn) {
         return (Bruker) em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn",navn).getSingleResult();

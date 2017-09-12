@@ -2,6 +2,8 @@ package pwa.controller;
 
 
 
+import pwa.app.FlashUtil;
+import pwa.app.InnloggingUtil;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 
@@ -29,30 +31,14 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String brukernavn = request.getParameter("username");
-        request.getSession().setAttribute("brukernavn", brukernavn);
         String passord = request.getParameter("password");
-        String message = "";
-        String flash;
-        if(!passord.equals(handlelisteEAO.finnBrukerPaaNavn(brukernavn).getPassord())){
-            message = "Ugyldig brukernavn eller passord";
-            flash = "Error";
-            request.getSession().setAttribute("flash", flash);
-            response.sendRedirect("/login?message=" + URLEncoder.encode(message, "UTF-8"));
+        if(InnloggingUtil.isGyldigBrukernavn(brukernavn) && passord.equals(handlelisteEAO.finnBrukerPaaNavn(brukernavn).getPassord())){
+            InnloggingUtil.loggInnSom(request, brukernavn);
+            response.sendRedirect("/handleliste?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
         }else {
-            HttpSession sesjon = request.getSession(false);
-            if(sesjon != null){
-                sesjon.invalidate();
-            }
-            sesjon = request.getSession(true);
-            sesjon.setMaxInactiveInterval(10);
-            message = "Velkommen: "+ brukernavn;
-            flash = "Success";
-            request.getSession().setAttribute("flash", flash);
-            sesjon.setAttribute("brukernavn", brukernavn);
-            request.getSession().setAttribute("loggedInUser", brukernavn);
-            response.sendRedirect("/handleliste?message=" + URLEncoder.encode(message, "UTF-8"));
+            FlashUtil.UgyldigBruker(request);
+            response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
