@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet("/")
+@WebServlet("/login")
 public class Servlet extends HttpServlet {
     @EJB
     //private BrukerEAO brukerEAO;

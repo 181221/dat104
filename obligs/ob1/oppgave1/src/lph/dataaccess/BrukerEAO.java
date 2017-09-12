@@ -7,11 +7,11 @@ import javax.persistence.PersistenceContext;
 /**
  * Created by Peder on 06.09.2017.
  */
-@Stateless
-public class KlasseEAO {
+/*@Stateless
+//public class KlasseEAO {
     @PersistenceContext(name = "studentPersistenceUnit")
     private EntityManager em;
-
+*//*
     public void leggTilKlasse(Klasse b) {
         em.persist(b);
     }
@@ -23,5 +23,5 @@ public class KlasseEAO {
     }
     public void slettKlasse(Klasse id) {
         em.remove(em.find(Bruker.class, id));
-    }
-}
+    }*//*
+}*/

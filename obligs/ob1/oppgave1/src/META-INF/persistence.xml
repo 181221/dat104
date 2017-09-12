@@ -5,7 +5,9 @@
 
     <persistence-unit name="eclipselink" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
-        <class>lph.model.klassenavn</class>
+        <class>lph.model.Bruker</class>
+        <class>lph.model.Kurv</class>
+        <class>lph.model.Vare</class>
         <properties>
             <property name="tomee.jpa.cdi" value="false" />
         </properties>
