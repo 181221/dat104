@@ -1,4 +1,4 @@
-package lph.model;
+package pwa.model;
 
 import javax.persistence.*;
 

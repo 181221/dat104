@@ -1,4 +1,4 @@
-package lph.model;
+package pwa.model;
 
 import javax.persistence.*;
 
@@ -12,17 +12,13 @@ public class Vare {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer vare_id;
 
-    @JoinColumn(name = "kurv_id", referencedColumnName = "kurv_id")
-    private Kurv kurv;
-
     @Column(name = "navn")
     private String navn;
 
     public Vare(){
-        this(null,"");
+        this("");
     }
-    public Vare(Kurv kurv, String navn) {
-        this.kurv = kurv;
+    public Vare(String navn) {
         this.navn = navn;
     }
 
@@ -32,14 +28,6 @@ public class Vare {
 
     public void setVare_id(Integer vare_id) {
         this.vare_id = vare_id;
-    }
-
-    public Kurv getKurv() {
-        return kurv;
-    }
-
-    public void setKurv(Kurv kurv) {
-        this.kurv = kurv;
     }
 
     public String getNavn() {

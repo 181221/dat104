@@ -1,4 +1,4 @@
-package lph.model;
+package pwa.model;
 
 import javax.persistence.*;
 
@@ -7,6 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "bruker", schema = "handleliste")
+@NamedQuery(name="Bruker.finnPaaNavn", query="SELECT b FROM Bruker b WHERE b.brukernavn = :brukernavn")
 public class Bruker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

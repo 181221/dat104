@@ -1,8 +1,5 @@
-package lph.controller;
+package pwa.controller;
 
-
-
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +10,13 @@ import java.io.IOException;
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet("/login")
-public class Servlet extends HttpServlet {
-    @EJB
-    //private BrukerEAO brukerEAO;
-
+@WebServlet("/")
+public class LandingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/landing.jsp").forward(request,response);
     }
 }
