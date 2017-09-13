@@ -19,9 +19,15 @@
             <c:remove var="flash" scope="session" />
         </c:if>
 
+        <form class="form-group" action="/handleliste" method="post">
+            <label for="LeggTil">Legg Til:</label>
+             <input type="text" class="form-control" id="LeggTil" name="vare" placeholder="Varenavn..">
+            <input style="margin: 10px;" class="btn btn-primary" type="submit" value="Submit">
+        </form>
+
         <c:forEach var="vare" items="${varer}">
-            <form action="/slett" method="post">
-                <li><input type="hidden" name="varenavn" value="${vare.navn}"><input type="submit" value="Slett">: ${vare.navn}
+            <form action="/handleliste" method="post">
+                <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare.vare_id}"><input class="btn btn-danger" type="submit" value="Slett"> ${vare.navn}
             </form>
         </c:forEach>
     </div>

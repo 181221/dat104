@@ -11,6 +11,7 @@ import pwa.model.Vare;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
@@ -22,6 +23,16 @@ public class HandlelisteEAO {
         List<Vare> varer = em.createNamedQuery("Vare.visAlle").getResultList();
         return varer;
     }
+    public void leggTilVare(Vare v){
+        em.persist(v);
+    }
+    public Vare finnVare(String id) {
+        return em.find(Vare.class, id);
+    }
+    public void slettVare(String id) {
+        em.remove(em.find(Vare.class, id));
+    }
+
 
     public Boolean leggTilBruker(String brukernavn, String passord) {
         Bruker funnet = finnBrukerPaaNavn(brukernavn);
