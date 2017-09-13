@@ -36,13 +36,13 @@ public class LoginServlet extends HttpServlet {
             Bruker b = handlelisteEAO.finnBrukerPaaNavn(brukernavn);
             if(b != null && passord.equals(b.getPassord())){
                 InnloggingUtil.loggInnSom(request, brukernavn);
-                System.out.println(FlashUtil.message);
+            }else {
+                FlashUtil.UgyldigBruker(request);
             }
         }else {
-            System.out.println("feil");
             FlashUtil.UgyldigBruker(request);
         }
-        response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+        response.sendRedirect("/login");
 
     }
 

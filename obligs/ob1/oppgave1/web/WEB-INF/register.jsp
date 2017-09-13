@@ -11,6 +11,14 @@
 
 <div class="container">
     <div class="row">
+        <c:if test="${flash == 'Error'}">
+            <p class="alert alert-danger"> ${melding}</p>
+            <c:remove var="flash" scope="session" />
+        </c:if>
+        <c:if test="${flash == 'Success'}">
+            <p class="alert alert-success"> ${melding}</p>
+            <c:remove var="flash" scope="session" />
+        </c:if>
         <h1 style="text-align: center">Register</h1>
         <div style="width: 30%; margin: 25px auto;">
             <form action="/register" method="POST">

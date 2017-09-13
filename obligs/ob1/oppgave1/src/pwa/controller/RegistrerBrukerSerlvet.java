@@ -24,30 +24,20 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (InnloggingUtil.isInnlogget(request)){
             response.sendRedirect("/handleliste");
-        }
-        String brukernavn = request.getParameter("username");
-        String passord = request.getParameter("password");
-        System.out.println(brukernavn);
-        System.out.println(passord);
-        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
-            //Opprette en ny bruker
-            Boolean lagtTil = handlelisteEAO.leggTilBruker(brukernavn, passord);
-            if(lagtTil){
-                //lage flash
-                FlashUtil.registrertBruker(request);
-                response.sendRedirect("/handleliste");
-
-            }else {
-                //lage flash
-                FlashUtil.UgylidRegistertBruker(request);
-                response.sendRedirect("/register");
-            }
         }else {
-            // feil input
-            FlashUtil.UgylidRegistertBruker(request);
-            response.sendRedirect("/register");
+            String brukernavn = request.getParameter("username");
+            String passord = request.getParameter("password");
+            if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
+                Boolean lagtTil = handlelisteEAO.leggTilBruker(brukernavn, passord);
+                if(lagtTil){
+                    FlashUtil.registrertBruker(request);
+                    InnloggingUtil.loggInnSom(request, brukernavn);
+                }else {
+                    FlashUtil.UgylidRegistertBruker(request);
+                }
+            }
         }
-
+        response.sendRedirect("/register");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -7,7 +7,8 @@ package pwa.dataaccess;
 import pwa.model.Bruker;
 
 import javax.ejb.Stateless;
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
@@ -16,13 +17,11 @@ public class HandlelisteEAO {
     private EntityManager em;
 
     public Boolean leggTilBruker(String brukernavn, String passord) {
-        String funnet = finnBrukerPaaNavn(brukernavn).getBrukernavn();
-        System.out.println(funnet);
+        Bruker funnet = finnBrukerPaaNavn(brukernavn);
         if(funnet == null){
             Bruker ny = new Bruker();
             ny.setBrukernavn(brukernavn);
             ny.setPassord(passord);
-            System.out.println(funnet);
             em.persist(ny);
         }
         return funnet == null;

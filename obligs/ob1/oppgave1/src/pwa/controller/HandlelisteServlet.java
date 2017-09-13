@@ -1,5 +1,7 @@
 package pwa.controller;
 
+import pwa.app.FlashUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +23,8 @@ public class HandlelisteServlet extends HttpServlet {
         if(request.getSession().getAttribute("loggedInUser") != null){
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
-            String message = "Du må være logget inn for å gjøre det!";
-            String flash = "Error";
-            request.getSession().setAttribute("flash", flash);
-            response.sendRedirect("/login?message=" + URLEncoder.encode(message, "UTF-8"));
+            FlashUtil.duMaaVeareLoggetInn(request);
+            response.sendRedirect("/login");
         }
 
     }

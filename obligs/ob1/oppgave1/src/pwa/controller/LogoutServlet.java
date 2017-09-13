@@ -24,6 +24,6 @@ public class LogoutServlet extends HttpServlet {
         }else {
             FlashUtil.message = "";
         }
-        response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+        response.sendRedirect("/login");
     }
 }

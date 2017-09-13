@@ -11,11 +11,11 @@
 <div class="container">
     <div class="row">
 <c:if test="${flash == 'Error'}">
-    <p class="alert alert-danger">${param.message}</p>
+    <p class="alert alert-danger"> ${melding}</p>
     <c:remove var="flash" scope="session" />
 </c:if>
 <c:if test="${flash == 'Success'}">
-    <p class="alert alert-success">${param.message} ${melding}</p>
+    <p class="alert alert-success"> ${melding}</p>
     <c:remove var="flash" scope="session" />
 </c:if>
 

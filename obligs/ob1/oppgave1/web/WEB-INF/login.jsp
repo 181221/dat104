@@ -14,11 +14,11 @@
   <div class="row">
     <%--<c:set value="${flash}" var="flashMelding" scope="session"/>--%>
     <c:if test="${flash == 'Error'}">
-      <p class="alert alert-danger">${param.message}</p>
+      <p class="alert alert-danger"> ${melding}</p>
       <c:remove var="flash" scope="session" />
     </c:if>
     <c:if test="${flash == 'Success'}">
-       <p class="alert alert-success">${param.message}</p>
+       <p class="alert alert-success"> ${melding}</p>
        <c:remove var="flash" scope="session" />
     </c:if>
     <h1 style="text-align: center">Login</h1>
