@@ -12,7 +12,7 @@
     <div class="row">
         <c:if test="${empty loggedInUser}">
             <p>Du er ikke logget inn!</p>
-            <p>Logg inn her <a href="/login">her</a></p>
+            <p>Logg inn <a href="/login">her</a></p>
         </c:if>
         <c:if test="${not empty loggedInUser}">
             gå til handlelisten <a href="/handleliste">handleliste</a>

@@ -6,8 +6,8 @@
     <persistence-unit name="eclipselink" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
         <class>pwa.model.Bruker</class>
-        <!--<class>pwa.model.Kurv</class>
         <class>pwa.model.Vare</class>
+        <!--<class>pwa.model.Kurv</class>
         <class>pwa.model.KurvProdukt</class>-->
         <properties>
             <property name="tomee.jpa.cdi" value="false" />

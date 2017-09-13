@@ -10,16 +10,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="container">
     <div class="row">
-<c:if test="${flash == 'Error'}">
-    <p class="alert alert-danger"> ${melding}</p>
-    <c:remove var="flash" scope="session" />
-</c:if>
-<c:if test="${flash == 'Success'}">
-    <p class="alert alert-success"> ${melding}</p>
-    <c:remove var="flash" scope="session" />
-</c:if>
+        <c:if test="${flash == 'Error'}">
+            <p class="alert alert-danger"> ${melding}</p>
+            <c:remove var="flash" scope="session" />
+        </c:if>
+        <c:if test="${flash == 'Success'}">
+            <p class="alert alert-success"> ${melding}</p>
+            <c:remove var="flash" scope="session" />
+        </c:if>
 
-<p>her kommer handlelisten</p>
+        <c:forEach var="vare" items="${varer}">
+            <form action="/slett" method="post">
+                <li><input type="hidden" name="varenavn" value="${vare.navn}"><input type="submit" value="Slett">: ${vare.navn}
+            </form>
+        </c:forEach>
     </div>
 </div>
 

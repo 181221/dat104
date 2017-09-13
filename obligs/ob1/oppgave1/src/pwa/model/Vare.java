@@ -1,15 +1,12 @@
-/*
 package pwa.model;
 
 import javax.persistence.*;
 
-*/
-/**
- * Created by Peder on 12.09.2017.
- *//*
+
 
 @Entity
 @Table(name = "vare", schema = "handleliste")
+@NamedQuery(name="Vare.visAlle", query="SELECT v FROM Vare v")
 public class Vare {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,4 +38,3 @@ public class Vare {
         this.navn = navn;
     }
 }
-*/

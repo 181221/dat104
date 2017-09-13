@@ -4,7 +4,9 @@ package pwa.dataaccess;
  * Created by Peder on 06.09.2017.
  */
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import pwa.model.Bruker;
+import pwa.model.Vare;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,6 +17,11 @@ import java.util.List;
 public class HandlelisteEAO {
     @PersistenceContext(name = "studentPersistenceUnit")
     private EntityManager em;
+
+    public List<Vare> visAlleVarer(){
+        List<Vare> varer = em.createNamedQuery("Vare.visAlle").getResultList();
+        return varer;
+    }
 
     public Boolean leggTilBruker(String brukernavn, String passord) {
         Bruker funnet = finnBrukerPaaNavn(brukernavn);

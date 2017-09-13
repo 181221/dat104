@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
  * Created by Peder on 13.09.2017.
  */
 public class FlashUtil {
-    public static String message;
+    //beste måten å gjøre det på!
+    public static void Flash(HttpServletRequest request, String flash, String melding){
+            request.getSession().setAttribute("melding", melding);
+            request.getSession().setAttribute("flash", flash);
+    }
 
     public static void loggetInn(HttpServletRequest request, String Melding, String brukernavn) {
         String flash = "Success";
