@@ -15,11 +15,20 @@ public class HandlelisteEAO {
     @PersistenceContext(name = "studentPersistenceUnit")
     private EntityManager em;
 
-    public void leggTilBruker(Bruker b) {
-        em.persist(b);
+    public void leggTilBruker(String brukernavn, String passord) {
+        Bruker ny = new Bruker();
+        ny.setBrukernavn(brukernavn);
+        ny.setPassord(passord);
+        em.persist(ny);
     }
-    public Bruker finnBrukerPaaNavn(String navn) {
-        return (Bruker) em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn",navn).getSingleResult();
+
+    public String finnBrukerPaaNavn(String navn) {
+        Bruker b = null;
+        b = (Bruker) em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn",navn).getSingleResult();
+        if(b != null){
+            return b.getPassord();
+        }
+        return null;
     }
     /*public void leggTil(Klasse b) {
         em.persist(b);

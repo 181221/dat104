@@ -12,22 +12,22 @@ import javax.servlet.http.HttpSession;
 public class InnloggingUtil {
 
     //senere escape sql
-    public static boolean isGyldigBrukernavn(String brukernavn) {
-        return brukernavn != null;
+    public static boolean isGyldigBrukernavn(String brukernavn, String passord) {
+        return brukernavn != "" && passord != "";
     }
 
     public static boolean isInnlogget(HttpServletRequest request) {
 
         HttpSession session = request.getSession(false);
         return (session != null)
-                && (session.getAttribute("innloggetBruker") != null);
+                && (session.getAttribute("loggedInUser") != null);
     }
 
     public static String isInnloggetSom(HttpServletRequest request) {
 
         HttpSession session = request.getSession(false);
         return isInnlogget(request) ?
-                (String) session.getAttribute("innloggetBruker") : null;
+                (String) session.getAttribute("loggedInUser") : null;
     }
 
     public static void loggInnSom(HttpServletRequest request, String brukernavn) {
@@ -44,5 +44,6 @@ public class InnloggingUtil {
         if (session != null) {
             session.invalidate();
         }
+        FlashUtil.loggetUt(request);
     }
 }

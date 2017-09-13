@@ -1,5 +1,8 @@
 package pwa.controller;
 
+import pwa.app.FlashUtil;
+import pwa.app.InnloggingUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,16 +19,11 @@ import java.net.URLEncoder;
 public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String message = "";
-        if(request.getSession().getAttribute("loggedInUser") != null) {
-            HttpSession session = request.getSession(false);
-            if (session != null) {
-                session.invalidate();
-                String flash = "Success";
-                request.getSession().setAttribute("flash", flash);
-                message = "Du er nå logget ut";
-            }
+        if(InnloggingUtil.isInnlogget(request)) {
+            InnloggingUtil.loggUt(request);
+        }else {
+            FlashUtil.message = "";
         }
-        response.sendRedirect("/login?message=" + URLEncoder.encode(message, "UTF-8"));
+        response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
     }
 }

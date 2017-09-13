@@ -1,51 +1,51 @@
 package pwa.controller;
 
-
-
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 
 import javax.ejb.EJB;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.List;
 
 /**
- * Created by Peder on 12.09.2017.
+ * Created by Peder on 13.09.2017.
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/register")
+public class RegistrerBrukerSerlvet extends HttpServlet {
     @EJB
     private HandlelisteEAO handlelisteEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (InnloggingUtil.isInnlogget(request)){
+            response.sendRedirect("/handleliste");
+        }
         String brukernavn = request.getParameter("username");
         String passord = request.getParameter("password");
-        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord) && passord.equals(handlelisteEAO.finnBrukerPaaNavn(brukernavn))){
-            InnloggingUtil.loggInnSom(request, brukernavn);
-            response.sendRedirect("/handleliste?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
+            //Opprette en ny bruker
+            handlelisteEAO.leggTilBruker(brukernavn, passord);
+            //lage flash
+            FlashUtil.registrertBruker(request);
+            // sende redirect
+            response.sendRedirect("/handliste");
         }else {
-            FlashUtil.UgyldigBruker(request);
-            response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+            // feil input
+            FlashUtil.UgylidRegistertBruker(request);
         }
+        response.sendRedirect("/register");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(InnloggingUtil.isInnlogget(request)){
+        if(InnloggingUtil.isInnlogget(request)) {
             response.sendRedirect("/handleliste");
         }else {
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/register.jsp").forward(request,response);
         }
     }
 }
