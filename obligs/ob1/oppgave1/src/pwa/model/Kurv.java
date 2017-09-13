@@ -1,10 +1,13 @@
+/*
 package pwa.model;
 
 import javax.persistence.*;
 
+*/
 /**
  * Created by Peder on 12.09.2017.
- */
+ *//*
+
 @Entity
 @Table(name = "kurv", schema = "handleliste")
 public class Kurv {
@@ -51,3 +54,4 @@ public class Kurv {
         this.beskrivelse = beskrivelse;
     }
 }
+*/

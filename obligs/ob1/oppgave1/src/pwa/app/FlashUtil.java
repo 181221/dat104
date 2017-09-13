@@ -13,15 +13,17 @@ public class FlashUtil {
     public static void loggetInn(HttpServletRequest request, String Melding, String brukernavn) {
         message = "Velkommen: "+ brukernavn;
         String flash = "Success";
+        String melding = "Velkommen: " + brukernavn;
+        request.getSession().setAttribute("melding", melding);
         request.getSession().setAttribute("flash", flash);
     }
     public static void UgyldigBruker(HttpServletRequest request) {
-        message = "Ugyldig brukernavn eller passord";
+        message = "Ugyldig Brukernavn eller Passord";
         String flash = "Error";
         request.getSession().setAttribute("flash", flash);
     }
     public static void loggetUt(HttpServletRequest request) {
-        message = "logg ut Suksess";
+        message = "Logget Deg Ut!!";
         String flash = "Success";
         request.getSession().setAttribute("flash", flash);
     }

@@ -15,7 +15,7 @@
     <c:remove var="flash" scope="session" />
 </c:if>
 <c:if test="${flash == 'Success'}">
-    <p class="alert alert-success">${param.message}</p>
+    <p class="alert alert-success">${param.message} ${melding}</p>
     <c:remove var="flash" scope="session" />
 </c:if>
 

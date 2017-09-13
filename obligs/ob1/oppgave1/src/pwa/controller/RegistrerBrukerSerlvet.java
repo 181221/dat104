@@ -27,18 +27,27 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
         }
         String brukernavn = request.getParameter("username");
         String passord = request.getParameter("password");
+        System.out.println(brukernavn);
+        System.out.println(passord);
         if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
             //Opprette en ny bruker
-            handlelisteEAO.leggTilBruker(brukernavn, passord);
-            //lage flash
-            FlashUtil.registrertBruker(request);
-            // sende redirect
-            response.sendRedirect("/handliste");
+            Boolean lagtTil = handlelisteEAO.leggTilBruker(brukernavn, passord);
+            if(lagtTil){
+                //lage flash
+                FlashUtil.registrertBruker(request);
+                response.sendRedirect("/handleliste");
+
+            }else {
+                //lage flash
+                FlashUtil.UgylidRegistertBruker(request);
+                response.sendRedirect("/register");
+            }
         }else {
             // feil input
             FlashUtil.UgylidRegistertBruker(request);
+            response.sendRedirect("/register");
         }
-        response.sendRedirect("/register");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

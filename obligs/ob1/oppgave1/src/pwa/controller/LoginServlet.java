@@ -32,13 +32,18 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String brukernavn = request.getParameter("username");
         String passord = request.getParameter("password");
-        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord) && passord.equals(handlelisteEAO.finnBrukerPaaNavn(brukernavn))){
-            InnloggingUtil.loggInnSom(request, brukernavn);
-            response.sendRedirect("/handleliste?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
+            Bruker b = handlelisteEAO.finnBrukerPaaNavn(brukernavn);
+            if(b != null && passord.equals(b.getPassord())){
+                InnloggingUtil.loggInnSom(request, brukernavn);
+                System.out.println(FlashUtil.message);
+            }
         }else {
+            System.out.println("feil");
             FlashUtil.UgyldigBruker(request);
-            response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
         }
+        response.sendRedirect("/login?message=" + URLEncoder.encode(FlashUtil.message, "UTF-8"));
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

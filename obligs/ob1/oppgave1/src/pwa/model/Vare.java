@@ -1,10 +1,13 @@
+/*
 package pwa.model;
 
 import javax.persistence.*;
 
+*/
 /**
  * Created by Peder on 12.09.2017.
- */
+ *//*
+
 @Entity
 @Table(name = "vare", schema = "handleliste")
 public class Vare {
@@ -38,3 +41,4 @@ public class Vare {
         this.navn = navn;
     }
 }
+*/
