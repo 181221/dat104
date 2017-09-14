@@ -32,14 +32,17 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="SqlDialectMappings">
+    <file url="PROJECT" dialect="PostgreSQL" />
+  </component>
   <component name="libraryTable">
     <library name="jstl filer">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../../extra/jstl filer" />
+        <root url="file://$PROJECT_DIR$/../../../extra/jstl filer" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra/jstl filer" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../extra/jstl filer" recursive="false" />
     </library>
   </component>
   <component name="masterDetails">
