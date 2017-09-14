@@ -19,17 +19,17 @@ public class Bruker {
     @Column(name = "passord")
     private String passord;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "kurv_id", referencedColumnName = "kurv_id")
     private Kurv kurv;
 
     public Bruker() {
-        this("","", null);
+        this("","");
     }
-    public Bruker(String brukernavn, String passord, Kurv k) {
+    public Bruker(String brukernavn, String passord) {
         this.brukernavn = brukernavn;
         this.passord = passord;
-        kurv = k;
+        kurv = new Kurv();
     }
 
     public Kurv getKurv() {

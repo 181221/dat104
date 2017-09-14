@@ -7,7 +7,7 @@ CREATE SCHEMA handleliste;
 
 CREATE TABLE handleliste.kurv (
   kurv_id          SERIAL      NOT NULL,
-  beskrivelse      VARCHAR(20),
+  beskrivelse      VARCHAR(50),
   PRIMARY KEY(kurv_id)
 );
 CREATE TABLE handleliste.bruker (

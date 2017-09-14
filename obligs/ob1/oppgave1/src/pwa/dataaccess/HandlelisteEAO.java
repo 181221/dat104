@@ -13,6 +13,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Stateless
@@ -20,18 +21,21 @@ public class HandlelisteEAO {
     @PersistenceContext(name = "handlelistePersistenceUnit")
     private EntityManager em;
 
-    public List<Vare> visAlleVarerTilBruker(){
-        List<Vare> varer = em.createNamedQuery("Vare.visKurv").getResultList();
-
-        return varer;
+    public List<Vare> visAlleVarerTilBruker(Integer id) {
+        TypedQuery<Vare> vare = em.createQuery("SELECT v FROM Vare v WHERE v.kurv.kurv_id =: id", Vare.class).setParameter("id",id);
+        return vare.getResultList();
     }
 
-    public List<Vare> visAlleVarer(){
+    /*public List<Vare> visAlleVarerTilBruker(Integer id){
+        List<Vare> varer = em.createNamedQuery("Vare.visKurv").setParameter("id", id).getResultList();
+        return varer;
+    }*/
+
+    /*public List<Vare> visAlleVarer(){
        List<Vare> varer = em.createNamedQuery("Vare.visAlle").getResultList();
        return varer;
-    }
+    }*/
     public void leggTilVare(Vare v){
-
         em.persist(v);
     }
     public Vare finnVare(String id) {
@@ -42,28 +46,6 @@ public class HandlelisteEAO {
     }
 
 
-    public Boolean leggTilBruker(String brukernavn, String passord) {
-        Bruker funnet = finnBrukerPaaNavn(brukernavn);
-        if(funnet == null){
-            Bruker ny = new Bruker();
-            Kurv nyKurv = new Kurv();
-            nyKurv.setBeskrivelse(brukernavn + " Sin handlekurv");
-            ny.setBrukernavn(brukernavn);
-            ny.setPassord(passord);
-            em.persist(ny);
-            nyKurv.setBruker(ny);
-            em.persist(nyKurv);
-        }
-        return funnet == null;
-    }
-
-    public Bruker finnBrukerPaaNavn(String navn) {
-        List<Bruker> bruker = em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn",navn).getResultList();
-        if(bruker.isEmpty()){
-            return null;
-        }
-        return bruker.get(0);
-    }
     /*public void leggTil(Klasse b) {
         em.persist(b);
     }
