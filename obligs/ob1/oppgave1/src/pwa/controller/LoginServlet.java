@@ -44,9 +44,7 @@ public class LoginServlet extends HttpServlet {
             FlashUtil.UgyldigBruker(request);
         }
         response.sendRedirect("/login");
-
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)){
             response.sendRedirect("/handleliste");

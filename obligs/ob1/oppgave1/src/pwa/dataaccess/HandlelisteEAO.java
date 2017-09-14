@@ -22,7 +22,7 @@ public class HandlelisteEAO {
     private EntityManager em;
 
     public List<Vare> visAlleVarerTilBruker(Integer id) {
-        TypedQuery<Vare> vare = em.createQuery("SELECT v.navn FROM Vare v WHERE v.kurv.kurv_id =: id", Vare.class).setParameter("id",id);
+        TypedQuery<Vare> vare = em.createQuery("SELECT v FROM Vare v WHERE v.kurv.kurv_id =: id", Vare.class).setParameter("id",id);
         return vare.getResultList();
     }
 
