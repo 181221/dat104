@@ -33,7 +33,7 @@ public class HandlelisteServlet extends HttpServlet {
                 handlelisteEAO.leggTilVare(v);
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
             }else if(!slett.isEmpty()) {
-                
+
                 FlashUtil.Flash(request,"Success", "Vare slettet!");
                 handlelisteEAO.slettVare(slett);
             }
