@@ -1,6 +1,7 @@
 package pwa.app;
 
 import pwa.dataaccess.HandlelisteEAO;
+import pwa.model.Bruker;
 
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
@@ -30,13 +31,13 @@ public class InnloggingUtil {
                 (String) session.getAttribute("loggedInUser") : null;
     }
 
-    public static void loggInnSom(HttpServletRequest request, String brukernavn) {
+    public static void loggInnSom(HttpServletRequest request, Bruker b) {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
         sesjon.setMaxInactiveInterval(10);
-        sesjon.setAttribute("loggedInUser", brukernavn);
+        sesjon.setAttribute("currentUser", b);
+        sesjon.setAttribute("loggedInUser", b.getBrukernavn());
         FlashUtil.Flash(request, "Success", "Velkommen tilbake!");
-        //FlashUtil.loggetInn(request, "Success", brukernavn);
     }
 
     public static void loggUt(HttpServletRequest request) {

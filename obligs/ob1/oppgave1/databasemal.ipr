@@ -181,7 +181,7 @@
   </component>
   <component name="dataSourceStorageLocal">
     <data-source name="postgres@localhost" uuid="6a9e2b4a-c8fd-4962-b35b-6e5e152c37ee">
-      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
@@ -199,13 +199,13 @@
     </data-source>
   </component>
   <component name="libraryTable">
-    <library name="jstl">
+    <library name="jstl filer">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../../extra shit/jstl" />
+        <root url="file://$PROJECT_DIR$/../../../../extra/jstl filer" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra shit/jstl" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra/jstl filer" recursive="false" />
     </library>
   </component>
   <component name="masterDetails">

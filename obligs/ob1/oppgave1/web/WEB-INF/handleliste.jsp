@@ -27,7 +27,7 @@
 
         <c:forEach var="vare" items="${varer}">
             <form action="/handleliste" method="post">
-                <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare.vare_id}"><input class="btn btn-danger" type="submit" value="Slett"> ${vare.navn}
+                <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare}"><input class="btn btn-danger" type="submit" value="Slett"> ${vare}
             </form>
         </c:forEach>
     </div>

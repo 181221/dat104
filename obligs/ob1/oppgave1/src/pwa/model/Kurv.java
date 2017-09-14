@@ -17,25 +17,26 @@ public class Kurv {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer kurv_id;
 
-
     @Transient
     private List<Vare> varer;
 
     private String beskrivelse;
 
     public Kurv(){
-        this(null,"");
+        this("");
         varer = new ArrayList<>();
     }
 
-    public Kurv(Bruker bruker, String beskrivelse) {
-        this.bruker = bruker;
+    public Kurv(String beskrivelse) {
         this.beskrivelse = beskrivelse;
         varer = new ArrayList<>();
     }
-    public void leggTilVare(){
 
+    public void leggTilVare(Vare v){
+        varer.add(v);
     }
+
+
     public List<Vare> getVarer() {
         return varer;
     }
@@ -52,14 +53,6 @@ public class Kurv {
         this.kurv_id = kurv_id;
     }
 
-    public Bruker getBruker() {
-        return bruker;
-    }
-
-    public void setBruker(Bruker bruker) {
-        this.bruker = bruker;
-    }
-
     public String getBeskrivelse() {
         return beskrivelse;
     }
@@ -67,5 +60,6 @@ public class Kurv {
     public void setBeskrivelse(String beskrivelse) {
         this.beskrivelse = beskrivelse;
     }
+
 }
 

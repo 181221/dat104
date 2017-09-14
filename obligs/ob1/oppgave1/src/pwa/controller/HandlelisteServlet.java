@@ -2,6 +2,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.dataaccess.HandlelisteEAO;
+import pwa.model.Bruker;
 import pwa.model.Vare;
 
 import javax.ejb.EJB;
@@ -30,6 +31,10 @@ public class HandlelisteServlet extends HttpServlet {
             if(navn != null) {
                 v = new Vare();
                 v.setNavn(navn);
+                Bruker b = (Bruker) request.getSession().getAttribute("currentUser");
+                System.out.println(b.getKurv().getKurv_id());
+                b.getKurv().leggTilVare(v);
+                System.out.println(b.getKurv().getVarer().get(0).getNavn());
                 handlelisteEAO.leggTilVare(v);
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
             }else if(!slett.isEmpty()) {
@@ -45,8 +50,11 @@ public class HandlelisteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getSession().getAttribute("loggedInUser") != null){
-//            FlashUtil.Flash(request,"Success","Her er din handleliste");
-            List<Vare> varer = handlelisteEAO.visAlleVarer();
+            FlashUtil.Flash(request,"Success","Her er din handleliste");
+          //  List<Vare> varer = handlelisteEAO.visAlleVarer();
+            Bruker b = (Bruker) request.getSession().getAttribute("currentUser");
+            System.out.println("hei");
+            List<Vare> varer = handlelisteEAO.visAlleVarerTilBruker(b.getBruker_id());
             request.setAttribute("varer",varer);
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
