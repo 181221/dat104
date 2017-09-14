@@ -20,7 +20,7 @@
         </c:if>
         <form class="form-group" action="/handleliste" method="post">
             <label for="LeggTil">Legg Til:</label>
-             <input type="text" class="form-control" id="LeggTil" name="vare" placeholder="Varenavn..">
+             <input type="text" class="form-control" id="LeggTil" name="vare" placeholder="Varenavn.." autofocus>
             <input style="margin: 10px;" class="btn btn-primary" type="submit" value="Submit">
         </form>
 
