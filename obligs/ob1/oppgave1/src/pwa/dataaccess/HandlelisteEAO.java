@@ -6,6 +6,7 @@ package pwa.dataaccess;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import pwa.model.Bruker;
+import pwa.model.Kurv;
 import pwa.model.Vare;
 
 import javax.ejb.Stateless;
@@ -16,14 +17,21 @@ import java.util.List;
 
 @Stateless
 public class HandlelisteEAO {
-    @PersistenceContext(name = "studentPersistenceUnit")
+    @PersistenceContext(name = "handlelistePersistenceUnit")
     private EntityManager em;
 
-    public List<Vare> visAlleVarer(){
-        List<Vare> varer = em.createNamedQuery("Vare.visAlle").getResultList();
+    public List<Vare> visAlleVarerTilBruker(){
+        List<Vare> varer = em.createNamedQuery("Vare.visKurv").getResultList();
+
         return varer;
     }
+
+    public List<Vare> visAlleVarer(){
+       List<Vare> varer = em.createNamedQuery("Vare.visAlle").getResultList();
+       return varer;
+    }
     public void leggTilVare(Vare v){
+
         em.persist(v);
     }
     public Vare finnVare(String id) {
@@ -38,9 +46,13 @@ public class HandlelisteEAO {
         Bruker funnet = finnBrukerPaaNavn(brukernavn);
         if(funnet == null){
             Bruker ny = new Bruker();
+            Kurv nyKurv = new Kurv();
+            nyKurv.setBeskrivelse(brukernavn + " Sin handlekurv");
             ny.setBrukernavn(brukernavn);
             ny.setPassord(passord);
             em.persist(ny);
+            nyKurv.setBruker(ny);
+            em.persist(nyKurv);
         }
         return funnet == null;
     }

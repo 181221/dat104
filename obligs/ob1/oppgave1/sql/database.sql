@@ -24,7 +24,7 @@ CREATE TABLE handleliste.vare (
 );
 CREATE TABLE handleliste.kurv_produkt (
   kurv_id INTEGER REFERENCES handleliste.kurv(kurv_id),
-  vare_id INTEGER REFERENCES handleliste.vare(vare_id),
+  vare_id INTEGER REFERENCES handleliste.vare(vare_id) on delete cascade on update cascade,
   PRIMARY KEY (kurv_id, vare_id)
 );
 
