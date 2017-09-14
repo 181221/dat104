@@ -1,12 +1,14 @@
-/*
+
 package pwa.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-*/
+
 /**
  * Created by Peder on 12.09.2017.
- *//*
+ */
 
 @Entity
 @Table(name = "kurv", schema = "handleliste")
@@ -15,19 +17,31 @@ public class Kurv {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer kurv_id;
 
-    @JoinColumn(name = "bruker_id", referencedColumnName = "bruker_id")
-    private Bruker bruker;
 
-    @Basic
+    @Transient
+    private List<Vare> varer;
+
     private String beskrivelse;
 
     public Kurv(){
         this(null,"");
+        varer = new ArrayList<>();
     }
 
     public Kurv(Bruker bruker, String beskrivelse) {
         this.bruker = bruker;
         this.beskrivelse = beskrivelse;
+        varer = new ArrayList<>();
+    }
+    public void leggTilVare(){
+
+    }
+    public List<Vare> getVarer() {
+        return varer;
+    }
+
+    public void setVarer(List<Vare> varer) {
+        this.varer = varer;
     }
 
     public Integer getKurv_id() {
@@ -54,4 +68,4 @@ public class Kurv {
         this.beskrivelse = beskrivelse;
     }
 }
-*/
+

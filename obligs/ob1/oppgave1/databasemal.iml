@@ -30,6 +30,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 8.5.6" level="application_server_libraries" />
-    <orderEntry type="library" name="jstl filer" level="project" />
+    <orderEntry type="library" name="jstl" level="project" />
   </component>
 </module>

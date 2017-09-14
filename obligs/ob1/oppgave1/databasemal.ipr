@@ -20,11 +20,25 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="postgres@localhost [2]" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
   </component>
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
       <inspection_tool class="JpaAttributeTypeInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+      <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+        <option name="processCode" value="true" />
+        <option name="processLiterals" value="true" />
+        <option name="processComments" value="true" />
+      </inspection_tool>
     </profile>
     <version value="1.0" />
   </component>
@@ -149,6 +163,9 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="Peder" />
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/databasemal.iml" filepath="$PROJECT_DIR$/databasemal.iml" />
@@ -164,23 +181,31 @@
   </component>
   <component name="dataSourceStorageLocal">
     <data-source name="postgres@localhost" uuid="6a9e2b4a-c8fd-4962-b35b-6e5e152c37ee">
-      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>postgres:handleliste</introspection-schemas>
+    </data-source>
+    <data-source name="postgres@localhost [2]" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <introspection-schemas>postgres:handleliste</introspection-schemas>
+      <introspection-schemas>postgres:handleliste,public</introspection-schemas>
     </data-source>
   </component>
   <component name="libraryTable">
-    <library name="jstl filer">
+    <library name="jstl">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../../extra/jstl filer" />
+        <root url="file://$PROJECT_DIR$/../../../../extra shit/jstl" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra/jstl filer" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra shit/jstl" recursive="false" />
     </library>
   </component>
   <component name="masterDetails">

@@ -19,12 +19,25 @@ public class Bruker {
     @Column(name = "passord")
     private String passord;
 
+    @OneToOne
+    @JoinColumn(name = "kurv_id", referencedColumnName = "kurv_id")
+    private Kurv kurv;
+
     public Bruker() {
-        this("","");
+        this("","", null);
     }
-    public Bruker(String brukernavn, String passord) {
+    public Bruker(String brukernavn, String passord, Kurv k) {
         this.brukernavn = brukernavn;
         this.passord = passord;
+        kurv = k;
+    }
+
+    public Kurv getKurv() {
+        return kurv;
+    }
+
+    public void setKurv(Kurv kurv) {
+        this.kurv = kurv;
     }
 
     public Integer getBruker_id() {
