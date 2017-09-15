@@ -3,22 +3,13 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-    <persistence-unit name="eclipselink" transaction-type="JTA">
+    <persistence-unit name="handlelistePersistenceUnit" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
         <class>pwa.model.Bruker</class>
         <class>pwa.model.Vare</class>
-        <!--<class>pwa.model.Kurv</class>
-        <class>pwa.model.KurvProdukt</class>-->
+        <class>pwa.model.Kurv</class>
         <properties>
             <property name="tomee.jpa.cdi" value="false" />
-            <property name="toplink.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
-            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
-            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/postgres"/>
-            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
-            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
         </properties>
     </persistence-unit>
 </persistence>

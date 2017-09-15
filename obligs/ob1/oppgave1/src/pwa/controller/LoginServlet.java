@@ -4,6 +4,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 
@@ -27,15 +28,15 @@ import java.util.List;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @EJB
-    private HandlelisteEAO handlelisteEAO;
+    private BrukerEAO brukerEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String brukernavn = request.getParameter("username");
         String passord = request.getParameter("password");
         if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
-            Bruker b = handlelisteEAO.finnBrukerPaaNavn(brukernavn);
+            Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
             if(b != null && passord.equals(b.getPassord())){
-                InnloggingUtil.loggInnSom(request, brukernavn);
+                InnloggingUtil.loggInnSom(request, b);
             }else {
                 FlashUtil.UgyldigBruker(request);
             }
@@ -43,9 +44,7 @@ public class LoginServlet extends HttpServlet {
             FlashUtil.UgyldigBruker(request);
         }
         response.sendRedirect("/login");
-
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)){
             response.sendRedirect("/handleliste");

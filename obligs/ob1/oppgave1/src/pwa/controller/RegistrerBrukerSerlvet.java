@@ -2,6 +2,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 
@@ -19,7 +20,7 @@ import java.io.IOException;
 @WebServlet("/register")
 public class RegistrerBrukerSerlvet extends HttpServlet {
     @EJB
-    private HandlelisteEAO handlelisteEAO;
+    private BrukerEAO brukerEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (InnloggingUtil.isInnlogget(request)){
@@ -28,10 +29,11 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
             String brukernavn = request.getParameter("username");
             String passord = request.getParameter("password");
             if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
-                Boolean lagtTil = handlelisteEAO.leggTilBruker(brukernavn, passord);
+                Boolean lagtTil = brukerEAO.leggTilBruker(brukernavn, passord);
+                Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
                 if(lagtTil){
                     FlashUtil.registrertBruker(request);
-                    InnloggingUtil.loggInnSom(request, brukernavn);
+                    InnloggingUtil.loggInnSom(request, b);
                 }else {
                     FlashUtil.UgylidRegistertBruker(request);
                 }
