@@ -34,6 +34,7 @@ public class InnloggingUtil {
     public static void loggInnSom(HttpServletRequest request, Bruker b) {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
+
         sesjon.setMaxInactiveInterval(60);
         sesjon.setAttribute("currentUser", b);
         sesjon.setAttribute("loggedInUser", b.getBrukernavn());

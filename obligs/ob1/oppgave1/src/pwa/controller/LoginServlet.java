@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
             Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
             if(b != null && passord.equals(b.getPassord())){
                 InnloggingUtil.loggInnSom(request, b);
+                System.out.println(getServletContext().getInitParameter("timeout"));
             }else {
                 FlashUtil.UgyldigBruker(request);
             }
