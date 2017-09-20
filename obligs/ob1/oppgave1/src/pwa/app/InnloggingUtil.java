@@ -34,7 +34,7 @@ public class InnloggingUtil {
     public static void loggInnSom(HttpServletRequest request, Bruker b, String init) {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
-        request.getSession().setMaxInactiveInterval(Integer.parseInt(init));
+        sesjon.setMaxInactiveInterval(Integer.parseInt(init));
         sesjon.setAttribute("currentUser", b);
         sesjon.setAttribute("loggedInUser", b.getBrukernavn());
         FlashUtil.Flash(request, "Success", "Velkommen tilbake!");

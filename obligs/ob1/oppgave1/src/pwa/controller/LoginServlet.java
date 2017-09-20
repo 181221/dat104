@@ -36,8 +36,8 @@ public class LoginServlet extends HttpServlet {
         if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
             Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
             if(b != null && passord.equals(b.getPassord())){
-                System.out.println(getServletContext().getInitParameter("timeout"));
-                InnloggingUtil.loggInnSom(request, b, getInitParameter("timeout"));
+                String timeout = getServletContext().getInitParameter("timeout");
+                InnloggingUtil.loggInnSom(request, b, timeout);
             }else {
                 FlashUtil.UgyldigBruker(request);
             }
@@ -52,5 +52,8 @@ public class LoginServlet extends HttpServlet {
         }else {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }
+    }
+    public void init() throws ServletException {
+
     }
 }

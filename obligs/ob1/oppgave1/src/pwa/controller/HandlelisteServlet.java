@@ -30,7 +30,7 @@ public class HandlelisteServlet extends HttpServlet {
             if(ValidatorUtil.isValidString(navn)) {
                 handlelisteEAO.leggTilVare(opprettVaren(navn, request));
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
-            }else if(ValidatorUtil.isValidString(navn)) {
+            }else if(ValidatorUtil.isNotNull0(slett)) {
                 FlashUtil.Flash(request,"Success", "Vare slettet!");
                 handlelisteEAO.slettVare(slett);
             }
@@ -59,5 +59,8 @@ public class HandlelisteServlet extends HttpServlet {
         v.setKurv(b.getKurv());
         b.getKurv().leggTilVare(v);
         return v;
+    }
+    public void init() throws ServletException {
+
     }
 }

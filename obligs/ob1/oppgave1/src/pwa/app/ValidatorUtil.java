@@ -36,6 +36,9 @@ public class ValidatorUtil {
         }
         return null;
     }
+    public static boolean isNotNull0(String s) {
+        return s != null && s != "";
+    }
 
     public static boolean isValidUsername(String username) {
         return username != null && !username.equals("");

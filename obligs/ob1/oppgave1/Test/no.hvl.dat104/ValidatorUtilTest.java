@@ -20,7 +20,8 @@ public class ValidatorUtilTest {
     private String in6 = null;
     private String in7 = "1234567";
     private String in8 = "@\"'*^%¤#";
-
+    private String s = "";
+    private String noll = null;
     /*
      * < = &lt;
      * > = &gt;
@@ -98,5 +99,10 @@ public class ValidatorUtilTest {
 
     @Test
     void validerSubmit() {
+    }
+    @Test
+    void isNotNull() {
+        assertFalse(ValidatorUtil.isNotNull0(s));
+        assertFalse(ValidatorUtil.isNotNull0(noll));
     }
 }
