@@ -5,9 +5,12 @@
   Time: 22.56
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <jsp:include page="./partials/header.jsp" />
+
+<%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div class="container">
     <div class="row">
         <c:if test="${flash == 'Error'}">
@@ -26,12 +29,8 @@
 
         <c:forEach var="vare" items="${varer}">
             <form action="/handleliste" method="post">
-                <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare.vare_id}"><input class="btn btn-danger" type="submit" value="Slett"> ${vare.navn}
+                <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare.vare_id}"><input class="btn btn-danger" type="submit" value="Slett">  <c:out value = "${vare.navn}"/>
             </form>
         </c:forEach>
     </div>
 </div>
-
-
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>

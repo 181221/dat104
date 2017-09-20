@@ -1,7 +1,9 @@
 package pwa.controller;
 
+
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.app.ValidatorUtil;
 import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
@@ -26,17 +28,22 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
         if (InnloggingUtil.isInnlogget(request)){
             response.sendRedirect("/handleliste");
         }else {
-            String brukernavn = request.getParameter("username");
-            String passord = request.getParameter("password");
+            String brukernavn = ValidatorUtil.escapeHtml(request.getParameter("username"));
+            String passord = ValidatorUtil.escapeHtml(request.getParameter("password"));
             if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
                 Boolean lagtTil = brukerEAO.leggTilBruker(brukernavn, passord);
                 Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
                 if(lagtTil){
                     FlashUtil.registrertBruker(request);
-                    InnloggingUtil.loggInnSom(request, b);
+                    String timeout = getServletContext().getInitParameter("timeout");
+                    InnloggingUtil.loggInnSom(request, b, timeout);
                 }else {
-                    FlashUtil.UgylidRegistertBruker(request);
+                    String melding = "Det eksisterer allerede en bruker med brukernavnet: " + brukernavn;
+                    FlashUtil.Flash(request,"Error", melding);
                 }
+            }
+            else {
+                FlashUtil.Flash(request,"Error","Ugyldig input");
             }
         }
         response.sendRedirect("/register");

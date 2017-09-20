@@ -4,6 +4,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.app.ValidatorUtil;
 import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
@@ -36,12 +37,13 @@ public class LoginServlet extends HttpServlet {
         if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
             Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
             if(b != null && passord.equals(b.getPassord())){
-                InnloggingUtil.loggInnSom(request, b);
+                String timeout = getServletContext().getInitParameter("timeout");
+                InnloggingUtil.loggInnSom(request, b, timeout);
             }else {
-                FlashUtil.UgyldigBruker(request);
+                FlashUtil.Flash(request,"Error","Ugyldig input");
             }
         }else {
-            FlashUtil.UgyldigBruker(request);
+            FlashUtil.Flash(request,"Error","Ugyldig brukernavn eller passord");
         }
         response.sendRedirect("/login");
     }
@@ -51,5 +53,8 @@ public class LoginServlet extends HttpServlet {
         }else {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }
+    }
+    public void init() throws ServletException {
+
     }
 }

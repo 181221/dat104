@@ -1,6 +1,7 @@
 package pwa.controller;
 
 import pwa.app.FlashUtil;
+import pwa.app.ValidatorUtil;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 import pwa.model.Vare;
@@ -24,18 +25,16 @@ public class HandlelisteServlet extends HttpServlet {
     private HandlelisteEAO handlelisteEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getSession().getAttribute("loggedInUser") != null){
-            String navn = request.getParameter("vare");
+            String navn = request.getParameter("vare"); // bruker c:out for escape i jsp
             String slett =  request.getParameter("varenavn");
-            if(navn != "" && navn != null) {
-                System.out.println(navn);
+            if(ValidatorUtil.isValidVare(navn)) {
                 handlelisteEAO.leggTilVare(opprettVaren(navn, request));
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
-            }else if(slett != "" && slett != null) {
+            }else if(ValidatorUtil.isNotNull0(slett)) {
                 FlashUtil.Flash(request,"Success", "Vare slettet!");
                 handlelisteEAO.slettVare(slett);
             }
             else {
-                System.out.println("hei");
                 FlashUtil.Flash(request, "Error", "Du skrev inn Ugyldig");
             }
         }
@@ -45,10 +44,10 @@ public class HandlelisteServlet extends HttpServlet {
         if(request.getSession().getAttribute("loggedInUser") != null){
             Bruker b = (Bruker) request.getSession().getAttribute("currentUser");
             List<Vare> varer = handlelisteEAO.visAlleVarerTilBruker(b.getBruker_id());
-            request.setAttribute("varer",varer);
+            request.setAttribute("varer", varer);
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
-            FlashUtil.duMaaVeareLoggetInn(request);
+            FlashUtil.Flash(request, "Error","Du må være innlogget for å gjøre det!");
             response.sendRedirect("/login");
         }
     }
@@ -60,5 +59,8 @@ public class HandlelisteServlet extends HttpServlet {
         v.setKurv(b.getKurv());
         b.getKurv().leggTilVare(v);
         return v;
+    }
+    public void init() throws ServletException {
+
     }
 }
