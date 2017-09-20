@@ -5,6 +5,12 @@
 
 ![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/flash.JPG)
 
+<p>Bruker er registrert fra før</p>
+
+![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/eksisterendeBruker.JPG)
+
+<p>feil inntast fra bruker</p>
+
 ![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/registrer.JPG)
 
 <p>Bruker sin handlekurv</p>
@@ -14,3 +20,7 @@
 <p>En handlekurv til hver bruker</p
 
 ![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/olavsinliste.JPG)
+
+<p>Alltid noen som prøver seg - Escaped!</p>
+
+![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/escaped.JPG)
