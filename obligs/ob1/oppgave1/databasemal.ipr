@@ -197,16 +197,6 @@
       <introspection-schemas>postgres:handleliste,public</introspection-schemas>
     </data-source>
   </component>
-  <component name="libraryTable">
-    <library name="jstl filer">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../../extra/jstl filer" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/../../../../extra/jstl filer" recursive="false" />
-    </library>
-  </component>
   <component name="masterDetails">
     <states>
       <state key="GlobalLibrariesConfigurable.UI">

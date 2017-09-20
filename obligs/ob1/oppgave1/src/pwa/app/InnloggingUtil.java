@@ -31,11 +31,10 @@ public class InnloggingUtil {
                 (String) session.getAttribute("loggedInUser") : null;
     }
 
-    public static void loggInnSom(HttpServletRequest request, Bruker b) {
+    public static void loggInnSom(HttpServletRequest request, Bruker b, String init) {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
-
-        sesjon.setMaxInactiveInterval(60);
+        request.getSession().setMaxInactiveInterval(Integer.parseInt(init));
         sesjon.setAttribute("currentUser", b);
         sesjon.setAttribute("loggedInUser", b.getBrukernavn());
         FlashUtil.Flash(request, "Success", "Velkommen tilbake!");

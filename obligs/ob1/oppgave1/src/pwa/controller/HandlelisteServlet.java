@@ -1,6 +1,7 @@
 package pwa.controller;
 
 import pwa.app.FlashUtil;
+import pwa.app.ValidatorUtil;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
 import pwa.model.Vare;
@@ -26,16 +27,14 @@ public class HandlelisteServlet extends HttpServlet {
         if(request.getSession().getAttribute("loggedInUser") != null){
             String navn = request.getParameter("vare");
             String slett =  request.getParameter("varenavn");
-            if(navn != "" && navn != null) {
-                System.out.println(navn);
+            if(ValidatorUtil.isValidString(navn)) {
                 handlelisteEAO.leggTilVare(opprettVaren(navn, request));
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
-            }else if(slett != "" && slett != null) {
+            }else if(ValidatorUtil.isValidString(navn)) {
                 FlashUtil.Flash(request,"Success", "Vare slettet!");
                 handlelisteEAO.slettVare(slett);
             }
             else {
-                System.out.println("hei");
                 FlashUtil.Flash(request, "Error", "Du skrev inn Ugyldig");
             }
         }
@@ -45,7 +44,7 @@ public class HandlelisteServlet extends HttpServlet {
         if(request.getSession().getAttribute("loggedInUser") != null){
             Bruker b = (Bruker) request.getSession().getAttribute("currentUser");
             List<Vare> varer = handlelisteEAO.visAlleVarerTilBruker(b.getBruker_id());
-            request.setAttribute("varer",varer);
+            request.setAttribute("varer", varer);
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
             FlashUtil.duMaaVeareLoggetInn(request);

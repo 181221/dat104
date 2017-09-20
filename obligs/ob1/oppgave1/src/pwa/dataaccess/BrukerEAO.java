@@ -20,10 +20,7 @@ public class BrukerEAO {
     public Boolean leggTilBruker(String brukernavn, String passord) {
         Bruker funnet = finnBrukerPaaNavn(brukernavn);
         if(funnet == null){
-            Bruker ny = new Bruker();
-            ny.setBrukernavn(brukernavn);
-            ny.setPassord(passord);
-            ny.getKurv().setBeskrivelse(brukernavn + " Sin handlekurv" );
+            Bruker ny = lagNyBruker(brukernavn, passord);
             em.persist(ny);
         }
         return funnet == null;
@@ -35,6 +32,13 @@ public class BrukerEAO {
             return null;
         }
         return bruker.get(0);
+    }
+    private Bruker lagNyBruker(String b, String p) {
+        Bruker ny = new Bruker();
+        ny.setBrukernavn(b);
+        ny.setPassord(p);
+        ny.getKurv().setBeskrivelse(b + " Sin handlekurv" );
+        return ny;
     }
 
 

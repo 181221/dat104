@@ -1,5 +1,6 @@
 package pwa.controller;
 
+
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
 import pwa.dataaccess.BrukerEAO;
@@ -33,7 +34,7 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
                 Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
                 if(lagtTil){
                     FlashUtil.registrertBruker(request);
-                    InnloggingUtil.loggInnSom(request, b);
+                    InnloggingUtil.loggInnSom(request, b, getInitParameter("timeout"));
                 }else {
                     FlashUtil.UgylidRegistertBruker(request);
                 }
