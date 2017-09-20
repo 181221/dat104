@@ -4,6 +4,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.app.ValidatorUtil;
 import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
 import pwa.model.Bruker;
@@ -39,10 +40,10 @@ public class LoginServlet extends HttpServlet {
                 String timeout = getServletContext().getInitParameter("timeout");
                 InnloggingUtil.loggInnSom(request, b, timeout);
             }else {
-                FlashUtil.UgyldigBruker(request);
+                FlashUtil.Flash(request,"Error","Ugyldig input");
             }
         }else {
-            FlashUtil.UgyldigBruker(request);
+            FlashUtil.Flash(request,"Error","Ugyldig brukernavn eller passord");
         }
         response.sendRedirect("/login");
     }

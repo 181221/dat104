@@ -20,7 +20,7 @@ CREATE TABLE handleliste.bruker (
 
 CREATE TABLE handleliste.vare (
   vare_id          SERIAL      NOT NULL,
-  navn             VARCHAR(20) NOT NULL,
+  navn             VARCHAR(30) NOT NULL,
   kurv_id          INTEGER     REFERENCES handleliste.kurv(kurv_id),
   PRIMARY KEY(vare_id)
 );

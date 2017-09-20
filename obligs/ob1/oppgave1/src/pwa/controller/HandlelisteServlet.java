@@ -25,9 +25,9 @@ public class HandlelisteServlet extends HttpServlet {
     private HandlelisteEAO handlelisteEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getSession().getAttribute("loggedInUser") != null){
-            String navn = request.getParameter("vare");
+            String navn = request.getParameter("vare"); // bruker c:out for escape i jsp
             String slett =  request.getParameter("varenavn");
-            if(ValidatorUtil.isValidString(navn)) {
+            if(ValidatorUtil.isValidVare(navn)) {
                 handlelisteEAO.leggTilVare(opprettVaren(navn, request));
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
             }else if(ValidatorUtil.isNotNull0(slett)) {
@@ -47,7 +47,7 @@ public class HandlelisteServlet extends HttpServlet {
             request.setAttribute("varer", varer);
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
-            FlashUtil.duMaaVeareLoggetInn(request);
+            FlashUtil.Flash(request, "Error","Du må være innlogget for å gjøre det!");
             response.sendRedirect("/login");
         }
     }

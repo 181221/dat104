@@ -45,7 +45,7 @@ public class FlashUtil {
         request.getSession().setAttribute("flash", flash);
     }
     public static void duMaaVeareLoggetInn(HttpServletRequest req){
-        String melding = "du må være innlogget for å gjøre det!";
+        String melding = "Du må være innlogget for å gjøre det!";
         String flash = "Error";
         req.getSession().setAttribute("melding", melding);
         req.getSession().setAttribute("flash", flash);

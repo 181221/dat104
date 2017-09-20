@@ -41,11 +41,14 @@ public class ValidatorUtil {
     }
 
     public static boolean isValidUsername(String username) {
-        return username != null && !username.equals("");
+        return username != null && !username.equals("") && username.length() < 20;
     }
 
     public static boolean isValidPassword(String password) {
-        return password != null && !password.equals("");
+        return password != null && !password.equals("") && password.length() < 20;
+    }
+    public static boolean isValidVare(String b) {
+        return b != null && !b.equals("") && b.length() < 40;
     }
 
     public String escapeHtmlAPI(String s) {

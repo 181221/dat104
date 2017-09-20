@@ -105,4 +105,11 @@ public class ValidatorUtilTest {
         assertFalse(ValidatorUtil.isNotNull0(s));
         assertFalse(ValidatorUtil.isNotNull0(noll));
     }
+    @Test
+    void isValidVare() {
+        String feil = "powekfopwkefopwkefpowkefopwkefpowkefopwekfpowekfpasdasasdawoekfpwoekfwe";
+        assertFalse(ValidatorUtil.isValidVare(null));
+        assertFalse(ValidatorUtil.isValidVare(feil));
+        assertFalse(ValidatorUtil.isValidVare(""));
+    }
 }

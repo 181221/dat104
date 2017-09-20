@@ -1,5 +1,6 @@
 package pwa.dataaccess;
 
+import pwa.app.ValidatorUtil;
 import pwa.model.Bruker;
 import pwa.model.Kurv;
 

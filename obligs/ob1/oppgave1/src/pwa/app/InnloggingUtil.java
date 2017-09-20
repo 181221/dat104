@@ -14,11 +14,10 @@ public class InnloggingUtil {
 
     //senere escape sql
     public static boolean isGyldigBrukernavn(String brukernavn, String passord) {
-        return brukernavn != "" && passord != "";
+        return ValidatorUtil.isValidUsername(brukernavn) && ValidatorUtil.isValidPassword(passord);
     }
 
     public static boolean isInnlogget(HttpServletRequest request) {
-
         HttpSession session = request.getSession(false);
         return (session != null)
                 && (session.getAttribute("loggedInUser") != null);
