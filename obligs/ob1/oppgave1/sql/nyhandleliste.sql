@@ -27,14 +27,6 @@ CREATE TABLE handleliste.vare (
 
 ALTER TABLE handleliste.bruker ADD UNIQUE (brukernavn);
 
-INSERT INTO handleliste.kurv (beskrivelse) VALUES ('Peder sin kurv');
-INSERT INTO handleliste.kurv (beskrivelse) VALUES ('olav sin kurv');
-INSERT INTO handleliste.bruker (brukernavn, passord, kurv_id) VALUES ('peder','123',1);
-INSERT INTO handleliste.bruker (brukernavn, passord, kurv_id) VALUES ('olav','123',2);
-INSERT INTO handleliste.vare (navn, kurv_id) VALUES ('Melk', 1);
-INSERT INTO handleliste.vare (navn, kurv_id) VALUES ('Vann', 1);
-INSERT INTO handleliste.vare (navn, kurv_id) VALUES ('Saft', 2);
-INSERT INTO handleliste.vare (navn, kurv_id) VALUES ('Øl', 2);
 
 
 

@@ -54,9 +54,6 @@ public class LoginServlet extends HttpServlet {
         String passord = ValidatorUtil.escapeHtml(req.getParameter("password"));
         if (InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
             Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
-            System.out.println(b.getPassord());
-            System.out.println(SHA1.SHA1Hash(passord));
-            System.out.println(b.getPassord().equals(SHA1.SHA1Hash(passord)));
             String hashedPassord = SHA1.SHA1Hash(passord);
             if(b != null && hashedPassord.equals(b.getPassord())) {
                 String timeout = getServletContext().getInitParameter("timeout");
