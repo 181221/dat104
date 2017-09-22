@@ -117,7 +117,7 @@ public class ValidatorUtilTest {
         assertFalse(ValidatorUtil.isValidVare(""));
     }
     @Test
-    void testHash() throws NoSuchAlgorithmException {
+    void SHA1Hash() throws NoSuchAlgorithmException {
         String p1 = SHA1.SHA1Hash(passord);
         String p2 = SHA1.SHA1Hash(passord);
         String p3 = SHA1.SHA1Hash("heisann");
