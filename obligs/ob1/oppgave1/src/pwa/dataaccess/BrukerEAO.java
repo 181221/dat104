@@ -18,6 +18,23 @@ public class BrukerEAO {
     @PersistenceContext(name = "handlelistePersistenceUnit")
     private EntityManager em;
 
+    public Bruker leggTil(String brukernavn, String passord) {
+        Bruker b = lagNyBruker(brukernavn, passord);
+        em.persist(b);
+        return b;
+    }
+    public boolean sjekkOmBrukerErRegistrert(String brukernavn) {
+        List<Bruker> bruker = em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn", brukernavn).getResultList();
+        return bruker.isEmpty();
+    }
+    private Bruker lagNyBruker(String b, String p) {
+        Bruker ny = new Bruker();
+        ny.setBrukernavn(b);
+        ny.setPassord(p);
+        ny.getKurv().setBeskrivelse(b + " Sin handlekurv" );
+        return ny;
+    }
+
     public Boolean leggTilBruker(String brukernavn, String passord) {
         Bruker funnet = finnBrukerPaaNavn(brukernavn);
         if(funnet == null){
@@ -34,13 +51,8 @@ public class BrukerEAO {
         }
         return bruker.get(0);
     }
-    private Bruker lagNyBruker(String b, String p) {
-        Bruker ny = new Bruker();
-        ny.setBrukernavn(b);
-        ny.setPassord(p);
-        ny.getKurv().setBeskrivelse(b + " Sin handlekurv" );
-        return ny;
-    }
+
+
 
 
 }

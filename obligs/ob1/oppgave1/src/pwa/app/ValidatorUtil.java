@@ -45,7 +45,7 @@ public class ValidatorUtil {
     }
 
     public static boolean isValidPassword(String password) {
-        return password != null && !password.equals("") && password.length() < 20;
+        return password != null && !password.equals("") && password.length() < 200;
     }
     public static boolean isValidVare(String b) {
         return b != null && !b.equals("") && b.length() < 40;
