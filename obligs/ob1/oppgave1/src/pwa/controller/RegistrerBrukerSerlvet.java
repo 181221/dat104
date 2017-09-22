@@ -3,6 +3,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.app.SHA1;
 import pwa.app.ValidatorUtil;
 import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by Peder on 13.09.2017.
@@ -28,7 +30,11 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
         if (InnloggingUtil.isInnlogget(request)) {
             response.sendRedirect("/handleliste");
         }else {
-            sjekkBrukerInfoOgLeggTilBruker(request, response);
+            try {
+                sjekkBrukerInfoOgLeggTilBruker(request, response);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
         }
         response.sendRedirect("/register");
     }
@@ -41,12 +47,13 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
         }
     }
 
-    private void sjekkBrukerInfoOgLeggTilBruker(HttpServletRequest req, HttpServletResponse res) {
+    private void sjekkBrukerInfoOgLeggTilBruker(HttpServletRequest req, HttpServletResponse res) throws NoSuchAlgorithmException {
         String brukernavn = ValidatorUtil.escapeHtml(req.getParameter("username"));
         String passord = ValidatorUtil.escapeHtml(req.getParameter("password"));
         if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)) {
             if(brukerEAO.sjekkOmBrukerErRegistrert(brukernavn)) {
-                Bruker ny = brukerEAO.leggTil(brukernavn, passord);
+                String hashedPassord = SHA1.SHA1Hash(passord);
+                Bruker ny = brukerEAO.leggTil(brukernavn, hashedPassord);
                 FlashUtil.registrertBruker(req);
                 String timeout = getServletContext().getInitParameter("timeout");
                 InnloggingUtil.loggInnSom(req, ny, timeout);
@@ -59,21 +66,4 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
         }
         return;
     }
-     /*String brukernavn = ValidatorUtil.escapeHtml(request.getParameter("username"));
-            String passord = ValidatorUtil.escapeHtml(request.getParameter("password"));
-            if (sjekkBrukerInfo(request, response)) {
-                Boolean lagtTil = brukerEAO.leggTilBruker(brukernavn, passord);
-                Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
-                if (lagtTil) {
-                    FlashUtil.registrertBruker(request);
-                    String timeout = getServletContext().getInitParameter("timeout");
-                    InnloggingUtil.loggInnSom(request, b, timeout);
-                } else {
-                    String melding = "Det eksisterer allerede en bruker med brukernavnet: " + brukernavn;
-                    FlashUtil.Flash(request, "Error", melding);
-                }
-            } else {
-                FlashUtil.Flash(request, "Error", "Ugyldig input");
-            }
-        }*/
 }

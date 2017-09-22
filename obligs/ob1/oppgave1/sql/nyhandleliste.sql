@@ -13,7 +13,7 @@ CREATE TABLE handleliste.kurv (
 CREATE TABLE handleliste.bruker (
   bruker_id     SERIAL      NOT NULL,
   brukernavn    VARCHAR(20),
-  passord       VARCHAR(20),
+  passord       VARCHAR(200),
   kurv_id       INTEGER     REFERENCES handleliste.kurv(kurv_id),
   PRIMARY KEY(bruker_id)
 );
