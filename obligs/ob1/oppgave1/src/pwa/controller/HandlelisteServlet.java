@@ -16,10 +16,13 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 
+import static pwa.controller.UrlMappings.HANDLELISTE_URL;
+import static pwa.controller.UrlMappings.LOGIN_URL;
+
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet("/handleliste")
+@WebServlet
 public class HandlelisteServlet extends HttpServlet {
     @EJB
     private HandlelisteEAO handlelisteEAO;
@@ -38,7 +41,7 @@ public class HandlelisteServlet extends HttpServlet {
                 FlashUtil.Flash(request, "Error", "Du skrev inn Ugyldig");
             }
         }
-        response.sendRedirect("/handleliste");
+        response.sendRedirect(HANDLELISTE_URL);
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getSession().getAttribute("loggedInUser") != null){
@@ -48,7 +51,7 @@ public class HandlelisteServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/handleliste.jsp").forward(request,response);
         }else {
             FlashUtil.Flash(request, "Error","Du må være innlogget for å gjøre det!");
-            response.sendRedirect("/login");
+            response.sendRedirect(LOGIN_URL);
         }
     }
     private Vare opprettVaren(String navn, HttpServletRequest req){

@@ -15,6 +15,42 @@
             <param-value>10</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>pwa.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistrerBrukerSerlvet</servlet-name>
+        <servlet-class>pwa.controller.RegistrerBrukerSerlvet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HandlelisteServlet</servlet-name>
+        <servlet-class>pwa.controller.HandlelisteServlet</servlet-class>
+    </servlet>
+    <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>pwa.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LandingServlet</servlet-name>
+        <url-pattern>/landing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrerBrukerSerlvet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HandlelisteServlet</servlet-name>
+        <url-pattern>/handleliste</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LandingServlet</servlet-name>
         <url-pattern>/</url-pattern>

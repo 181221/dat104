@@ -1,4 +1,5 @@
-<%--
+<%@ page import="static pwa.controller.UrlMappings.REGISTER_URL" %>
+<%@ page import="static pwa.controller.UrlMappings.LANDING_URL" %><%--
   Created by IntelliJ IDEA.
   User: Peder
   Date: 13.09.2017
@@ -21,7 +22,7 @@
         </c:if>
         <h1 style="text-align: center">Register</h1>
         <div style="width: 30%; margin: 25px auto;">
-            <form action="/register" method="POST">
+            <form action="<%= REGISTER_URL%>" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" placeholder="username">
                 </div>
@@ -32,7 +33,7 @@
                     <button class="btn btn-lg btn-primary btn-block">Register!</button>
                 </div>
             </form>
-            <a href="/">Go Back</a>
+            <a href=<%= LANDING_URL%>>Go Back</a>
         </div>
     </div>
 </div>

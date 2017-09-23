@@ -16,17 +16,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static pwa.controller.UrlMappings.HANDLELISTE_URL;
+import static pwa.controller.UrlMappings.REGISTER_URL;
+
 /**
  * Created by Peder on 13.09.2017.
  */
-@WebServlet("/register")
+@WebServlet
 public class RegistrerBrukerSerlvet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (InnloggingUtil.isInnlogget(request)){
-            response.sendRedirect("/handleliste");
+            response.sendRedirect(HANDLELISTE_URL);
         }else {
             String brukernavn = ValidatorUtil.escapeHtml(request.getParameter("username"));
             String passord = ValidatorUtil.escapeHtml(request.getParameter("password"));
@@ -46,12 +49,12 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
                 FlashUtil.Flash(request,"Error","Ugyldig input");
             }
         }
-        response.sendRedirect("/register");
+        response.sendRedirect(REGISTER_URL);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)) {
-            response.sendRedirect("/handleliste");
+            response.sendRedirect(HANDLELISTE_URL);
         }else {
             request.getRequestDispatcher("WEB-INF/register.jsp").forward(request,response);
         }

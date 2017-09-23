@@ -23,10 +23,13 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 
+import static pwa.controller.UrlMappings.HANDLELISTE_URL;
+import static pwa.controller.UrlMappings.LOGIN_URL;
+
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet("/login")
+@WebServlet
 public class LoginServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
@@ -45,11 +48,11 @@ public class LoginServlet extends HttpServlet {
         }else {
             FlashUtil.Flash(request,"Error","Ugyldig brukernavn eller passord");
         }
-        response.sendRedirect("/login");
+        response.sendRedirect(LOGIN_URL);
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)){
-            response.sendRedirect("/handleliste");
+            response.sendRedirect(HANDLELISTE_URL);
         }else {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }

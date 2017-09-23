@@ -1,4 +1,7 @@
-<%--
+<%@ page import="static pwa.controller.UrlMappings.HANDLELISTE_URL" %>
+<%@ page import="static pwa.controller.UrlMappings.REGISTER_URL" %>
+<%@ page import="static pwa.controller.UrlMappings.LOGIN_URL" %>
+<%@ page import="static pwa.controller.UrlMappings.*" %><%--
   Created by IntelliJ IDEA.
   User: Peder
   Date: 12.09.2017
@@ -27,20 +30,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/#">Handleliste!</a>
+            <a class="navbar-brand" href="<%= HANDLELISTE_URL%>">Handleliste!</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${empty loggedInUser}">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Sign Up</a></li>
+                <li><a href="<%= LOGIN_URL%>">Login</a></li>
+                <li><a href="<%= REGISTER_URL%>">Sign Up</a></li>
                 </c:if>
                 <c:if test="${not empty loggedInUser}">
                 <li>
-                    <a href= "/#"> Signed In As ${loggedInUser} <span class="glyphicon glyphicon-user" aria-hidden="true"></span> </a>
+                    <a href= "<%= HANDLELISTE_URL%>"> Signed In As ${loggedInUser} <span class="glyphicon glyphicon-user" aria-hidden="true"></span> </a>
                 </li>
 
-                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="<%= LOGOUT_URL%>">Logout</a></li>
 
                 </c:if>
 

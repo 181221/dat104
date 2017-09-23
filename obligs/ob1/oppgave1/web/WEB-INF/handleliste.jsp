@@ -1,4 +1,4 @@
-<%--
+<%@ page import="static pwa.controller.UrlMappings.HANDLELISTE_URL" %><%--
   Created by IntelliJ IDEA.
   User: Peder
   Date: 12.09.2017
@@ -21,14 +21,14 @@
             <p class="alert alert-success"> ${melding}</p>
             <c:remove var="flash" scope="session" />
         </c:if>
-        <form class="form-group" action="/handleliste" method="post">
+        <form class="form-group" action="<%= HANDLELISTE_URL%>" method="post">
             <label for="LeggTil">Legg Til:</label>
              <input type="text" class="form-control" id="LeggTil" name="vare" placeholder="Varenavn.." autofocus>
             <input style="margin: 10px;" class="btn btn-primary" type="submit" value="Submit">
         </form>
 
         <c:forEach var="vare" items="${varer}">
-            <form action="/handleliste" method="post">
+            <form action="<%= HANDLELISTE_URL%>" method="post">
                 <li style="list-style-type: none;"><input type="hidden" name="varenavn" value="${vare.vare_id}"><input class="btn btn-danger" type="submit" value="Slett">  <c:out value = "${vare.navn}"/>
             </form>
         </c:forEach>

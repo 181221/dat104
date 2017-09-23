@@ -1,4 +1,5 @@
-
+<%@ page import="static pwa.controller.UrlMappings.LOGIN_URL" %>
+<%@ page import="static pwa.controller.UrlMappings.LANDING_URL" %>
 <%--
   Created by IntelliJ IDEA.
   User: Peder
@@ -23,7 +24,7 @@
     </c:if>
     <h1 style="text-align: center">Login</h1>
     <div style="width: 30%; margin: 25px auto;">
-      <form action="/login" method="POST">
+      <form action="<%= LOGIN_URL%>" method="POST">
         <div class="form-group">
           <input class="form-control" type="text" name="username" placeholder="username">
         </div>
@@ -34,7 +35,7 @@
           <button class="btn btn-lg btn-primary btn-block">Login!</button>
         </div>
       </form>
-      <a href="/">Go Back</a>
+      <a href="<%= LANDING_URL%>">Go Back</a>
     </div>
   </div>
 </div>
