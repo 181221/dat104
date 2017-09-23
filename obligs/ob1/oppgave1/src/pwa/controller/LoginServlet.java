@@ -4,6 +4,7 @@ package pwa.controller;
 
 import pwa.app.FlashUtil;
 import pwa.app.InnloggingUtil;
+import pwa.app.SHA1;
 import pwa.app.ValidatorUtil;
 import pwa.dataaccess.BrukerEAO;
 import pwa.dataaccess.HandlelisteEAO;
@@ -18,11 +19,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.List;
-
+import java.security.NoSuchAlgorithmException;
 import static pwa.controller.UrlMappings.HANDLELISTE_URL;
 import static pwa.controller.UrlMappings.LOGIN_URL;
 
@@ -35,18 +33,10 @@ public class LoginServlet extends HttpServlet {
     private BrukerEAO brukerEAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String brukernavn = request.getParameter("username");
-        String passord = request.getParameter("password");
-        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
-            Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
-            if(b != null && passord.equals(b.getPassord())){
-                String timeout = getServletContext().getInitParameter("timeout");
-                InnloggingUtil.loggInnSom(request, b, timeout);
-            }else {
-                FlashUtil.Flash(request,"Error","Ugyldig input");
-            }
-        }else {
-            FlashUtil.Flash(request,"Error","Ugyldig brukernavn eller passord");
+        try {
+            sjekkBrukerInfoOgLoggInn(request, response);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
         response.sendRedirect(LOGIN_URL);
     }
@@ -57,6 +47,24 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }
     }
+    public void sjekkBrukerInfoOgLoggInn(HttpServletRequest req, HttpServletResponse res) throws NoSuchAlgorithmException {
+        String brukernavn = ValidatorUtil.escapeHtml(req.getParameter("username"));
+        String passord = ValidatorUtil.escapeHtml(req.getParameter("password"));
+        if (InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)){
+            Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
+            String hashedPassord = SHA1.SHA1Hash(passord);
+            if(b != null && hashedPassord.equals(b.getPassord())) {
+                String timeout = getServletContext().getInitParameter("timeout");
+                InnloggingUtil.loggInnSom(req, b, timeout);
+            }else {
+                FlashUtil.Flash(req,"Error","Ugyldig input");
+            }
+        } else {
+            FlashUtil.Flash(req,"Error","Ugyldig brukernavn eller passord");
+        }
+        return;
+    }
+
     public void init() throws ServletException {
 
     }

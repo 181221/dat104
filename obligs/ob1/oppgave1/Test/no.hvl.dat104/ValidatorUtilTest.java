@@ -2,7 +2,10 @@ package no.hvl.dat104;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pwa.app.SHA1;
 import pwa.app.ValidatorUtil;
+
+import java.security.NoSuchAlgorithmException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,6 +25,7 @@ public class ValidatorUtilTest {
     private String in8 = "@\"'*^%¤#";
     private String s = "";
     private String noll = null;
+    private String passord = "detteErEtPassord";
     /*
      * < = &lt;
      * > = &gt;
@@ -111,5 +115,18 @@ public class ValidatorUtilTest {
         assertFalse(ValidatorUtil.isValidVare(null));
         assertFalse(ValidatorUtil.isValidVare(feil));
         assertFalse(ValidatorUtil.isValidVare(""));
+    }
+    @Test
+    void SHA1Hash() throws NoSuchAlgorithmException {
+        String p1 = SHA1.SHA1Hash(passord);
+        String p2 = SHA1.SHA1Hash(passord);
+        String p3 = SHA1.SHA1Hash("heisann");
+        String p4 = SHA1.SHA1Hash("heisann");
+        String p5 = SHA1.SHA1Hash("heiSann");
+        String feil = SHA1.SHA1Hash("DETTEERIKKEETPASSORD");
+        assertFalse(feil.equals(p1));
+        assertFalse(p5.equals(p4));
+        assertEquals(p1,p2);
+        assertEquals(p3,p4);
     }
 }
