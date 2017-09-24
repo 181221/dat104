@@ -6,6 +6,7 @@ CREATE SCHEMA brukersystem;
 CREATE TABLE brukersystem.bruker (
 bruker_id     SERIAL      NOT NULL,
 brukernavn    VARCHAR(20),
+email    VARCHAR(30),
 passord       VARCHAR(250),
 PRIMARY KEY(bruker_id)
 );

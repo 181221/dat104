@@ -60,6 +60,9 @@ public class ValidatorUtil {
     public static boolean isValidPassword(String password) {
         return password != null && !password.equals("") && password.length() < 200;
     }
+    public static boolean isValidEmail(String email) {
+        return email != null && !email.equals("") && email.length() < 40;
+    }
 
     /**
      * Sjekker en streng for null, "", og lengde under 40

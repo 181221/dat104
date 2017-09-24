@@ -26,27 +26,26 @@ public class ResetPassordServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String til = request.getParameter("email");
-        String fra = "peder.wiig@gmail.com";
-        String passord = "Wpoxns147";
-        Mail m = MailUtil.setUpMail(til,fra,passord);
-        try {
-            lagNyttPassord(request, m);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        String brukernavn = request.getParameter("brukernavn");
+        Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
+        if(b != null) {
+            String fra = "dinemail@gmail.com";
+            String passord = "Passord123";
+            Mail m = MailUtil.setUpMail(b.getEmail(), fra, passord);
+            try {
+                lagNyttPassord(request, m);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+            MailUtil.setUpProps(m, request);
+            FlashUtil.Flash(request, "Succuss", "Sjekk mail");
         }
-        MailUtil.setUpProps(m, request);
-        FlashUtil.Flash(request, "Succuss", "Sjekk mail");
+        FlashUtil.Flash(request, "Error", "Brukeren eksisterer ikke");
         response.sendRedirect(LOGIN_URL);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(InnloggingUtil.isInnlogget(request)) {
-            request.getRequestDispatcher("WEB-INF/reset.jsp").forward(request, response);
-        }else {
-            FlashUtil.Flash(request,"Error", "Du må være innlogget!");
-            response.sendRedirect(LOGIN_URL);
-        }
+        request.getRequestDispatcher("WEB-INF/reset.jsp").forward(request, response);
     }
     private void lagNyttPassord(HttpServletRequest request, Mail mail) throws NoSuchAlgorithmException {
         Bruker b = (Bruker) request.getSession().getAttribute("currentUser");

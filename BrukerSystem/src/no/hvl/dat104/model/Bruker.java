@@ -17,14 +17,17 @@ public class Bruker {
     private String brukernavn;
     @Column(name = "passord")
     private String passord;
+    @Column(name = "email")
+    private String email;
 
     public Bruker() {
-        this("","");
+        this("","","");
     }
 
-    public Bruker(String brukernavn, String passord) {
+    public Bruker(String brukernavn, String passord, String email) {
         this.brukernavn = brukernavn;
         this.passord = passord;
+        this.email = email;
     }
 
     public Integer getBruker_id() {
@@ -51,4 +54,11 @@ public class Bruker {
         this.passord = passord;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

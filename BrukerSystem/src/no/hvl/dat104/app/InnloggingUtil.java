@@ -17,7 +17,7 @@ public class InnloggingUtil {
         return ValidatorUtil.isValidUsername(brukernavn) && ValidatorUtil.isValidPassword(passord);
     }
     public static boolean isGyldigBrukernavn(String brukernavn, String passord, String email) {
-        return ValidatorUtil.isValidUsername(brukernavn) && ValidatorUtil.isValidPassword(passord) && ValidatorUtil.isValidPassword(email);
+        return ValidatorUtil.isValidUsername(brukernavn) && ValidatorUtil.isValidPassword(passord) && ValidatorUtil.isValidEmail(email);
     }
     /**
      * Sjekker om bruker er innlogget

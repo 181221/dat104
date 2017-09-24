@@ -50,10 +50,11 @@ public class RegistrerBrukerServlet extends HttpServlet {
     private void sjekkBrukerInfoOgLeggTilBruker(HttpServletRequest req, HttpServletResponse res) throws NoSuchAlgorithmException {
         String brukernavn = ValidatorUtil.escapeHtml(req.getParameter("username"));
         String passord = ValidatorUtil.escapeHtml(req.getParameter("password"));
-        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord)) {
+        String email = ValidatorUtil.escapeHtml(req.getParameter("email"));
+        if(InnloggingUtil.isGyldigBrukernavn(brukernavn, passord, email)) {
             if(brukerEAO.sjekkOmBrukerErRegistrert(brukernavn)) {
                 String hashedPassord = SHA.SHA1Hash(passord);
-                Bruker ny = brukerEAO.leggTil(brukernavn, hashedPassord);
+                Bruker ny = brukerEAO.leggTil(brukernavn, hashedPassord, email);
                 FlashUtil.Flash(req,"Success", "Velkommen");
                 InnloggingUtil.loggInnSom(req, ny);
             }else {

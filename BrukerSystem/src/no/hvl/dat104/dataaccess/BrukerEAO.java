@@ -15,15 +15,16 @@ public class BrukerEAO {
     @PersistenceContext(name = "BrukerSystem")
     private EntityManager em;
 
-    public Bruker leggTil(String brukernavn, String passord) {
-        Bruker b = lagNyBruker(brukernavn, passord);
+    public Bruker leggTil(String brukernavn, String passord, String email) {
+        Bruker b = lagNyBruker(brukernavn, passord, email);
         em.persist(b);
         return b;
     }
-    private Bruker lagNyBruker(String b, String p) {
+    private Bruker lagNyBruker(String b, String p, String email) {
         Bruker ny = new Bruker();
         ny.setBrukernavn(b);
         ny.setPassord(p);
+        ny.setEmail(email);
         return ny;
     }
     public Bruker finnBruker(String id) {
