@@ -10,4 +10,5 @@ public class UrlMappings {
     public static final String SECRET_URL = "/secret";
     public static final String LANDING_URL = "";
     public static final String RESETPASSORD_URL = "/reset";
+    public static final String SETTINGS_URL = "/settings";
 }

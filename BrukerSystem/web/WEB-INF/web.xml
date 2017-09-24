@@ -51,4 +51,12 @@
         <servlet-name>ResetPassordServlet</servlet-name>
         <url-pattern>/reset</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SettingsServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.SettingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SettingsServlet</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
 </web-app>
