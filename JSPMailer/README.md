@@ -13,3 +13,8 @@
 
 ![Mail](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/jspmailer.JPG)
 
+# Sjekk gmail
+<br>
+
+![Mail](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/gmail.JPG)
+
