@@ -33,7 +33,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${empty currentUser}">
                     <li><a href="<%= LOGIN_URL%>">Login</a></li>
-                    <li><a href="<%= REGISTER_URL%>">Sign Up</a></li>
+                    <li><a href="<%= REGISTRER_URL%>">Sign Up</a></li>
                 </c:if>
                 <c:if test="${not empty currentUser}">
                     <li>

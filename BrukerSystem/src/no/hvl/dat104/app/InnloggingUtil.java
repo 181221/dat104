@@ -1,4 +1,6 @@
 package no.hvl.dat104.app;
+import no.hvl.dat104.model.Bruker;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

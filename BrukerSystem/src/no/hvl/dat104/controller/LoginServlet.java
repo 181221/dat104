@@ -5,6 +5,7 @@ import no.hvl.dat104.app.InnloggingUtil;
 import no.hvl.dat104.app.SHA;
 import no.hvl.dat104.app.ValidatorUtil;
 import no.hvl.dat104.dataaccess.BrukerEAO;
+import no.hvl.dat104.model.Bruker;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
