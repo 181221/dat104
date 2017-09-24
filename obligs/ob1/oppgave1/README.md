@@ -24,3 +24,7 @@
 <p>Alltid noen som prøver seg - Escaped!</p>
 
 ![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/escaped.JPG)
+
+<p>Hashet passord med SHA1!</p>
+
+![login](https://github.com/h181221/h181221.github.io/blob/master/dat104/hashetpassord.JPG)
