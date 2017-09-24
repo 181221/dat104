@@ -45,6 +45,7 @@ public class RegistrerBrukerServlet extends HttpServlet {
         }else {
             request.getRequestDispatcher("WEB-INF/registrer.jsp").forward(request,response);
         }
+
     }
     private void sjekkBrukerInfoOgLeggTilBruker(HttpServletRequest req, HttpServletResponse res) throws NoSuchAlgorithmException {
         String brukernavn = ValidatorUtil.escapeHtml(req.getParameter("username"));

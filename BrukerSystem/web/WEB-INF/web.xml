@@ -43,4 +43,12 @@
         <servlet-name>LandingServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ResetPassordServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.ResetPassordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetPassordServlet</servlet-name>
+        <url-pattern>/reset</url-pattern>
+    </servlet-mapping>
 </web-app>

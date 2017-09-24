@@ -15,7 +15,6 @@ public class Bruker {
 
     @Column(name = "brukernavn")
     private String brukernavn;
-
     @Column(name = "passord")
     private String passord;
 
@@ -51,4 +50,5 @@ public class Bruker {
     public void setPassord(String passord) {
         this.passord = passord;
     }
+
 }

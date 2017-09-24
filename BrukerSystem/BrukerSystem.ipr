@@ -51,6 +51,15 @@
       <introspection-schemas>postgres:brukersystem</introspection-schemas>
     </data-source>
   </component>
+  <component name="libraryTable">
+    <library name="Mail">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/Dropbox/programmering/JARS/Mail.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
   <component name="masterDetails">
     <states>
       <state key="GlobalLibrariesConfigurable.UI">

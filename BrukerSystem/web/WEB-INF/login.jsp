@@ -34,6 +34,7 @@
                 </div>
             </form>
             <a href="<%= LANDING_URL%>">Go Back</a>
+            <p><a href="<%= RESETPASSORD_URL%>">glemt passord</a></p>
         </div>
     </div>
 </div>

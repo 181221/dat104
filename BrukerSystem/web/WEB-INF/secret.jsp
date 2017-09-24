@@ -1,4 +1,4 @@
-<%--
+<%@ page import="no.hvl.dat104.controller.UrlMappings" %><%--
   Created by IntelliJ IDEA.
   User: Peder
   Date: 24.09.2017
@@ -18,6 +18,6 @@
         <p class="alert alert-success"> ${melding}</p>
             <c:remove var="flash" scope="session" />
         </c:if>
-
+        <a href="<%= UrlMappings.RESETPASSORD_URL%>">Reset passord</a>
     </div>
 </div>
