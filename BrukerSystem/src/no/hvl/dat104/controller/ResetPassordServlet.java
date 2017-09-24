@@ -29,9 +29,8 @@ public class ResetPassordServlet extends HttpServlet {
         String email = request.getParameter("email");
         Bruker b = brukerEAO.finnBrukerPaaEmail(email);
         if(b != null) {
-            String fra = "DINMAIL@gmail.com";
-            String passord = "DITTPASSORD";
-            //finn mailen
+            String fra = "dinmail@gmail.com";
+            String passord = "dittpassord";
             Mail m = MailUtil.setUpMail(b.getEmail(), fra, passord);
             MailUtil.setUpProps(m, request);
             Flash(request, "Succuss", "Sjekk mail");

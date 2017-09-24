@@ -13,7 +13,7 @@ import java.util.Properties;
 public class MailUtil {
     public static Mail setUpMail(String til, String fra, String passord) {
         String msg = GenererPassord.nyttPassord();
-        String subject = "Nytt Passord";
+        String subject = "Reset your password";
         Mail mail = opprettMail(til, msg, subject, fra, passord);
         return mail;
     }
@@ -57,9 +57,11 @@ public class MailUtil {
             message.addRecipient(Message.RecipientType.TO,
                     new InternetAddress(mail.getTil()));
             // Set Subject: header field
+            String overskrift = "<h3>Her er ditt nye midlertidig passord</h3>";
+            String melding = "<p>"+mail.getMsg()+"</p>";
             message.setSubject(mail.getSubject());
-            // Now set the actual message
-            message.setText(mail.getMsg());
+            message.setContent(overskrift + melding, "text/html" );
+
             // Send message
             javax.mail.Transport.send(message);
             mail.setResult("Your mail sent successfully....");
