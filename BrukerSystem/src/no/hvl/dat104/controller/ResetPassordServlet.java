@@ -21,7 +21,7 @@ import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
 /**
  * Created by Peder on 24.09.2017.
  */
-
+//reseter passord
 public class ResetPassordServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
