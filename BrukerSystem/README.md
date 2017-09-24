@@ -5,6 +5,6 @@
 
 * Last ned <a href="https://github.com/h181221/h181221.github.io/raw/master/dat104/brukersystem/BrukerSystem.jar" download>App Utils</a> - 
 her får du Flash melding, InnlogginUtil, SHA og ValidatorUtil.
-* Last ned <a href="https://github.com/h181221/h181221.github.io/raw/master/dat104/jspmailer/Mail.jar" download>JspMailer</a>
+* Last ned <a href="https://github.com/h181221/h181221.github.io/raw/master/dat104/jspmailer/Mail.jar" download>JspMailer</a> - Info finner du <a href="https://github.com/h181221/dat104/blob/master/JSPMailer/README.md" >her!</a>
 
 
