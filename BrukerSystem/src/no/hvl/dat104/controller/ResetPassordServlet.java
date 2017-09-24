@@ -35,8 +35,9 @@ public class ResetPassordServlet extends HttpServlet {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
-        //MailUtil.setUpProps(m, request);
+        MailUtil.setUpProps(m, request);
+        FlashUtil.Flash(request, "Succuss", "Sjekk mail");
+        response.sendRedirect(LOGIN_URL);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
