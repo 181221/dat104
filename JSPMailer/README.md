@@ -6,7 +6,7 @@
 
 * Legg til mail og passord i no.hvl.dat104.app.Mail
 
-![Mail](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/setup.JPG)
+![Mail](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/setupny.JPG)
 
 # Kjør app - Mail
 <br>
