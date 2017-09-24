@@ -52,9 +52,17 @@
     </data-source>
   </component>
   <component name="libraryTable">
-    <library name="Mail">
+    <library name="activation">
       <CLASSES>
-        <root url="jar://$USER_HOME$/Dropbox/programmering/JARS/Mail.jar!/" />
+        <root url="jar://$USER_HOME$/Dropbox/programmering/JARS/activation.jar!/" />
+        <root url="jar://$USER_HOME$/Dropbox/programmering/JARS/javax.mail.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Java EE 6-Java EE 6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

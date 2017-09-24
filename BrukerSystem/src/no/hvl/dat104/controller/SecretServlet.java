@@ -2,6 +2,7 @@ package no.hvl.dat104.controller;
 
 import no.hvl.dat104.app.FlashUtil;
 import no.hvl.dat104.app.InnloggingUtil;
+import no.hvl.dat104.app.MailUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,9 +17,8 @@ import java.io.IOException;
 
 public class SecretServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
-        System.out.println(email);
-        System.out.println("passord skal bli resettet her");
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

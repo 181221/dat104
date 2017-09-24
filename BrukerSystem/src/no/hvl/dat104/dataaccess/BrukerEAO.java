@@ -20,12 +20,17 @@ public class BrukerEAO {
         em.persist(b);
         return b;
     }
-
     private Bruker lagNyBruker(String b, String p) {
         Bruker ny = new Bruker();
         ny.setBrukernavn(b);
         ny.setPassord(p);
         return ny;
+    }
+    public Bruker finnBruker(String id) {
+        return em.find(Bruker.class, id);
+    }
+    public void oppdaterBruker(Bruker b){
+        em.merge(b);
     }
     public boolean sjekkOmBrukerErRegistrert(String brukernavn) {
         List<Bruker> bruker =  em.createQuery(
