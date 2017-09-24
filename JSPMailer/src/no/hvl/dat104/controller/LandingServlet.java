@@ -11,7 +11,7 @@ import static no.hvl.dat104.controller.UrlMappings.RESULT_URL;
 @WebServlet
 public class LandingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MailUtil.setUpMail(request);
+        MailUtil.setUpMail(request, "eksempel@gmail.com", "passord123");
         response.sendRedirect(RESULT_URL);
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

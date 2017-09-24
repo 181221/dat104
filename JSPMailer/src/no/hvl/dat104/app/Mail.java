@@ -1,8 +1,8 @@
 package no.hvl.dat104.app;
 
 public class Mail {
-    private static final String FRAMAIL = "eksempel@gmail.com";
-    private static final String PASSORD = "passord123";
+    private static String FRAMAIL;
+    private static String PASSORD;
 
     private String til;
     private String msg;
@@ -13,7 +13,7 @@ public class Mail {
         this.til = til;
         this.msg = msg;
         this.subject = subject;
-        result = "";
+        this.result = result;
     }
 
     public String getResult() {
@@ -22,6 +22,13 @@ public class Mail {
 
     public void setResult(String result) {
         this.result = result;
+    }
+    public static void setFRAMAIL(String FRAMAIL) {
+        Mail.FRAMAIL = FRAMAIL;
+    }
+
+    public static void setPASSORD(String PASSORD) {
+        Mail.PASSORD = PASSORD;
     }
 
     public static String getFRAMAIL() {

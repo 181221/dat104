@@ -10,12 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Properties;
 
 public class MailUtil {
-    public static void setUpMail(HttpServletRequest request) {
+    public static void setUpMail(HttpServletRequest request, String fra, String passord) {
         String til = request.getParameter("til");
         String msg = request.getParameter("msg");
         String subject = request.getParameter("subject");
-        Mail mail = new Mail(til, msg, subject);
+        Mail mail = opprettMail(til, msg, subject, fra, passord);
         setUpProps(mail, request);
+    }
+    private static Mail opprettMail(String til, String msg, String subject, String fra, String passord) {
+        Mail mail = new Mail(til, msg, subject);
+        mail.setFRAMAIL(fra);
+        mail.setPASSORD(passord);
+        return mail;
     }
     private static void setUpProps(Mail mail, HttpServletRequest req) {
         String host = "smtp.gmail.com";
