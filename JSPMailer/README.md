@@ -13,6 +13,10 @@
 
 ![Mail](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/jspmailer.JPG)
 
+# Sendt
+
+![SENDT](https://github.com/h181221/h181221.github.io/blob/master/dat104/jspmailer/sent.JPG)
+
 # Sjekk gmail
 <br>
 
