@@ -26,23 +26,22 @@ public class ResetPassordServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String brukernavn = request.getParameter("brukernavn");
-        Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
+        String email = request.getParameter("email");
+        Bruker b = brukerEAO.finnBrukerPaaEmail(email);
         if(b != null) {
-            String fra = "abc@gmail.com";
-            String passord = "password123";
+            String fra = "DINMAIL@gmail.com";
+            String passord = "DITTPASSORD";
             //finn mailen
             Mail m = MailUtil.setUpMail(b.getEmail(), fra, passord);
             MailUtil.setUpProps(m, request);
+            Flash(request, "Succuss", "Sjekk mail");
             try {
                 oppdaterNyttPassordUtenAAVeareInnlogget(b, m.getMsg(), brukerEAO);
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
-                Flash(request, "Error","Skjedde en feil");
             }
         }
-        Flash(request, "Succuss", "Sjekk mail");
-        response.sendRedirect(LOGIN_URL);
+        request.getRequestDispatcher("WEB-INF/resetinfo.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

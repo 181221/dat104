@@ -41,6 +41,13 @@ public class BrukerEAO {
                 .getResultList();
         return bruker.isEmpty();
     }
+    public Bruker finnBrukerPaaEmail(String email) {
+        List<Bruker> bruker = em.createQuery("SELECT b FROM Bruker b WHERE b.email = :email").setParameter("email",email).getResultList();
+        if(bruker.isEmpty()){
+            return null;
+        }
+        return bruker.get(0);
+    }
     public Bruker finnBrukerPaaNavn(String navn) {
         List<Bruker> bruker = em.createNamedQuery("Bruker.finnPaaNavn").setParameter("brukernavn",navn).getResultList();
         if(bruker.isEmpty()){
