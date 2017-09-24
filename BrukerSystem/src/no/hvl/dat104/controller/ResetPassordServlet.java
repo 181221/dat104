@@ -15,6 +15,7 @@ import java.security.NoSuchAlgorithmException;
 
 import static no.hvl.dat104.app.FlashUtil.Flash;
 import static no.hvl.dat104.app.GenererPassord.oppdaterNyttPassord;
+import static no.hvl.dat104.app.GenererPassord.oppdaterNyttPassordUtenAAVeareInnlogget;
 import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
 
 /**
@@ -27,20 +28,20 @@ public class ResetPassordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String brukernavn = request.getParameter("brukernavn");
         Bruker b = brukerEAO.finnBrukerPaaNavn(brukernavn);
-        System.out.println(b.getEmail());
         if(b != null) {
-            String fra = "peder.wig@gmail.com";
-            String passord = "huwyaka123";
+            String fra = "abc@gmail.com";
+            String passord = "password123";
+            //finn mailen
             Mail m = MailUtil.setUpMail(b.getEmail(), fra, passord);
+            MailUtil.setUpProps(m, request);
             try {
-                oppdaterNyttPassord(request, m.getMsg(), brukerEAO);
+                oppdaterNyttPassordUtenAAVeareInnlogget(b, m.getMsg(), brukerEAO);
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
+                Flash(request, "Error","Skjedde en feil");
             }
-            MailUtil.setUpProps(m, request);
-            Flash(request, "Succuss", "Sjekk mail");
         }
-        Flash(request, "Error", "Brukeren eksisterer ikke");
+        Flash(request, "Succuss", "Sjekk mail");
         response.sendRedirect(LOGIN_URL);
     }
 

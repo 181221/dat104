@@ -39,7 +39,7 @@
                     <li>
                         <a href= "<%= LANDING_URL%>"> Signed In As ${currentUser.brukernavn} <span class="glyphicon glyphicon-user" aria-hidden="true"></span> </a>
                     </li>
-
+                    <li><a href="<%= SETTINGS_URL%>">Settings</a></li>
                     <li><a href="<%= LOGOUT_URL%>">Logout</a></li>
 
                 </c:if>

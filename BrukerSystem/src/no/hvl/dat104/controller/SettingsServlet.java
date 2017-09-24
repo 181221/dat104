@@ -22,7 +22,6 @@ import static no.hvl.dat104.controller.UrlMappings.SETTINGS_URL;
 /**
  * Created by Peder on 24.09.2017.
  */
-
 public class SettingsServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;
@@ -47,7 +46,7 @@ public class SettingsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)) {
-            request.getRequestDispatcher("WEB-INF/settings.jps").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/settings.jsp").forward(request, response);
         }else {
             FlashUtil.Flash(request, "Error", "Du må være logget inn");
             response.sendRedirect(LOGIN_URL);

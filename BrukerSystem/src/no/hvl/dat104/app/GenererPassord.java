@@ -21,4 +21,9 @@ public class GenererPassord {
         b.setPassord(hashetPassord);
         brukerEAO.oppdaterBruker(b);
     }
+    public static void oppdaterNyttPassordUtenAAVeareInnlogget(Bruker bruker, String passord, BrukerEAO brukerEAO) throws NoSuchAlgorithmException{
+        String hashetPassord = SHA.SHA1Hash(passord);
+        bruker.setPassord(hashetPassord);
+        brukerEAO.oppdaterBruker(bruker);
+    }
 }

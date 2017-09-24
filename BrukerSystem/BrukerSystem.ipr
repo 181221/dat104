@@ -9,6 +9,10 @@
           <element id="directory" name="classes">
             <element id="module-output" name="brukersystem" />
           </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="activation" />
+            <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          </element>
         </element>
       </root>
     </artifact>
