@@ -17,7 +17,7 @@ import static pwa.controller.UrlMappings.LOGIN_URL;
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet()
+
 public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,6 +12,17 @@
         </element>
       </root>
     </artifact>
+    <artifact type="war" name="databasemal:war">
+      <output-path>$PROJECT_DIR$/out/artifacts/databasemal_war</output-path>
+      <root id="archive" name="databasemal_war.war">
+        <element id="artifact" artifact-name="databasemal:war exploded" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="postgresql-42.0.0.jre6" />
+          </element>
+        </element>
+      </root>
+    </artifact>
   </component>
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="postgres@localhost" uuid="6a9e2b4a-c8fd-4962-b35b-6e5e152c37ee">
@@ -28,6 +39,12 @@
       <driver-properties>
         <property name="ApplicationName" value="DataGrip" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="pederyo@kalliainen.ddns.net" uuid="7b8f10f1-1ccd-466c-aa05-6bc742d26ad8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://kalliainen.ddns.net:5432/pederyo</jdbc-url>
     </data-source>
   </component>
   <component name="InspectionProjectProfileManager">
@@ -196,6 +213,26 @@
       <user-name>postgres</user-name>
       <introspection-schemas>postgres:handleliste,public</introspection-schemas>
     </data-source>
+    <data-source name="pederyo@kalliainen.ddns.net" uuid="7b8f10f1-1ccd-466c-aa05-6bc742d26ad8">
+      <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>pederyo</user-name>
+      <introspection-schemas>pederyo:public</introspection-schemas>
+    </data-source>
+  </component>
+  <component name="libraryTable">
+    <library name="postgresql-42.0.0.jre6">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/postgresql-42.0.0.jre6.jar!/" />
+        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
+        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="masterDetails">
     <states>
