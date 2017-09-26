@@ -22,8 +22,10 @@ public class HandlelisteEAO {
     private EntityManager em;
 
     public List<Vare> visAlleVarerTilBruker(Integer id) {
-        TypedQuery<Vare> vare = em.createQuery("SELECT v FROM Vare v WHERE v.kurv.kurv_id =: id", Vare.class).setParameter("id",id);
-        return vare.getResultList();
+        Query v = em.createQuery("SELECT v FROM Vare v WHERE v.kurv.kurv_id =:id").setParameter("id",id);
+
+        //TypedQuery<Vare> vare = em.createQuery("SELECT v FROM Vare v WHERE v.kurv.kurv_id =: id", Vare.class).setParameter("id",id);
+        return v.getResultList();
     }
     public void leggTilVare(Vare v){
         em.persist(v);
@@ -31,7 +33,7 @@ public class HandlelisteEAO {
     public Vare finnVare(String id) {
         return em.find(Vare.class, id);
     }
-    public void slettVare(String id) {
+    public void slettVare(Integer id) {
         em.remove(em.find(Vare.class, id));
     }
 

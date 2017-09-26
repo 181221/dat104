@@ -31,11 +31,13 @@ public class HandlelisteServlet extends HttpServlet {
             String navn = request.getParameter("vare"); // bruker c:out for escape i jsp
             String slett =  request.getParameter("varenavn");
             if(ValidatorUtil.isValidVare(navn)) {
-                handlelisteEAO.leggTilVare(opprettVaren(navn, request));
+                Vare v = opprettVaren(navn, request);
+                handlelisteEAO.leggTilVare(v);
                 FlashUtil.Flash(request,"Success", "Vare lagt til");
             }else if(ValidatorUtil.isNotNull0(slett)) {
+                Integer slettet = Integer.parseInt(request.getParameter("varenavn"));
                 FlashUtil.Flash(request,"Success", "Vare slettet!");
-                handlelisteEAO.slettVare(slett);
+                handlelisteEAO.slettVare(slettet);
             }
             else {
                 FlashUtil.Flash(request, "Error", "Du skrev inn Ugyldig");

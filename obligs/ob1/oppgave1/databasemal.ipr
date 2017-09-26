@@ -220,7 +220,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>pederyo</user-name>
-      <introspection-schemas>pederyo:public</introspection-schemas>
+      <introspection-schemas>pederyo:handleliste,public</introspection-schemas>
     </data-source>
   </component>
   <component name="libraryTable">
