@@ -4,26 +4,21 @@
     <artifact type="exploded-war" name="databasemal:war exploded">
       <output-path>$PROJECT_DIR$/out/artifacts/databasemal_war_exploded</output-path>
       <root id="root">
-        <element id="javaee-facet-resources" facet="databasemal/web/Web" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
             <element id="module-output" name="databasemal" />
           </element>
           <element id="directory" name="lib">
-            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
+            <element id="library" level="project" name="postgresql-42.0.0.jre6" />
           </element>
         </element>
+        <element id="javaee-facet-resources" facet="databasemal/web/Web" />
       </root>
     </artifact>
     <artifact type="war" name="databasemal:war">
       <output-path>$PROJECT_DIR$/out/artifacts/databasemal_war</output-path>
       <root id="archive" name="databasemal_war.war">
         <element id="artifact" artifact-name="databasemal:war exploded" />
-        <element id="directory" name="WEB-INF">
-          <element id="directory" name="lib">
-            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
-          </element>
-        </element>
       </root>
     </artifact>
     <artifact type="war" name="databasemal:war">
@@ -245,18 +240,12 @@
       <user-name>htdeshky</user-name>
       <introspection-schemas>postgres:handleliste,public</introspection-schemas>
     </data-source>
-<<<<<<< HEAD
-    <data-source name="littleTurtle" uuid="014c3485-1082-48ae-8ffd-993c7fc636db">
-      <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
-=======
     <data-source name="pederyo@kalliainen.ddns.net" uuid="7b8f10f1-1ccd-466c-aa05-6bc742d26ad8">
       <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
->>>>>>> 80f82ca5cdf38331c7e845498c16191dca6fea10
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-<<<<<<< HEAD
       <user-name>fckahzbo</user-name>
       <introspection-schemas>fckahzbo:handleliste,public</introspection-schemas>
     </data-source>
@@ -271,25 +260,14 @@
     </data-source>
   </component>
   <component name="libraryTable">
-    <library name="javax.servlet.jsp.jstl-1.2.1">
+    <library name="postgresql-42.0.0.jre6">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/../../../../extra shit/jstl/javax.servlet.jsp.jstl-1.2.1.jar!/" />
         <root url="jar://$PROJECT_DIR$/../../../../extra shit/jstl/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
-=======
       <user-name>pederyo</user-name>
       <introspection-schemas>pederyo:public</introspection-schemas>
     </data-source>
   </component>
-  <component name="libraryTable">
-    <library name="postgresql-42.0.0.jre6">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/postgresql-42.0.0.jre6.jar!/" />
-        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
-        <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-1.2.1.jar!/" />
->>>>>>> 80f82ca5cdf38331c7e845498c16191dca6fea10
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
     </library>
   </component>
   <component name="masterDetails">
