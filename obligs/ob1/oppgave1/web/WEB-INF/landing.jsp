@@ -18,5 +18,6 @@
         <c:if test="${not empty loggedInUser}">
             gå til handlelisten <a href="<%= HANDLELISTE_URL%>">handleliste</a>
         </c:if>
+        <a href="https://github.com/h181221/dat104/tree/master/obligs/ob1/oppgave1">Sjekk ut koden på github!</a>
     </div>
 </div>
