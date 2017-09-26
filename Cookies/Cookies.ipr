@@ -12,6 +12,12 @@
         </element>
       </root>
     </artifact>
+    <artifact type="jar" name="Cookies:jar">
+      <output-path>$PROJECT_DIR$/out/artifacts/Cookies_jar</output-path>
+      <root id="archive" name="Cookies.jar">
+        <element id="module-output" name="Cookies" />
+      </root>
+    </artifact>
   </component>
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
