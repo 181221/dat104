@@ -18,5 +18,6 @@
         <c:if test="${not empty loggedInUser}">
             gå til handlelisten <a href="<%= HANDLELISTE_URL%>">handleliste</a>
         </c:if>
+        ${melding}
     </div>
 </div>

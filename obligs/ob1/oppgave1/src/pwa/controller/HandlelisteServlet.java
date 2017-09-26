@@ -22,7 +22,6 @@ import static pwa.controller.UrlMappings.LOGIN_URL;
 /**
  * Created by Peder on 12.09.2017.
  */
-
 public class HandlelisteServlet extends HttpServlet {
     @EJB
     private HandlelisteEAO handlelisteEAO;
