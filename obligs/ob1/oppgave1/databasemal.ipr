@@ -9,6 +9,20 @@
           <element id="directory" name="classes">
             <element id="module-output" name="databasemal" />
           </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="war" name="databasemal:war">
+      <output-path>$PROJECT_DIR$/out/artifacts/databasemal_war</output-path>
+      <root id="archive" name="databasemal_war.war">
+        <element id="artifact" artifact-name="databasemal:war exploded" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
+          </element>
         </element>
       </root>
     </artifact>
@@ -20,11 +34,29 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="postgres@localhost [2]" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
+    <data-source source="LOCAL" name="htdeshky@packy.db.elephantsql.com" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://packy.db.elephantsql.com:5432/htdeshky</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="littleTurtle" uuid="014c3485-1082-48ae-8ffd-993c7fc636db">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://horton.elephantsql.com:5432/fckahzbo</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="h181221" uuid="3c228074-6ab4-4f75-b1e5-d40199872be5">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://data1.hib.no:5433/h181221</jdbc-url>
       <driver-properties>
         <property name="ApplicationName" value="DataGrip" />
       </driver-properties>
@@ -188,14 +220,42 @@
       <user-name>postgres</user-name>
       <introspection-schemas>postgres:handleliste</introspection-schemas>
     </data-source>
-    <data-source name="postgres@localhost [2]" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
+    <data-source name="htdeshky@packy.db.elephantsql.com" uuid="524ddafd-a178-4005-85dc-a53df2a1c772">
       <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>postgres</user-name>
+      <user-name>htdeshky</user-name>
       <introspection-schemas>postgres:handleliste,public</introspection-schemas>
     </data-source>
+    <data-source name="littleTurtle" uuid="014c3485-1082-48ae-8ffd-993c7fc636db">
+      <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>fckahzbo</user-name>
+      <introspection-schemas>fckahzbo:handleliste,public</introspection-schemas>
+    </data-source>
+    <data-source name="h181221" uuid="3c228074-6ab4-4f75-b1e5-d40199872be5">
+      <database-info product="PostgreSQL" version="9.5.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>h181221</user-name>
+      <introspection-schemas>h181221:*</introspection-schemas>
+    </data-source>
+  </component>
+  <component name="libraryTable">
+    <library name="javax.servlet.jsp.jstl-1.2.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../extra shit/jstl/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../../extra shit/jstl/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="masterDetails">
     <states>

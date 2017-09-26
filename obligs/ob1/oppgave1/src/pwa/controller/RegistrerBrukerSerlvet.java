@@ -24,7 +24,7 @@ import static pwa.controller.UrlMappings.REGISTER_URL;
 /**
  * Created by Peder on 13.09.2017.
  */
-@WebServlet
+
 public class RegistrerBrukerSerlvet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;

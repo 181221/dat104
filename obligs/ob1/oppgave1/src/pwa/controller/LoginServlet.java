@@ -27,7 +27,7 @@ import static pwa.controller.UrlMappings.LOGIN_URL;
 /**
  * Created by Peder on 12.09.2017.
  */
-@WebServlet
+
 public class LoginServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;

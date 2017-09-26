@@ -45,5 +45,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javax.servlet.jsp.jstl-1.2.1" level="project" />
   </component>
 </module>
