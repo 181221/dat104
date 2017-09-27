@@ -11,6 +11,17 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping>
+          <factory-entry name="handlelistePersistenceUnit" />
+          <factory-entry name="meldpaatilfest" value="ddfebf3e-f4ee-4d29-a896-00c7855d3352" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -20,6 +31,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 8.5.6" level="application_server_libraries" />
-    <orderEntry type="library" name="Utils" level="project" />
+    <orderEntry type="library" name="CookieUtil" level="project" />
   </component>
 </module>

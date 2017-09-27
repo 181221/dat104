@@ -8,7 +8,7 @@ CREATE TABLE Oblig2.bruker (
   kjonn       VARCHAR,
   fornavn     VARCHAR,
   etternavn   VARCHAR,
-  erKasserer  BOOLEAN,
-  harBetalt   BOOLEAN,
+  er_kasserer  BOOLEAN,
+  har_betalt   BOOLEAN,
   PRIMARY KEY(telefon)
 );

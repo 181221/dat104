@@ -3,7 +3,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-    <persistence-unit name="brukersystem" transaction-type="JTA">
+    <persistence-unit name="meldpaatilfest" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
         <class>no.pederyo.model.Bruker</class>
         <properties>

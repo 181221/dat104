@@ -4,15 +4,13 @@
     <artifact type="exploded-war" name="paameldtilfest:war exploded">
       <output-path>$PROJECT_DIR$/out/artifacts/paameldtilfest_war_exploded</output-path>
       <root id="root">
-        <element id="javaee-facet-resources" facet="paameldtilfest/web/Web" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
             <element id="module-output" name="paameldtilfest" />
           </element>
-          <element id="directory" name="lib">
-            <element id="library" level="project" name="Utils" />
-          </element>
+          <element id="directory" name="lib" />
         </element>
+        <element id="javaee-facet-resources" facet="paameldtilfest/web/Web" />
       </root>
     </artifact>
   </component>
@@ -93,13 +91,16 @@
     </data-source>
   </component>
   <component name="libraryTable">
-    <library name="Utils">
+    <library name="CookieUtil">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils" />
+        <root url="jar://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils/CookieUtil.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils/FlashUtil.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils/InnloggingUtil.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils/SHA-512.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils/ValidatorUtil.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/../../../h181221.github.io/dat104/JARS/Utils" recursive="false" />
     </library>
   </component>
   <component name="masterDetails">
