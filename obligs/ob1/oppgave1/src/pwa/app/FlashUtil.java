@@ -1,4 +1,4 @@
-package pwa.app;
+package no.pederyo.app;
 
 import pwa.model.Bruker;
 
