@@ -17,10 +17,22 @@ public class ValidatorTest {
     private String f4 = "Pederderpederpederpederpederpederpederpederpe";
     private String f5 = "peDer";
     private String f6 = "P";
+
+    private String t0 = "123";
+    private String t1 = "12345678";
+    private String t2 = "1234567812345678";
     @BeforeEach
     void setUp() {
 
     }
+
+    @Test
+    void isValidTelfon() {
+        assertTrue(ValidatorUtil.isValidTelefon(t1));
+        assertFalse(ValidatorUtil.isValidTelefon(t0));
+        assertFalse(ValidatorUtil.isValidTelefon(t0));
+    }
+
     @Test
     void isValidfornavn() {
         assertTrue(ValidatorUtil.isValidfornavn(f0));
@@ -31,5 +43,6 @@ public class ValidatorTest {
         assertFalse(ValidatorUtil.isValidfornavn(f5));
         assertFalse(ValidatorUtil.isValidfornavn(f6));
     }
+
 
 }

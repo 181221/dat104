@@ -55,7 +55,7 @@ public class ValidatorUtil {
      * @return
      */
     public static boolean isValidTelefon(String telefon) {
-        return telefon.matches("^[A-Z]\\p{L}{2,20}");
+        return telefon.length() == 8;
     }
 
     /**
