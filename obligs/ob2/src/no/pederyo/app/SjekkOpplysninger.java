@@ -28,9 +28,11 @@ public class SjekkOpplysninger {
     }
 
     /**
-     * Sjekker cookies kaller på sjekkParams for å sjekke om de er gyldig
+     * Sjekker cookies kaller på sjekkParams for å sjekke om de er gyldig.
+     * sjekkParams sjekker fornavn, etternavn og mobil er riktig.
+     * Escaper HTML.
      * @param cookies
-     * @return
+     * @return returnerer sann om fornavn, etternavn og mobil er Ok.
      */
     public static boolean sjekkCookies(List<Cookie> cookies) {
         for(int i = 0; i < cookies.size(); i ++) {

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import static no.pederyo.app.SjekkOpplysninger.sjekkCookies;
 import static no.pederyo.app.SjekkOpplysninger.sjekkPersonOpplysninger;
+import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 
 /**
  * Created by Peder on 27.09.2017.
@@ -17,16 +18,22 @@ import static no.pederyo.app.SjekkOpplysninger.sjekkPersonOpplysninger;
 @WebServlet(name = "paamelding", urlPatterns = "/")
 public class LandingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Boolean riktig = false;
         List<Cookie> cookies = sjekkPersonOpplysninger(request);
         if(sjekkCookies(cookies)) {
-            // det er verdier i alle cookiesene nå må Eg sjekke fnavn etternavn og mobil.
+            //legg til bruker i databasen
+            riktig = true;
+            request.setAttribute("riktig", riktig);
         }else {
-            System.out.println("du har et par feil her");
+            request.setAttribute("riktig", riktig);
         }
-        //hentPersonOpplysninger(request);
+        response.sendRedirect(PAAMELDING_URL);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if((boolean)request.getSession().getAttribute("riktig")) {
+            response.sendRedirect("");
+        }
         request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
     }
 

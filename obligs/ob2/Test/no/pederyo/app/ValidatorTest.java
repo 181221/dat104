@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class ValidatorTest {
     private String f0 = "Pæåder";
-    private String f1 = "Peder";
-    private String f2 = "peder";
+    private String f1 = "Pe-der";
+    private String f2 = "Ped-Wiig Ålener";
     private String f3 = "pederpederpederpederpederpederpederpeder";
     private String f4 = "Pederderpederpederpederpederpederpederpederpe";
     private String f5 = "peDer";
@@ -37,11 +37,12 @@ public class ValidatorTest {
     void isValidfornavn() {
         assertTrue(ValidatorUtil.isValidfornavn(f0));
         assertTrue(ValidatorUtil.isValidfornavn(f1));
-        assertFalse(ValidatorUtil.isValidfornavn(f2));
+        assertTrue(ValidatorUtil.isValidfornavn(f2));
         assertFalse(ValidatorUtil.isValidfornavn(f3));
         assertFalse(ValidatorUtil.isValidfornavn(f4));
         assertFalse(ValidatorUtil.isValidfornavn(f5));
         assertFalse(ValidatorUtil.isValidfornavn(f6));
     }
+
 
 }
