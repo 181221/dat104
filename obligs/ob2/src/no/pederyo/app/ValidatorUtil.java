@@ -49,9 +49,9 @@ public class ValidatorUtil {
         return fornavn.matches("^[A-ZØÆÅ][A-ZÆØÅa-zæøå\\-\\ \\']{1,19}$");
     }
 
-    /*public static boolean isValidetternavn(String etternavn) {
-
-    }*/
+    public static boolean isValidetternavn(String etternavn) {
+        return etternavn.matches("^[A-ZØÆÅ][A-ZÆØÅa-zæøå\\-\\']{1,19}$");
+    }
     /**
      * Mobil skal være eksakt 8 siffer, ingenting annet
      * @param telefon
