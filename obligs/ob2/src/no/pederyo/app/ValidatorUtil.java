@@ -15,10 +15,6 @@ public class ValidatorUtil {
         return n != null && n.matches("^[\\d]+$");
     }
 
-    public static boolean isValidSubmitType(String submit) {
-        return submit != null && (submit.equals("Slett") || submit.equals("Submit"));
-    }
-
     /**
      * Renser strengen for <, >, &, ' med html encoding
      * @param s Strengen som skal renses
@@ -45,12 +41,21 @@ public class ValidatorUtil {
     }
 
     /**
-     * Sann om brukernavn ikke er null, "" eller mindre enn 20
-     * @param username
+     * Fornavn skal være 2-20 tegn og kan inneholde bokstaver (inkl. æøåÆØÅ),
+     * @param fornavn
      * @return
      */
-    public static boolean isValidUsername(String username) {
-        return username != null && !username.equals("") && username.length() < 20;
+    public static boolean isValidfornavn(String fornavn) {
+        return fornavn.matches("^[A-Z]\\p{L}{2,20}");
+    }
+
+    /**
+     * Mobil skal være eksakt 8 siffer, ingenting annet
+     * @param telefon
+     * @return
+     */
+    public static boolean isValidTelefon(String telefon) {
+        return telefon.matches("^[A-Z]\\p{L}{2,20}");
     }
 
     /**
