@@ -18,13 +18,14 @@ public class SjekkOpplysninger {
      */
     public static boolean sjekkParams(String type, String param) {
         switch (type) {
-            case "fornavn": case "etternavn":
+            case "fornavn":
                 return ValidatorUtil.isValidfornavn(param);
+            case "etternavn":
+                return ValidatorUtil.isValidetternavn(param);
             case "mobil":
                 return ValidatorUtil.isValidNumber(param);
-            default:
-                return false;
         }
+        return false;
     }
 
     /**
@@ -35,11 +36,9 @@ public class SjekkOpplysninger {
      * @return returnerer sann om fornavn, etternavn og mobil er Ok.
      */
     public static boolean sjekkCookies(List<Cookie> cookies) {
-        for(int i = 0; i < cookies.size(); i ++) {
+        for(int i = 0; i < cookies.size()-1; i ++) {
             if(!sjekkParams(cookies.get(i).getName(), cookies.get(i).getValue())) {
                 return false;
-            }else {
-                ValidatorUtil.escapeHtml(cookies.get(i).getValue());
             }
         }
         return true;
