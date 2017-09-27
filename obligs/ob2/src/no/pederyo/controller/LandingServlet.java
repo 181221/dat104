@@ -1,8 +1,5 @@
 package no.pederyo.controller;
 
-import no.hvl.dat104.app.CookiesUtil;
-import no.pederyo.app.ValidatorUtil;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -10,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
+import static no.pederyo.app.SjekkOpplysninger.sjekkCookies;
+import static no.pederyo.app.SjekkOpplysninger.sjekkPersonOpplysninger;
 
 /**
  * Created by Peder on 27.09.2017.
@@ -32,25 +29,5 @@ public class LandingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
     }
-    private boolean sjekkCookies(List<Cookie> cookies) {
-        for(int i = 0; i < cookies.size(); i ++) {
-            if(!(ValidatorUtil.isNotNull0(cookies.get(i).getValue()))) {
-                System.out.println("feil her:" + cookies.get(i).getValue());
-                return false;
-            }else {
-                ValidatorUtil.escapeHtml(cookies.get(i).getValue());
-            }
-        }
-        return true;
-    }
-    private List<Cookie> sjekkPersonOpplysninger(HttpServletRequest request) {
-        Enumeration<String> k = request.getParameterNames();
-        List<Cookie> cookies = new ArrayList<>();
-        while (k.hasMoreElements()){
-            String param = k.nextElement();
-            Cookie ny = new Cookie(param,request.getParameter(param));
-            cookies.add(ny);
-        }
-        return cookies;
-    }
+
 }

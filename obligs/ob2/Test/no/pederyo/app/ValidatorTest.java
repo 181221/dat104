@@ -44,5 +44,4 @@ public class ValidatorTest {
         assertFalse(ValidatorUtil.isValidfornavn(f6));
     }
 
-
 }
