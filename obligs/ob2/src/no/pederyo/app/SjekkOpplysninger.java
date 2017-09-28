@@ -5,12 +5,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by Peder on 27.09.2017.
  */
 public class SjekkOpplysninger {
+    public static final String FEIL_FORNAVN = "Fornavn skal være 2-20 tegn og kan inneholde bokstaver (inkl. æøåÆØÅ) bindestrek og mellomrom. Første tegn skal være en stor bokstav.";
+    public static final String FEIL_ETTERNAVN = "Etternavn skal være 2-20 tegn og kan inneholde bokstaver (inkl. æøåÆØÅ) og bindestrek (IKKE mellomrom). Første tegn skal være en stor bokstav.";
+    public static final String FEIL_MOBIL = "Mobil skal være eksakt 8 siffer";
     /**
      * Sjekker parameter typene ved a kalle på ValidatorUtil sjekker om de er gyldig
      * @param type fornavn, etternavn og mobil
@@ -36,19 +40,19 @@ public class SjekkOpplysninger {
      * @param cookies
      * @return returnerer sann om fornavn, etternavn og mobil er Ok.
      */
-    public static boolean sjekkCookies(List<Cookie> cookies) {
-        List<String> meldinger = new ArrayList<>();
-        FlashUtil flash = new FlashUtil();
+    public static boolean sjekkCookies(List<Cookie> cookies, HttpServletRequest request) {
+        HashMap<String, String> feilmeldinger = new HashMap<>();
+        String[] meldinger = {FEIL_FORNAVN,FEIL_ETTERNAVN,FEIL_MOBIL};
         Boolean feil = true;
         for(int i = 0; i < cookies.size()-1; i ++) {
             String navn = cookies.get(i).getName();
             String verdi = cookies.get(i).getValue();
             if(!sjekkParams(navn, verdi)) {
-                meldinger.add(navn);
+                feilmeldinger.put(navn,meldinger[i]);
                 feil = false;
             }
         }
-        flash.setMeldinger(meldinger);
+        request.getSession().setAttribute("feilmeldinger", feilmeldinger);
         return feil;
     }
 

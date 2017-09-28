@@ -3,6 +3,7 @@ package no.pederyo.app;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,7 +55,8 @@ class SjekkOpplysningerTest {
 
     @Test
     void sjekkCookies() {
-        assertTrue(SjekkOpplysninger.sjekkCookies(cookies));
+        HttpServletRequest request = null;
+        assertTrue(SjekkOpplysninger.sjekkCookies(cookies, request));
     }
 
 }

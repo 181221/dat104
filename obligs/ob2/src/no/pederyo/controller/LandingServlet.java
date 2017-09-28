@@ -22,7 +22,7 @@ public class LandingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean riktig = false;
         List<Cookie> cookies = sjekkPersonOpplysninger(request, response);
-        if(sjekkCookies(cookies)) {
+        if(sjekkCookies(cookies, request)) {
             //legg til bruker i databasen
             riktig = true;
             request.getSession().setAttribute("riktig", riktig);
