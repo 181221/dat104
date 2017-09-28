@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import static no.pederyo.app.SjekkOpplysninger.sjekkCookies;
 import static no.pederyo.app.SjekkOpplysninger.sjekkPersonOpplysninger;
+import static no.pederyo.controller.UrlMappings.PAAMELDFEIL;
 import static no.pederyo.controller.UrlMappings.PAAMELDINGSBEKREFTELSE_URL;
 import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 
@@ -20,7 +21,7 @@ import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 public class LandingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean riktig = false;
-        List<Cookie> cookies = sjekkPersonOpplysninger(request);
+        List<Cookie> cookies = sjekkPersonOpplysninger(request, response);
         if(sjekkCookies(cookies)) {
             //legg til bruker i databasen
             riktig = true;
@@ -36,6 +37,8 @@ public class LandingServlet extends HttpServlet {
         if(b != null) {
             if((boolean) b  == true){
                 response.sendRedirect(PAAMELDINGSBEKREFTELSE_URL);
+            }else {
+                response.sendRedirect(PAAMELDFEIL);
             }
         }else {
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);

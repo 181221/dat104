@@ -2,6 +2,7 @@ package no.pederyo.app;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -56,12 +57,13 @@ public class SjekkOpplysninger {
      * @param request
      * @return
      */
-    public static List<Cookie> sjekkPersonOpplysninger(HttpServletRequest request) {
+    public static List<Cookie> sjekkPersonOpplysninger(HttpServletRequest request, HttpServletResponse response) {
         Enumeration<String> k = request.getParameterNames();
         List<Cookie> cookies = new ArrayList<>();
         while (k.hasMoreElements()){
             String param = k.nextElement();
             Cookie ny = new Cookie(param,request.getParameter(param));
+            response.addCookie(ny);
             cookies.add(ny);
         }
         return cookies;

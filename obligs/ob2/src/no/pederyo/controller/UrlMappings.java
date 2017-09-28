@@ -6,6 +6,7 @@ package no.pederyo.controller;
 public class UrlMappings {
     public static final String PAAMELDING_URL = "/";
     public static final String PAAMELDINGSBEKREFTELSE_URL = "/paameldbekreft";
+    public static final String PAAMELDFEIL = "/paameldfeil";
 
 
 }
