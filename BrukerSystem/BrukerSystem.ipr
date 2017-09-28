@@ -16,13 +16,25 @@
         </element>
       </root>
     </artifact>
+    <artifact type="war" name="BrukerSystem:war">
+      <output-path>$PROJECT_DIR$/out/artifacts/BrukerSystem_war</output-path>
+      <root id="archive" name="BrukerSystem_war.war">
+        <element id="artifact" artifact-name="BrukerSystem:war exploded" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="postgresql-42.0.0.jre6" />
+            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
+          </element>
+        </element>
+      </root>
+    </artifact>
   </component>
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="eff17fae-e5e7-4f8f-ac9c-dab3130cbe55">
+    <data-source source="LOCAL" name="kalliainen@localhost" uuid="eff17fae-e5e7-4f8f-ac9c-dab3130cbe55">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://kalliainen.ddns.net:5432/pederyo</jdbc-url>
     </data-source>
   </component>
   <component name="InspectionProjectProfileManager">
@@ -45,13 +57,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="dataSourceStorageLocal">
-    <data-source name="postgres@localhost" uuid="eff17fae-e5e7-4f8f-ac9c-dab3130cbe55">
-      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
+    <data-source name="kalliainen@localhost" uuid="eff17fae-e5e7-4f8f-ac9c-dab3130cbe55">
+      <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.0" driver-name="PostgreSQL JDBC Driver" driver-version="42.0.0.jre6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
+      <user-name>pederyo</user-name>
       <introspection-schemas>postgres:brukersystem</introspection-schemas>
     </data-source>
   </component>
@@ -67,6 +79,21 @@
     <library name="Java EE 6-Java EE 6">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="javax.servlet.jsp.jstl-1.2.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/dat104/JARS/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/dat104/JARS/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="postgresql-42.0.0.jre6">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../h181221.github.io/dat104/JARS/postgresql-42.0.0.jre6.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

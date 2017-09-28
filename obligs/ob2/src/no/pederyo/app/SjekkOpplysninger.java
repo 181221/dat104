@@ -36,12 +36,19 @@ public class SjekkOpplysninger {
      * @return returnerer sann om fornavn, etternavn og mobil er Ok.
      */
     public static boolean sjekkCookies(List<Cookie> cookies) {
+        List<String> meldinger = new ArrayList<>();
+        FlashUtil flash = new FlashUtil();
+        Boolean feil = true;
         for(int i = 0; i < cookies.size()-1; i ++) {
-            if(!sjekkParams(cookies.get(i).getName(), cookies.get(i).getValue())) {
-                return false;
+            String navn = cookies.get(i).getName();
+            String verdi = cookies.get(i).getValue();
+            if(!sjekkParams(navn, verdi)) {
+                meldinger.add(navn);
+                feil = false;
             }
         }
-        return true;
+        flash.setMeldinger(meldinger);
+        return feil;
     }
 
     /**

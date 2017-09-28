@@ -13,7 +13,13 @@ import java.security.NoSuchAlgorithmException;
 public class GenererPassord {
 
     public static String nyttPassord() {
-        return "heisanndu";
+        char[] alfabet = "abcdefghijklmnopqrstuvwxyzæøå".toCharArray();
+        String passord = "";
+        for (int i = 0; i < 5; i ++) {
+            int plass =(int) (Math.random()*alfabet.length);
+            passord += alfabet[plass];
+        }
+        return passord;
     }
     public static void oppdaterNyttPassord(HttpServletRequest request, String passord ,BrukerEAO brukerEAO) throws NoSuchAlgorithmException{
         Bruker b = (Bruker) request.getSession().getAttribute("currentUser");
