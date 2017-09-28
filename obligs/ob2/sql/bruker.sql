@@ -12,3 +12,4 @@ CREATE TABLE Oblig2.bruker (
   har_betalt   BOOLEAN,
   PRIMARY KEY(telefon)
 );
+INSERT INTO Oblig2.bruker (telefon, fornavn) VALUES ('12345678', 'peder')

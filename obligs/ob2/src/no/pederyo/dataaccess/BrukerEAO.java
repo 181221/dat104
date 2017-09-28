@@ -17,7 +17,8 @@ public class BrukerEAO {
     public void leggTilBruker(Bruker b) {
         em.persist(b);
     }
-    public Bruker finnBruker(Integer id) {
+
+    public Bruker finnBruker(String id) {
         return em.find(Bruker.class, id);
     }
 

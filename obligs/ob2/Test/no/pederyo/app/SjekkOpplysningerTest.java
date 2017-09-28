@@ -44,6 +44,7 @@ class SjekkOpplysningerTest {
         cookies.add(cookie);
         cookies.add(cookie1);
         cookies.add(cookie2);
+
     }
 
     @Test
@@ -51,12 +52,6 @@ class SjekkOpplysningerTest {
         assertTrue(SjekkOpplysninger.sjekkParams(type, f));
         assertTrue(SjekkOpplysninger.sjekkParams(type1, f1));
         assertTrue(SjekkOpplysninger.sjekkParams(type2, mobil));
-    }
-
-    @Test
-    void sjekkCookies() {
-        HttpServletRequest request = null;
-        assertTrue(SjekkOpplysninger.sjekkCookies(cookies, request));
     }
 
 }

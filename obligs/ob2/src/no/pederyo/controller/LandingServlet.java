@@ -1,5 +1,10 @@
 package no.pederyo.controller;
 
+import no.pederyo.app.ValidatorUtil;
+import no.pederyo.dataaccess.BrukerEAO;
+import no.pederyo.model.Bruker;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -19,13 +24,20 @@ import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
  */
 @WebServlet(name = "paamelding", urlPatterns = "/")
 public class LandingServlet extends HttpServlet {
+    @EJB
+    BrukerEAO brukerEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean riktig = false;
         List<Cookie> cookies = sjekkPersonOpplysninger(request, response);
         if(sjekkCookies(cookies, request)) {
-            //legg til bruker i databasen
-            riktig = true;
-            request.getSession().setAttribute("riktig", riktig);
+            //TODO
+            if(sjekkOmtelefonEksisterer(request)) {
+                riktig = true;
+                opprettBruker(request);
+                request.getSession().setAttribute("riktig", riktig);
+            }else {
+                request.getSession().setAttribute("riktig", riktig);
+            }
         }else {
             request.getSession().setAttribute("riktig", riktig);
         }
@@ -43,8 +55,23 @@ public class LandingServlet extends HttpServlet {
         }else {
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
         }
+    }
+    private void opprettBruker(HttpServletRequest request) {
+       String fornavn = ValidatorUtil.escapeHtml(request.getParameter("fornavn"));
+       String etternavn = ValidatorUtil.escapeHtml(request.getParameter("etternavn"));
+       String mobil = ValidatorUtil.escapeHtml(request.getParameter("mobil"));
+       String kjonn = ValidatorUtil.escapeHtml(request.getParameter("kjonn"));
+        System.out.println(fornavn);
+        System.out.println(etternavn);
+        System.out.println(mobil);
+        System.out.println(kjonn);
 
+    }
 
+    private boolean sjekkOmtelefonEksisterer(HttpServletRequest request) {
+        String mobil = request.getParameter("mobil");
+        Bruker b = brukerEAO.finnBruker(mobil);
+        return b == null;
     }
 
 }

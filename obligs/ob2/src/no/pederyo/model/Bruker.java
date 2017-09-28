@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "bruker", schema = "oblig2")
 public class Bruker {
     @Id
-    private String tlf;
+    private String telefon;
 
     @Column(name = "kjonn")
     private String kjonn;
@@ -33,21 +33,13 @@ public class Bruker {
         this("","","","",null,null);
     }
 
-    public Bruker(String tlf, String kjonn, String fornavn, String etternavn, Boolean erKasserer, Boolean harBetalt) {
-        this.tlf = tlf;
+    public Bruker(String telefon, String kjonn, String fornavn, String etternavn, Boolean erKasserer, Boolean harBetalt) {
+        this.telefon = telefon;
         this.kjonn = kjonn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.erKasserer = erKasserer;
         this.harBetalt = harBetalt;
-    }
-
-    public String getTlf() {
-        return tlf;
-    }
-
-    public void setTlf(String tlf) {
-        this.tlf = tlf;
     }
 
     public String getKjonn() {
@@ -88,5 +80,13 @@ public class Bruker {
 
     public void setHarBetalt(Boolean harBetalt) {
         this.harBetalt = harBetalt;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 }
