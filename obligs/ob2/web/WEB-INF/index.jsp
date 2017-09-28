@@ -1,6 +1,16 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:if test="${flash == 'Error'}">
+  <p class="alert alert-danger"> ${melding}</p>
+  <c:remove var="flash" scope="session" />
+</c:if>
+<c:if test="${flash == 'Success'}">
+  <p class="alert alert-success"> ${melding}</p>
+  <c:remove var="flash" scope="session" />
+</c:if>
+
 <form action="/" method="POST">
   <fieldset>
     <legend>Personlige data</legend>

@@ -24,7 +24,7 @@ public class SjekkOpplysninger {
             case "etternavn":
                 return ValidatorUtil.isValidetternavn(param);
             case "mobil":
-                return ValidatorUtil.isValidNumber(param);
+                return ValidatorUtil.isValidTelefon(param);
         }
         return false;
     }

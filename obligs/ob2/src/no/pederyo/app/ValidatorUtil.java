@@ -58,7 +58,7 @@ public class ValidatorUtil {
      * @return
      */
     public static boolean isValidTelefon(String telefon) {
-        return telefon.length() == 8;
+        return telefon.length() == 8 && isValidNumber(telefon);
     }
 
     /**
