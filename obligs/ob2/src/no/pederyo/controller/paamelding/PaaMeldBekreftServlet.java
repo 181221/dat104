@@ -1,8 +1,9 @@
-package no.pederyo.controller;
+package no.pederyo.controller.paamelding;
 
 import no.pederyo.app.CookiesUtil;
 import no.pederyo.app.FlashUtil;
 import no.pederyo.app.InnloggingUtil;
+import no.pederyo.controller.UrlMappings;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

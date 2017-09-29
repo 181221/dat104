@@ -1,4 +1,4 @@
-package no.pederyo.controller;
+package no.pederyo.controller.paamelding;
 
 import no.pederyo.app.InnloggingUtil;
 import no.pederyo.app.ValidatorUtil;

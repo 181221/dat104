@@ -1,4 +1,4 @@
-package no.pederyo.controller;
+package no.pederyo.controller.info;
 
 import no.pederyo.app.InnloggingUtil;
 import no.pederyo.dataaccess.BrukerEAO;

@@ -1,4 +1,4 @@
-package no.pederyo.controller;
+package no.pederyo.controller.login;
 
 import no.pederyo.app.FlashUtil;
 import no.pederyo.app.InnloggingUtil;
@@ -27,23 +27,19 @@ public class LoginServlet extends HttpServlet {
     private BrukerEAO brukerEAO;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mobil = request.getParameter("mobil");
-        System.out.println();
         if(ValidatorUtil.isValidTelefon(mobil)) {
             Bruker b = brukerEAO.finnBruker(mobil);
-            System.out.println(b.getFornavn());
             if(b != null) {
                 InnloggingUtil.loggInnSom(request, b);
             }
         }
         response.sendRedirect(LOGIN);
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(InnloggingUtil.isInnlogget(request)) {
             response.sendRedirect(DELTAGERLISTE);
         }else {
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request,response);
         }
-
     }
 }

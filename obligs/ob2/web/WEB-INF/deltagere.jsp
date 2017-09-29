@@ -18,14 +18,19 @@
         </tr>
     </thead>
     <tbody>
+
+    <%//TODO%>
     <c:forEach var ="bruker" items="${brukere}">
+        <c:if test="${currentUser.mobil = bruker.mobil && bruker.harBetalt}">
+
+        </c:if>
         <tr>
             <c:choose>
                 <c:when test="${bruker.kjonn eq 'kvinne'}"><td>&#9792;</td></c:when>
                 <c:otherwise><td>&#9794;</td></c:otherwise>
             </c:choose>
             <c:choose>
-                <c:when test="${currentUser.harBetalt}">
+                <c:when test="${currentUser.harBetalt == true}">
                     <td bgcolor="#7FFF00"><c:out value="${bruker.fornavn}"/> <c:out value="${bruker.etternavn}"/></td>
                 </c:when>
                 <c:otherwise><td bgcolor="#ffaaaa"><c:out value="${bruker.fornavn}"/> <c:out value="${bruker.etternavn}"/></td></c:otherwise>

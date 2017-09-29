@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>LoggInnKassererServlet</servlet-name>
-        <servlet-class>no.pederyo.controller.LoggInnKassererServlet</servlet-class>
+        <servlet-class>no.pederyo.controller.login.LoggInnKassererServlet</servlet-class>
         <init-param>
             <param-name>kassererPassord</param-name>
             <param-value>10203040</param-value>

@@ -1,4 +1,4 @@
-package no.pederyo.controller;
+package no.pederyo.controller.login;
 
 import no.pederyo.app.InnloggingUtil;
 
