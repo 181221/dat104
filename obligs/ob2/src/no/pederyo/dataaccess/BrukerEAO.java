@@ -26,8 +26,11 @@ public class BrukerEAO {
     }
 
     public List<Bruker> finnAlleBrukere() {
-        Query b = em.createQuery("SELECT b FROM Bruker b WHERE b.erKasserer = FALSE ORDER BY b.fornavn, b.etternavn");
+        Query b = em.createQuery("SELECT b FROM Bruker b ORDER BY b.fornavn, b.etternavn");
         return b.getResultList();
+    }
+    public void oppdaterBruker(Bruker b) {
+        em.merge(b);
     }
 
 }

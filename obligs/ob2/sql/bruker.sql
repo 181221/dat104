@@ -8,8 +8,6 @@ CREATE TABLE Oblig2.bruker (
   kjonn       VARCHAR,
   fornavn     VARCHAR,
   etternavn   VARCHAR,
-  er_kasserer  BOOLEAN,
   har_betalt   BOOLEAN,
   PRIMARY KEY(telefon)
 );
-INSERT INTO Oblig2.bruker (telefon, fornavn, er_kasserer) VALUES ('55960636','peder',TRUE)

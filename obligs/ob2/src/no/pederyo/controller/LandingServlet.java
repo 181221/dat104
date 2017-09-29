@@ -71,7 +71,6 @@ public class LandingServlet extends HttpServlet {
         Bruker b = new Bruker();
         b.setFornavn(fornavn);
         b.setEtternavn(etternavn);
-        b.setErKasserer(false);
         b.setHarBetalt(false);
         b.setTelefon(mobil);
         b.setKjonn(kjonn);

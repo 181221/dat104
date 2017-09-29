@@ -26,8 +26,7 @@ public class LoggInnKassererServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String passord = request.getParameter("passord");
         if(ValidatorUtil.isValidTelefon(passord)) {
-            Bruker b = brukerEAO.finnBruker(passord);
-            if(b.getTelefon().equals(getServletConfig().getInitParameter("kassererPassord"))){
+            if(passord.equals(getServletConfig().getInitParameter("kassererPassord"))){
                 InnloggingUtil.loggInnSomKasserer(request);
             }
         }
@@ -35,7 +34,6 @@ public class LoggInnKassererServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(InnloggingUtil.isInnLoggetSomKasserer(request));
         if(InnloggingUtil.isInnLoggetSomKasserer(request)) {
             response.sendRedirect(BETALINGSINFO);
         }else {

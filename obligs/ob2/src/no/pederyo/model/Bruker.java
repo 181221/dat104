@@ -23,9 +23,6 @@ public class Bruker {
     @Column(name = "etternavn")
     private String etternavn;
 
-    @Column(name="er_kasserer")
-    private Boolean erKasserer;
-
     @Column(name = "har_betalt")
     private Boolean harBetalt;
 
@@ -38,7 +35,6 @@ public class Bruker {
         this.kjonn = kjonn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
-        this.erKasserer = erKasserer;
         this.harBetalt = harBetalt;
     }
 
@@ -64,14 +60,6 @@ public class Bruker {
 
     public void setEtternavn(String etternavn) {
         this.etternavn = etternavn;
-    }
-
-    public Boolean getErKasserer() {
-        return erKasserer;
-    }
-
-    public void setErKasserer(Boolean erKasserer) {
-        this.erKasserer = erKasserer;
     }
 
     public Boolean getHarBetalt() {

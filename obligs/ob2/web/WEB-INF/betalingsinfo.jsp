@@ -9,16 +9,35 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp"/>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<jsp:useBean id="formaterTlf" class="no.pederyo.app.TelefonUtil"/>
 <h2>Betalingsoversikt</h2>
-<form action=<%=BETALINGSINFO%> method="post">
-    <table border="1">
-        <tr bgcolor="#cccccc"><th align="left">Navn</th><th>Mobil</th><th>Betalingsstatus</th></tr>
-        <tr><td>Arne And</td><td>123 45 678</td><td align="center">Betaling mottatt</td></tr>
-        <tr><td>Arne Arnesen</td><td>901 23 456</td><td><input type="submit" name="90123456" value="Registrer betaling" /></td></tr>
-        <tr><td>Berit Beritsen</td><td>876 54 321</td><td><input type="submit" name="87654321" value="Registrer betaling" /></td></tr>
-    </table>
-</form>
+<table border ="1">
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Mobil</th>
+            <th>Betalingsstatus</th>
+        </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="bruker" items="${brukere}">
+        <tr>
+            <td><c:out value ="${bruker.fornavn}"/>  <c:out value ="${bruker.etternavn}"/></td>
+            <td><c:out value="${formaterTlf.formaterTlf(bruker.telefon)}"/></td>
+            <c:choose>
+                <c:when test = "${bruker.harBetalt == true}"><td>Betaling motatt</td></c:when>
+                <c:otherwise>
+                    <td>
+                        <form action=<%=BETALINGSINFO%> method="post">
+                            <input type="hidden" name="mobil" value="${bruker.telefon}">
+                            <input type="submit" value="Registrer betaling">
+                        </form>
+                    </td>
+                </c:otherwise>
+            </c:choose>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 <p><a href="kassererlogin.html">Ferdig</a></p>
-
 <jsp:include page="./partials/footer.jsp"/>
