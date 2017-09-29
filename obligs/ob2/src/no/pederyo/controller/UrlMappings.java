@@ -7,6 +7,7 @@ public class UrlMappings {
     public static final String PAAMELDING_URL = "/";
     public static final String PAAMELDINGSBEKREFTELSE_URL = "/paameldbekreft";
     public static final String PAAMELDFEIL = "/paameldfeil";
+    public static final String DELTAGERLISTE = "/deltagere";
 
 
 }

@@ -57,7 +57,7 @@ public class RegistrerBrukerSerlvet extends HttpServlet {
             if(brukerEAO.sjekkOmBrukerErRegistrert(brukernavn)) {
                 String hashedPassord = SHA1.SHA1Hash(passord);
                 Bruker ny = brukerEAO.leggTil(brukernavn, hashedPassord);
-                FlashUtil.registrertBruker(req);
+                FlashUtil.Flash(req, "Success","Velkommen");
                 String timeout = getServletContext().getInitParameter("timeout");
                 InnloggingUtil.loggInnSom(req, ny, timeout);
             }else {

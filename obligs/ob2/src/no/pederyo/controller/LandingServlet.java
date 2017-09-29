@@ -1,5 +1,6 @@
 package no.pederyo.controller;
 
+import no.pederyo.app.InnloggingUtil;
 import no.pederyo.app.ValidatorUtil;
 import no.pederyo.dataaccess.BrukerEAO;
 import no.pederyo.model.Bruker;
@@ -30,10 +31,11 @@ public class LandingServlet extends HttpServlet {
         Boolean riktig = false;
         List<Cookie> cookies = sjekkPersonOpplysninger(request, response);
         if(sjekkCookies(cookies, request)) {
-            //TODO
             if(sjekkOmtelefonEksisterer(request)) {
                 riktig = true;
-                opprettBruker(request);
+                Bruker ny = opprettBruker(request);
+                InnloggingUtil.loggInnSom(request, ny);
+                request.getSession().setAttribute("ny", ny);
                 request.getSession().setAttribute("riktig", riktig);
             }else {
                 request.getSession().setAttribute("riktig", riktig);
@@ -56,16 +58,24 @@ public class LandingServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request,response);
         }
     }
-    private void opprettBruker(HttpServletRequest request) {
+    private Bruker opprettBruker(HttpServletRequest request) {
        String fornavn = ValidatorUtil.escapeHtml(request.getParameter("fornavn"));
        String etternavn = ValidatorUtil.escapeHtml(request.getParameter("etternavn"));
        String mobil = ValidatorUtil.escapeHtml(request.getParameter("mobil"));
        String kjonn = ValidatorUtil.escapeHtml(request.getParameter("kjonn"));
-        System.out.println(fornavn);
-        System.out.println(etternavn);
-        System.out.println(mobil);
-        System.out.println(kjonn);
-
+       Bruker b = setBrukerInfo(fornavn,etternavn,mobil,kjonn);
+       brukerEAO.leggTilBruker(b);
+       return b;
+    }
+    private Bruker setBrukerInfo(String fornavn, String etternavn, String mobil, String kjonn) {
+        Bruker b = new Bruker();
+        b.setFornavn(fornavn);
+        b.setEtternavn(etternavn);
+        b.setErKasserer(false);
+        b.setHarBetalt(false);
+        b.setTelefon(mobil);
+        b.setKjonn(kjonn);
+        return b;
     }
 
     private boolean sjekkOmtelefonEksisterer(HttpServletRequest request) {

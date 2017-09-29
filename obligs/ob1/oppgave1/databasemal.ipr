@@ -19,6 +19,7 @@
         <element id="directory" name="WEB-INF">
           <element id="directory" name="lib">
             <element id="library" level="project" name="postgresql-42.0.0.jre6" />
+            <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
           </element>
         </element>
       </root>
@@ -224,11 +225,20 @@
     </data-source>
   </component>
   <component name="libraryTable">
+    <library name="javax.servlet.jsp.jstl-1.2.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../../../h181221.github.io/dat104/JARS/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../../h181221.github.io/dat104/JARS/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="postgresql-42.0.0.jre6">
       <CLASSES>
         <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/postgresql-42.0.0.jre6.jar!/" />
         <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
         <root url="jar://$USER_HOME$/Dropbox/programmering/eclipselink/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../../h181221.github.io/dat104/JARS/Utils/FlashUtil.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

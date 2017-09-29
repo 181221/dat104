@@ -1,4 +1,4 @@
-<%--
+<%@ page import="static no.pederyo.controller.UrlMappings.DELTAGERLISTE" %><%--
   Created by IntelliJ IDEA.
   User: Peder
   Date: 27.09.2017
@@ -11,6 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<p>du er bekreftet</p>
+<h2>Påmeldingsbekreftelse</h2>
+<p>Påmeldingen er mottatt for</p>
+<p>&nbsp;&nbsp;&nbsp;${ny.fornavn}<br/>
+    &nbsp;&nbsp;&nbsp;${ny.etternavn}<br/>
+    &nbsp;&nbsp;&nbsp;${ny.telefon}<br/>
+    &nbsp;&nbsp;&nbsp;${ny.kjonn}</p>
+<p><b>NB! Husk å betale til kassereren før festen!</b></p>
+<a href=<%= DELTAGERLISTE %>>Gå til deltagerlisten</a>
 </body>
 </html>

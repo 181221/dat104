@@ -45,6 +45,6 @@ public class InnloggingUtil {
         if (session != null) {
             session.invalidate();
         }
-        FlashUtil.loggetUt(request);
+        FlashUtil.Flash(request, "Success", "Logget deg ut!");
     }
 }

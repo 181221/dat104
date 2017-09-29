@@ -9,8 +9,6 @@
         <class>pwa.model.Bruker</class>
         <class>pwa.model.Vare</class>
         <class>pwa.model.Kurv</class>
-        <properties>
-            <property name="tomee.jpa.cdi" value="false" />
-        </properties>
     </persistence-unit>
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 </persistence>
