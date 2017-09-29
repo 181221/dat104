@@ -20,7 +20,6 @@ public class InnloggingUtil {
                 && (session.getAttribute("currentUser") != null);
     }
     public static String isInnloggetSom(HttpServletRequest request) {
-
         HttpSession session = request.getSession(false);
         return isInnlogget(request) ?
                 (String) session.getAttribute("currentUser") : null;
@@ -52,12 +51,16 @@ public class InnloggingUtil {
      * Logger inn med streng brukernavn.
      * currentUser er nå en streng.
      * @param request
-     * @param brukernavn
      */
-    public static void loggInnSom(HttpServletRequest request, String brukernavn) {
+    public static boolean isInnLoggetSomKasserer(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        return (session != null)
+                && (session.getAttribute("kasserer") != null);
+    }
+    public static void loggInnSomKasserer(HttpServletRequest request) {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
-        sesjon.setAttribute("currentUser", brukernavn);
+        sesjon.setAttribute("kasserer", "kasserer");
     }
     /**
      * logger deg ut!

@@ -10,6 +10,8 @@ public class UrlMappings {
     public static final String DELTAGERLISTE = "/deltagere";
     public static final String LOGIN="/login";
     public static final String LOGGUT="/loggut";
+    public static final String LOGGINNKASSERER="/kasserer";
+    public static final String BETALINGSINFO="/betalingsinfo";
 
 
 }

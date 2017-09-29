@@ -24,6 +24,7 @@ public class BrukerEAO {
     public Bruker finnBruker(String id) {
         return em.find(Bruker.class, id);
     }
+
     public List<Bruker> finnAlleBrukere() {
         Query b = em.createQuery("SELECT b FROM Bruker b WHERE b.erKasserer = FALSE ORDER BY b.fornavn, b.etternavn");
         return b.getResultList();
