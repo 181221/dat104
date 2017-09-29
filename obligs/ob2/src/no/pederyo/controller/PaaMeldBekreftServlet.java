@@ -2,6 +2,7 @@ package no.pederyo.controller;
 
 import no.pederyo.app.CookiesUtil;
 import no.pederyo.app.FlashUtil;
+import no.pederyo.app.InnloggingUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,13 +25,18 @@ public class PaaMeldBekreftServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean b = (boolean)request.getSession().getAttribute("riktig");
-        if(b){
-            request.getRequestDispatcher("WEB-INF/paameldbekreft.jsp").forward(request,response);
+        if(InnloggingUtil.isInnlogget(request)){
+            boolean b = (boolean)request.getSession().getAttribute("riktig");
+            if(b){
+                request.getRequestDispatcher("WEB-INF/paameldbekreft.jsp").forward(request,response);
+            }else {
+                Flash(request, "Error", "Du kan ikke gjøre det!");
+                response.sendRedirect(PAAMELDING_URL);
+            }
         }else {
-            Flash(request, "Error", "Du kan ikke gjøre det!");
             response.sendRedirect(PAAMELDING_URL);
         }
+
 
     }
 }

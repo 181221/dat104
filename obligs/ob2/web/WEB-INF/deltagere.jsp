@@ -34,5 +34,5 @@
     </c:forEach>
     </tbody>
 </table>
-<p><a href="ferdig.html">Ferdig</a></p>
+<p><a href=<%=LOGGUT%>>Ferdig</a></p>
 <jsp:include page="./partials/footer.jsp"/>
