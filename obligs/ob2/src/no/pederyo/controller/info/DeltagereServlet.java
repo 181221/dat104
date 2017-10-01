@@ -32,6 +32,10 @@ public class DeltagereServlet extends HttpServlet {
         if (InnloggingUtil.isInnlogget(request)) {
             List<Bruker> brukere = brukerEAO.finnAlleBrukere();
             request.getSession().setAttribute("brukere", brukere);
+            Bruker betaltBruker = (Bruker) request.getSession().getAttribute("currentUser");
+            if(betaltBruker.getHarBetalt()){
+                request.getSession().setAttribute("betaltBruker", betaltBruker);
+            }
             request.getRequestDispatcher("WEB-INF/deltagere.jsp").forward(request, response);
         } else {
             response.sendRedirect(PAAMELDING_URL);
