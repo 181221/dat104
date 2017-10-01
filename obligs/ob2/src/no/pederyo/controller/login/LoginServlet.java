@@ -21,7 +21,7 @@ import static no.pederyo.controller.UrlMappings.LOGIN;
 /**
  * Created by Peder on 29.09.2017.
  */
-@WebServlet(name = "LoginServlet", urlPatterns = LOGIN)
+
 public class LoginServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;

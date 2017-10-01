@@ -14,7 +14,7 @@ import static no.pederyo.controller.UrlMappings.LOGGUT;
 /**
  * Created by Peder on 29.09.2017.
  */
-@WebServlet(name = "LoggUtServlet", urlPatterns = LOGGUT)
+
 public class LoggUtServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         InnloggingUtil.loggUt(request);

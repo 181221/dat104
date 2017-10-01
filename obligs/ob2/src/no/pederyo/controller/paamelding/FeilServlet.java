@@ -16,7 +16,7 @@ import static no.pederyo.controller.UrlMappings.PAAMELDFEIL;
 /**
  * Created by Peder on 28.09.2017.
  */
-@WebServlet(name = "FeilServlet", urlPatterns = PAAMELDFEIL)
+
 public class FeilServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

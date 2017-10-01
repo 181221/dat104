@@ -21,7 +21,7 @@ import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 /**
  * Created by Peder on 29.09.2017.
  */
-@WebServlet(name = "BetalingsInfoServlet", urlPatterns = BETALINGSINFO)
+
 public class BetalingsInfoServlet extends HttpServlet {
     @EJB
     private BrukerEAO brukerEAO;

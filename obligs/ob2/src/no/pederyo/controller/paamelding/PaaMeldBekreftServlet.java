@@ -19,7 +19,7 @@ import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 /**
  * Created by Peder on 27.09.2017.
  */
-@WebServlet(name = "paamelddingsbekreftelse", urlPatterns = UrlMappings.PAAMELDINGSBEKREFTELSE_URL)
+
 public class PaaMeldBekreftServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

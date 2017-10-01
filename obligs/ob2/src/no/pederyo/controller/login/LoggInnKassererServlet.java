@@ -19,7 +19,7 @@ import static no.pederyo.controller.UrlMappings.LOGGINNKASSERER;
 /**
  * Created by Peder on 29.09.2017.
  */
-@WebServlet(name = "LoggInnKassererServlet", urlPatterns = LOGGINNKASSERER)
+
 public class LoggInnKassererServlet extends HttpServlet {
     @EJB
     BrukerEAO brukerEAO;

@@ -1,3 +1,4 @@
+<%@ page import="static no.pederyo.controller.UrlMappings.PAAMELDING_URL" %>
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,7 +7,7 @@
   <p style="color:red;">${melding}</p>
   <c:remove var="flash" scope="session" />
 </c:if>
-<form action="/" method="POST">
+<form action=<%=PAAMELDING_URL%> method="post">
   <fieldset>
     <legend>Personlige data</legend>
     <p>Fornavn: <input type="text" name="fornavn" placeholder="Arne"/></p>
@@ -16,4 +17,5 @@
       <input type="radio" name="kjonn" value="kvinne" />kvinne</p>
     <p><input type="submit" value="Meld meg på" /></p>
   </fieldset>
+</form>
 <jsp:include page="./partials/footer.jsp" />

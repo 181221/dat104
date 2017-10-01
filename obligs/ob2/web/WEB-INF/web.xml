@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
     <servlet>
         <servlet-name>LoggInnKassererServlet</servlet-name>
         <servlet-class>no.pederyo.controller.login.LoggInnKassererServlet</servlet-class>
@@ -12,4 +11,64 @@
             <param-value>10203040</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>BetalingsInfoServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.info.BetalingsInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeltagereServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.info.DeltagereServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoggUtServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.login.LoggUtServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.login.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FeilServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.paamelding.FeilServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LandingServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.paamelding.LandingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaaMeldBekreftServlet</servlet-name>
+        <servlet-class>no.pederyo.controller.paamelding.PaaMeldBekreftServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaaMeldBekreftServlet</servlet-name>
+        <url-pattern>/paameldbekreft</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LandingServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FeilServlet</servlet-name>
+        <url-pattern>/paameldfeil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoggUtServlet</servlet-name>
+        <url-pattern>/loggut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeltagereServlet</servlet-name>
+        <url-pattern>/deltagere</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BetalingsInfoServlet</servlet-name>
+        <url-pattern>/betalingsinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoggInnKassererServlet</servlet-name>
+        <url-pattern>/kasserer</url-pattern>
+    </servlet-mapping>
 </web-app>

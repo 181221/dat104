@@ -25,7 +25,7 @@ import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 /**
  * Created by Peder on 27.09.2017.
  */
-@WebServlet(name = "paamelding", urlPatterns = "/")
+
 public class LandingServlet extends HttpServlet {
     @EJB
     BrukerEAO brukerEAO;
@@ -39,6 +39,7 @@ public class LandingServlet extends HttpServlet {
                 InnloggingUtil.loggInnSom(request, ny);
                 request.getSession().setAttribute("ny", ny);
                 request.getSession().setAttribute("riktig", riktig);
+
             }else {
                 Flash(request,"Error", "Det eksisterer allerede en bruker med det telefonnummeret");
                 request.getSession().setAttribute("riktig", riktig);
