@@ -32,6 +32,9 @@ public class LoginServlet extends HttpServlet {
             if(b != null) {
                 InnloggingUtil.loggInnSom(request, b);
             }
+            Flash(request,"Error","Feil passord");
+        }else {
+            Flash(request, "Error", "Ikke gyldig telefon nummer!");
         }
         response.sendRedirect(LOGIN);
     }

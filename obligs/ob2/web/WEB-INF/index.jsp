@@ -3,14 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${flash == 'Error'}">
-  <p class="alert alert-danger"> ${melding}</p>
+  <p style="color:red;">${melding}</p>
   <c:remove var="flash" scope="session" />
 </c:if>
-<c:if test="${flash == 'Success'}">
-  <p class="alert alert-success"> ${melding}</p>
-  <c:remove var="flash" scope="session" />
-</c:if>
-
 <form action="/" method="POST">
   <fieldset>
     <legend>Personlige data</legend>

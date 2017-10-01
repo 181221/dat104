@@ -9,19 +9,10 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp"/>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<div class="container">
-    <div class="row">
-
-        <c:if test="${flash == 'Error'}">
-            <p class="alert alert-danger"> ${melding}</p>
-            <c:remove var="flash" scope="session" />
-        </c:if>
-        <c:if test="${flash == 'Success'}">
-            <p class="alert alert-success"> ${melding}</p>
-            <c:remove var="flash" scope="session" />
-        </c:if>
-    </div>
-</div>
+<c:if test="${flash == 'Error'}">
+    <p style="color:red;">${melding}</p>
+    <c:remove var="flash" scope="session" />
+</c:if>
 <h3>Logg inn</h3>
 <p>Det er kun registrerte deltagere som får se deltagerlisten.
     Logg inn ved å gi mobil-nummeret ditt.</p>

@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+
+import static no.pederyo.app.FlashUtil.Flash;
 import static no.pederyo.app.SjekkOpplysninger.sjekkCookies;
 import static no.pederyo.app.SjekkOpplysninger.sjekkPersonOpplysninger;
 import static no.pederyo.controller.UrlMappings.PAAMELDFEIL;
@@ -38,6 +40,7 @@ public class LandingServlet extends HttpServlet {
                 request.getSession().setAttribute("ny", ny);
                 request.getSession().setAttribute("riktig", riktig);
             }else {
+                Flash(request,"Error", "Det eksisterer allerede en bruker med det telefonnummeret");
                 request.getSession().setAttribute("riktig", riktig);
             }
         }else {

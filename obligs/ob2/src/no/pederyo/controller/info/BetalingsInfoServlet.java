@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static no.pederyo.app.FlashUtil.Flash;
 import static no.pederyo.controller.UrlMappings.BETALINGSINFO;
+import static no.pederyo.controller.UrlMappings.LOGGINNKASSERER;
 import static no.pederyo.controller.UrlMappings.PAAMELDING_URL;
 
 /**
@@ -37,7 +39,8 @@ public class BetalingsInfoServlet extends HttpServlet {
             request.getSession().setAttribute("brukere", brukere);
             request.getRequestDispatcher("WEB-INF/betalingsinfo.jsp").forward(request,response);
         }else {
-            response.sendRedirect(PAAMELDING_URL);
+            Flash(request, "Error", "Du må være innlogget som Kasserer for å gjøre det!");
+            response.sendRedirect(LOGGINNKASSERER);
         }
 
     }

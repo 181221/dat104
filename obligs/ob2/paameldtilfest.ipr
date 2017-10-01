@@ -17,6 +17,12 @@
         <element id="javaee-facet-resources" facet="paameldtilfest/web/Web" />
       </root>
     </artifact>
+    <artifact type="war" name="paameldtilfest:war">
+      <output-path>$PROJECT_DIR$/out/artifacts/paameldtilfest_war</output-path>
+      <root id="archive" name="paameldtilfest_war.war">
+        <element id="artifact" artifact-name="paameldtilfest:war exploded" />
+      </root>
+    </artifact>
   </component>
   <component name="ClientPropertiesManager">
     <properties class="javax.swing.AbstractButton">

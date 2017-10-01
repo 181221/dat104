@@ -9,6 +9,10 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp"/>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:if test="${flash == 'Error'}">
+    <p style="color:red;">${melding}</p>
+    <c:remove var="flash" scope="session" />
+</c:if>
 <h2>Kasserer login</h2>
 <form action=<%=LOGGINNKASSERER%> method="post">
     <fieldset>

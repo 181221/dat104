@@ -6,8 +6,6 @@
     <persistence-unit name="meldpaatilfest" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
         <class>no.pederyo.model.Bruker</class>
-        <properties>
-            <property name="tomee.jpa.cdi" value="false" />
-        </properties>
     </persistence-unit>
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 </persistence>
