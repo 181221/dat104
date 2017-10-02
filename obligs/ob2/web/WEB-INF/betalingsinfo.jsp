@@ -9,7 +9,7 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp"/>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="formaterTlf" class="no.pederyo.app.TelefonUtil"/>
+<jsp:useBean id="formaterTlf" class="no.pederyo.utils.TelefonUtil"/>
 <h2>Betalingsoversikt</h2>
 <table border ="1">
     <thead>
@@ -39,5 +39,5 @@
     </c:forEach>
     </tbody>
 </table>
-<p><a href="kassererlogin.html">Ferdig</a></p>
+<p><a href=<%=LOGGUT%>>Ferdig</a></p>
 <jsp:include page="./partials/footer.jsp"/>

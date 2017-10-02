@@ -1,4 +1,6 @@
 <%@ page import="static no.pederyo.controller.UrlMappings.PAAMELDING_URL" %>
+<%@ page import="static no.pederyo.controller.UrlMappings.LOGIN" %>
+<%@ page import="static no.pederyo.controller.UrlMappings.LOGGINNKASSERER" %>
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" %>
 <jsp:include page="./partials/header.jsp" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -18,4 +20,5 @@
     <p><input type="submit" value="Meld meg på" /></p>
   </fieldset>
 </form>
+<a href=<%=LOGIN%>>LoggInn</a> &emsp; <a href=<%=LOGGINNKASSERER%>>LoggInnKasserer</a>
 <jsp:include page="./partials/footer.jsp" />

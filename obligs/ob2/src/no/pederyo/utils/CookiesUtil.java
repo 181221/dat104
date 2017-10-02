@@ -1,4 +1,4 @@
-package no.pederyo.app;
+package no.pederyo.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

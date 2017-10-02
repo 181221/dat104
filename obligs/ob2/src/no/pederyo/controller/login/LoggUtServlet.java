@@ -1,15 +1,12 @@
 package no.pederyo.controller.login;
 
-import no.pederyo.app.InnloggingUtil;
+import no.pederyo.utils.InnloggingUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import static no.pederyo.controller.UrlMappings.LOGGUT;
 
 /**
  * Created by Peder on 29.09.2017.

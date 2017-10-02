@@ -21,4 +21,5 @@
         <p><input type="submit" value="Logg inn" /></p>
     </fieldset>
 </form>
+<a href=<%=PAAMELDING_URL%>>Meld det på her!</a> &emsp; <a href=<%=LOGIN%>>Login Som Deltager</a>
 <jsp:include page="./partials/footer.jsp"/>

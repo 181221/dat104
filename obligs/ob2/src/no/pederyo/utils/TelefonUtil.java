@@ -1,4 +1,4 @@
-package no.pederyo.app;
+package no.pederyo.utils;
 
 /**
  * Created by Peder on 28.09.2017.

@@ -1,13 +1,11 @@
 package no.pederyo.controller.login;
 
-import no.pederyo.app.InnloggingUtil;
-import no.pederyo.app.ValidatorUtil;
+import no.pederyo.utils.InnloggingUtil;
+import no.pederyo.utils.ValidatorUtil;
 import no.pederyo.dataaccess.BrukerEAO;
-import no.pederyo.model.Bruker;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +13,7 @@ import java.io.IOException;
 
 import static no.pederyo.controller.UrlMappings.BETALINGSINFO;
 import static no.pederyo.controller.UrlMappings.LOGGINNKASSERER;
+import static no.pederyo.utils.FlashUtil.Flash;
 
 /**
  * Created by Peder on 29.09.2017.
@@ -28,7 +27,11 @@ public class LoggInnKassererServlet extends HttpServlet {
         if(ValidatorUtil.isValidTelefon(passord)) {
             if(passord.equals(getServletConfig().getInitParameter("kassererPassord"))){
                 InnloggingUtil.loggInnSomKasserer(request);
+            }else {
+                Flash(request, "Error", "Feil passord");
             }
+        }else {
+            Flash(request, "Error","Ugyldig input");
         }
         response.sendRedirect(LOGGINNKASSERER);
     }

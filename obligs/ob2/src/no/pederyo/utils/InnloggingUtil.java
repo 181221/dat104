@@ -1,4 +1,4 @@
-package no.pederyo.app;
+package no.pederyo.utils;
 
 import no.pederyo.model.Bruker;
 

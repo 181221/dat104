@@ -1,17 +1,13 @@
 package no.pederyo.controller.paamelding;
 
-import no.pederyo.app.CookiesUtil;
+import no.pederyo.utils.CookiesUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
-
-import static no.pederyo.controller.UrlMappings.PAAMELDFEIL;
 
 /**
  * Created by Peder on 28.09.2017.

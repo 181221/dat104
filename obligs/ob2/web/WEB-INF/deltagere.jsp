@@ -19,31 +19,10 @@
     </thead>
     <tbody>
     <c:forEach var ="bruker" items="${brukere}">
-        <tr>
-        <c:if test="${betaltBruker.telefon eq bruker.telefon}">
-            <c:choose>
-                <c:when test="${bruker.kjonn eq 'kvinne'}">
-                    <td bgcolor="#7FFF00">&#9792;</td>
-                </c:when>
-                <c:otherwise>
-                    <td bgcolor="#7FFF00">&#9794;</td>
-                </c:otherwise>
-            </c:choose>
-            <td bgcolor="#7FFF00"><c:out value="${bruker.fornavn}"/> <c:out value="${bruker.etternavn}"/></td>
-        </c:if>
-        <c:if test="${!bruker.harBetalt}">
-            <c:choose>
-                <c:when test="${bruker.kjonn eq 'kvinne'}">
-                    <td>&#9792;</td>
-                </c:when>
-                <c:otherwise>
-                    <td>&#9794;</td>
-                </c:otherwise>
-            </c:choose>
-            <td><c:out value="${bruker.fornavn}"/> <c:out value="${bruker.etternavn}"/></td>
-        </c:if>
-
-        </tr>
+        <tr bgcolor="${currentUser.telefon eq bruker.telefon ? (bruker.harBetalt ? '#aaffaa' : '#ffaaaa'): ''}">
+            <td align="center">${bruker.kjonn eq 'mann' ? '&#9794;' : '&#9792;'}</td>
+            <td><c:out value="${bruker.fornavn} ${bruker.etternavn}" /></td>
+       </tr>
     </c:forEach>
     </tbody>
 </table>

@@ -1,4 +1,4 @@
-package no.pederyo.app;
+package no.pederyo.utils;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
