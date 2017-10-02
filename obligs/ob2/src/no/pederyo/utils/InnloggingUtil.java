@@ -46,6 +46,7 @@ public class InnloggingUtil {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
         sesjon.setAttribute("currentUser", b);
+        sesjon.setMaxInactiveInterval(60);
     }
     /**
      * Logger inn med streng brukernavn.
@@ -61,6 +62,7 @@ public class InnloggingUtil {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
         sesjon.setAttribute("kasserer", "kasserer");
+        sesjon.setMaxInactiveInterval(60);
     }
     /**
      * logger deg ut!

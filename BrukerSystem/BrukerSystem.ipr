@@ -64,7 +64,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>pederyo</user-name>
-      <introspection-schemas>postgres:brukersystem</introspection-schemas>
+      <introspection-schemas>pederyo:|postgres:brukersystem</introspection-schemas>
     </data-source>
   </component>
   <component name="libraryTable">

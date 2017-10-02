@@ -44,6 +44,7 @@ public class InnloggingUtil {
         loggUt(request);
         HttpSession sesjon = request.getSession(true);
         sesjon.setAttribute("currentUser", b);
+        sesjon.setMaxInactiveInterval(60);
         FlashUtil.Flash(request, "Success", "Velkommen tilbake!");
     }
 
