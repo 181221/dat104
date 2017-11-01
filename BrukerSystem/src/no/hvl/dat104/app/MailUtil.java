@@ -34,7 +34,7 @@ public class MailUtil {
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.user", Mail.getFRAMAIL());
         props.put("mail.password", Mail.getPASSORD());
-        props.put("mail.port", "465");
+        props.put("mail.port", "587");
 
         sendMail(mail, props, req);
     }
@@ -64,12 +64,17 @@ public class MailUtil {
 
             // Send message
             javax.mail.Transport.send(message);
+
             mail.setResult("Your mail sent successfully....");
             req.getSession().setAttribute("result", mail.getResult());
         } catch (AddressException e) {
             e.printStackTrace();
+            mail.setResult(e.toString());
         } catch (javax.mail.MessagingException e) {
             e.printStackTrace();
+            mail.setResult(e.toString());
+        }finally {
+            req.getSession().setAttribute("result", mail.getResult());
         }
     }
 }

@@ -39,6 +39,8 @@ public class ResetPassordServlet extends HttpServlet {
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
+        }else {
+            request.getSession().setAttribute("result","Melding ble ikke sendt");
         }
         request.getRequestDispatcher("WEB-INF/resetinfo.jsp").forward(request, response);
     }
