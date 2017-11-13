@@ -26,7 +26,14 @@ public class CSVReader {
 
     }
     public static void readCSVInternett() throws FileNotFoundException, IOException {
-        URL url = new URL("https://no.timeedit.net/web/hib/db1/aistudent/riq0Yy62355ZX7QZ6555g5ZQ6Q05527Q18o062YQ66oY707g6qQZ.csv");
+        String URL = "https://no.timeedit.net/web/hib/db1/aistudent/riq0Yy62355ZX7QZ6555g5ZQ6Q05527Q18o002YQ66oY707g6qQZ.html";
+        if(URL.contains("html")) {
+            URL = URL.replace("html", "csv");
+            System.out.println(URL);
+
+        }
+        URL url = new URL(URL);
+
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         if (connection.getResponseCode() == 200) {
             InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
