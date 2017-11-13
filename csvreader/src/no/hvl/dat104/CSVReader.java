@@ -27,8 +27,14 @@ public class CSVReader {
 
     public static List readCSV() throws FileNotFoundException, IOException {
         List countries = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader("test.csv"));
+        BufferedReader br = new BufferedReader(new FileReader("test4.csv"));
         String line = br.readLine();
+        line = br.readLine() + br.readLine() + br.readLine();
+        String[] fieldsene = line.split(",");
+        fieldsene = Arrays.copyOfRange(fieldsene, 3, fieldsene.length);
+        System.out.println("ny array");
+        System.out.println(Arrays.toString(fieldsene));
+        System.out.println(line);
         String[] fields = null;
         while ((line = br.readLine()) != null && !line.isEmpty()) {
             fields = line.split(",");
