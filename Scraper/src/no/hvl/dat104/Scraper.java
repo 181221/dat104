@@ -49,8 +49,8 @@ public class Scraper {
         WebElement pw = driver.findElement(By.id("password"));
         WebElement js = driver.findElement(By.id("input_has_js"));
 
-        username.sendKeys("181221");
-        pw.sendKeys("wpoxns147");
+        username.sendKeys(System.getenv("FEIDE_B"));
+        pw.sendKeys(System.getenv("FEIDE_P"));
         // Enter something to search for
         //element.sendKeys("Cheese!");
         // Now submit the form. WebDriver will find the form for us from the element
